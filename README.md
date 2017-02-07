@@ -5,6 +5,9 @@ email me at ehs82@cornell.edu if you're interested
 
 ##Software Dependencies
 
+###Installign OSRM
+https://github.com/Project-OSRM/osrm-backend/wiki/Building-OSRM
+
 ###Installing Nominatim
 http://wiki.openstreetmap.org/wiki/Nominatim/Installation_on_CentOS
 http://wiki.openstreetmap.org/wiki/Nominatim/Installation
