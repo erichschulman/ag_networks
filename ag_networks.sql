@@ -10,7 +10,7 @@ CREATE TABLE `proc` (
  `procid` INTEGER,
  `lat` REAL,
  `long` REAL,
- `lat` REAL,
+ `type` TEXT,
   PRIMARY KEY(`procid`) 
  );
 
@@ -18,6 +18,7 @@ CREATE TABLE `stores` (
 	`storeid` INTEGER,
 	`lat` REAL,
 	`long` REAL,
+    `sqftg` INTEGER,
 	PRIMARY KEY(`storeid`)
 );
 
