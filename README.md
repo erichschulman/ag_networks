@@ -1,6 +1,7 @@
 # Food Networks!
-This is the code Repo for my Honors Thesis
-email me at ehs82@cornell.edu
+This is the code repo for my Honors Thesis
+
+email me at ehs82@cornell.edu if you're interested
 
 ##Software Dependencies
 
