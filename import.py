@@ -10,6 +10,13 @@ import json
 #add relevant information to database
 
 
+#Try this to get things working with selinux
+# sudo semanage fcontext -a -t lib_t "$USERHOME/Nominatim/module/nominatim.so"
+#sudo restorecon -R -v $USERHOME/Nominatim
+#sudo chmod 755 /home/ /home/erichschulman/ /home/erichschulman/Documents/ /home/erichschulman/Documents/Nominatim-2.5.1/ /home/erichschulman/Documents/Nominatim-2.5.1/module /home/erichschulman/Documents/Nominatim-2.5.1/module/nominatim.so
+
+
+
 def import_file(db, file, addr, field):
 	"""use this to import data into the db"""
 	conn = sqlite3.connect(db)
@@ -20,7 +27,7 @@ def import_file(db, file, addr, field):
 		for row in reader:
 			#concat address
 			#query the server for gps
-			url_osrm = "http://localhost/nominatim/search?q=111+catherine+street,+ithaca&format=json"
+			url_osrm = "http://localhost/nominatim/search?format=json&q=%s,%s,%s,%s" %(row["Street  Address"], row["City"], row["State"], row["Zip"])
 			lon = 0
 			lat = 0
 			#c.execute('INSERT INTO proc VALUES (?,?,?,?)', (procid,lon,lat,row[field],) )
