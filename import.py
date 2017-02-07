@@ -2,6 +2,7 @@ import requests
 import numpy as np
 import csv
 import sqlite3
+import json
 
 #hard code name of files
 #open file
@@ -11,16 +12,20 @@ import sqlite3
 
 def import_file(db, file, addr, field):
 	"""use this to import data into the db"""
-	conn = sqlite3.connect("db")
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
 	with open(file) as csvfile:
 		reader = csv.DictReader(csvfile)
 		procid = 1
 		for row in reader:
-			procid
 			#concat address
 			#query the server for gps
-			#add gps, field to db
-			row[field]
+			url_osrm = "http://localhost/nominatim/search?q=111+catherine+street,+ithaca&format=json"
+			lon = 0
+			lat = 0
+			#c.execute('INSERT INTO proc VALUES (?,?,?,?)', (procid,lon,lat,row[field],) )
+			#procid =procid+1
+	conn.commit()
 	return
 
 
