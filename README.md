@@ -5,7 +5,7 @@ email me at ehs82@cornell.edu if you're interested
 
 ##Software Dependencies
 
-###Installign OSRM
+###Installing OSRM
 https://github.com/Project-OSRM/osrm-backend/wiki/Building-OSRM
 
 ###Installing Nominatim
