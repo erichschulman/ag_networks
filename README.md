@@ -33,11 +33,11 @@ https://www.geofabrik.de/data/download.html
 ##Running Code
 
 ###To run nominatim server
-'sudo systemctl start postgresql
-'sudo systemctl start httpd
+`sudo systemctl start postgresql`
+`sudo systemctl start httpd`
 
 ###To run OSRM server (from the osrm directory)
-'osrm-routed ../maps/new-york-latest.osrm
+`osrm-routed ../maps/new-york-latest.osrm`
 
 
 ##Todo
