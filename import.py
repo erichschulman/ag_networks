@@ -5,12 +5,6 @@ import sqlite3
 import json
 import string
 
-#hard code name of files
-#open file
-#geolcate address
-#add relevant information to database
-
-#setsebool -P httpd_can_network_connect_db on
 
 
 def import_proc(db, file):
@@ -61,5 +55,5 @@ def geolocate(addr):
 	return outp[0]['lat'], outp[0]['lon']
 
 if __name__ == "__main__":
-	#import_proc("db/test.db","input/ptest.csv")
+	import_proc("db/test.db","input/ptest.csv")
 	import_store("db/test.db","input/stest.csv")
