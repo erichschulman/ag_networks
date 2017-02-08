@@ -2,14 +2,14 @@
 CREATE TABLE `farms` ( 
 	`farmid` INTEGER,
 	`lat` REAL,
-	`long` REAL,
+	`lon` REAL,
 	PRIMARY KEY(`farmid`) 
 );
 
 CREATE TABLE `proc` (
  `procid` INTEGER,
  `lat` REAL,
- `long` REAL,
+ `lon` REAL,
  `type` TEXT,
   PRIMARY KEY(`procid`) 
  );
@@ -17,7 +17,7 @@ CREATE TABLE `proc` (
 CREATE TABLE `stores` ( 
 	`storeid` INTEGER,
 	`lat` REAL,
-	`long` REAL,
+	`lon` REAL,
     `sqftg` INTEGER,
 	PRIMARY KEY(`storeid`)
 );
