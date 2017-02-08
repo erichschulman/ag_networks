@@ -9,12 +9,7 @@ import json
 #geolcate address
 #add relevant information to database
 
-
-#Try this to get things working with selinux
-# sudo semanage fcontext -a -t lib_t "$USERHOME/Nominatim/module/nominatim.so"
-#sudo restorecon -R -v $USERHOME/Nominatim
-#sudo chmod 755 /home/ /home/erichschulman/ /home/erichschulman/Documents/ /home/erichschulman/Documents/Nominatim-2.5.1/ /home/erichschulman/Documents/Nominatim-2.5.1/module /home/erichschulman/Documents/Nominatim-2.5.1/module/nominatim.so
-
+#setsebool -P httpd_can_network_connect_db on
 
 
 def import_file(db, file, addr, field):
@@ -25,13 +20,15 @@ def import_file(db, file, addr, field):
 		reader = csv.DictReader(csvfile)
 		procid = 1
 		for row in reader:
-			#concat address
-			#query the server for gps
-			url_osrm = "http://localhost/nominatim/search?format=json&q=%s,%s,%s,%s" %(row["Street  Address"], row["City"], row["State"], row["Zip"])
-			lon = 0
-			lat = 0
-			#c.execute('INSERT INTO proc VALUES (?,?,?,?)', (procid,lon,lat,row[field],) )
-			#procid =procid+1
+			#query = "http://localhost/nominatim/search?q=%s,%s,%s,%s&format=json&polygon=1&addressdetails=1" %(row["Street  Address"], row["City"], row["State"], row["Zip Code"])
+			req = "http://nominatim.openstreetmap.org/search?q=%s,%s,%s&format=json&polygon=1&addressdetails=1" %(row["Street  Address"], row["City"], row["State"])
+			resp = requests.get(req)
+			outp = json.loads(resp.text)
+			lat = outp[0]['lat']
+			lon = outp[0]['lon']
+			c.execute('INSERT INTO proc VALUES (?,?,?,?)', (procid,lon,lat,row[field],) )
+			procid =procid+1
+
 	conn.commit()
 	return
 
@@ -43,3 +40,9 @@ def geolocate(addr):
 
 if __name__ == "__main__":
 	import_file("db/test.db","input/test.csv",["Street  Address","City","State","Zip"],"Commodity Listing")
+	#req= "http://nominatim.openstreetmap.org/search?q=%s,%s,%s,%s&format=json&polygon=1&addressdetails=1"
+	#outp = requests.get(req)
+	#fin = json.loads(outp.text)
+	#print(fin[0]['lat'])
+	#print(fin['lat'])
+	#print(fin['long'])

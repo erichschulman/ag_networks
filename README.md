@@ -34,6 +34,9 @@ http://cugir.mannlib.cornell.edu/bucketinfo.jsp?id=8033
 ###OSM map of NYS
 https://www.geofabrik.de/data/download.html
 
+###Tiger data with street addresses
+https://www.census.gov/geo/maps-data/data/tiger-geodatabases.html
+
 ##Running Code
 
 ###To run nominatim server
