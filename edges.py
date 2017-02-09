@@ -33,6 +33,5 @@ def routing(lon0,lat0,lon1,lat1):
 	return orsm['routes'][0]['duration']
 
 
-
 if __name__ == "__main__":
 	ps_edges("db/test.db")

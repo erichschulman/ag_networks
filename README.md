@@ -21,6 +21,15 @@ http://www.gurobi.com/documentation/7.0/examples/netflow_py.html
 ###farm product dealers
 https://data.ny.gov/Economic-Development/Farm-Product-Dealer-Licenses-Currently-Issued/ehtk-kzxa
 
+####using the raster data with qgis
+1. start by importing the tif image. Use the raster calculator in the raster menu raster and select the appropriate band
+2. use the translate tool to set 0 to no data
+3. then polygonize
+4. then open the attribute table by right clicking the polygon menu. drop an appropriate number of observations that are too small. Then use:
+for area: `$area`
+for longitude: `x( transform(centroid( $geometry), 'EPSG:32618', 'EPSG:4326'  ) )`
+for latitude: `y( transform(centroid( $geometry), 'EPSG:32618', 'EPSG:4326'  ) )`
+
 ###food retail stores
 https://data.ny.gov/Economic-Development/Retail-Food-Stores/9a8c-vfzj
 
