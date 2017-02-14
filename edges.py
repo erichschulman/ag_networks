@@ -5,23 +5,36 @@ import json
 
 #to start osrm osrm-routed ../maps/new-york-latest.osrm from the directory
 
-def ps_edges(db):
+def fp_edges(db):
+	"""figures out which is the most efficient edge between farms and stores"""
+	conn1 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED') #probably not secure, but ya know
+	conn2 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED')
+	
+	return
+
+
+def proc_edges(db, farms=False):
+	"""use this to create edges between procs, farms and stores
+	set the flag to switch between farms and stores. stores by default"""
+
+	table = 'ps_edges'
+	query = 'SELECT procs.procid, procs.lat, procs.lon, stores.storeid, stores.lat, stores.lon FROM procs, stores'
+	if (farms):
+		table = 'fp_edges'
+		query = 'SELECT procs.procid, procs.lat, procs.lon, farm.farmid, farm.lat, farm.lon FROM procs, farms'
+
 	"""computes edge weights between stores and processors"""
-	conn = sqlite3.connect(db)
-	c = conn.cursor()
+	conn1 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED') #probably not secure, but ya know
+	conn2 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED')
+	c1 = conn1.cursor()
+	c2 = conn2.cursor()
+	if (type)
 
-	c.execute("SELECT COUNT(*) FROM stores")
-	storenum = c.fetchone()[0]
-	c.execute("SELECT COUNT(*) FROM proc")
-	procnum = c.fetchone()[0]
-
-	for storeid in range(1,storenum+1):
-		for procid in range(1,procnum+1): #may change this depending on RAM constraints
-			c.execute("SELECT proc.procid, proc.lat, proc.lon, stores.storeid, stores.lat, stores.lon FROM proc, stores WHERE proc.procid=? AND stores.storeid=?",(procid,storeid,))
-			row = c.fetchone()
+	for row in c1.execute(query):
 			duration = routing(row[2],row[1],row[5],row[4])
-			c.execute('INSERT INTO ps_edges VALUES (?,?,?,?)', (storeid,procid,0,duration,))
-	conn.commit()
+			c2.execute('INSERT INTO ? VALUES (?,?,?,?)', (table, row[3],row[0],0,duration,))
+	
+	conn2.commit()
 	return
 
 
@@ -34,4 +47,5 @@ def routing(lon0,lat0,lon1,lat1):
 
 
 if __name__ == "__main__":
-	ps_edges("db/test.db")
+	#proc_edges("db/test.db")
+	proc_edges("db/test.db", farms = True )

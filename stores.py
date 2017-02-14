@@ -17,7 +17,7 @@ def import_proc(db, file):
 		for row in reader:
 			addr = "%s,%s,%s" %(row["Street  Address"], row["City"], row["State"])
 			lat,lon = geolocate(addr)
-			c.execute('INSERT INTO proc VALUES (?,?,?,?)', (procid,lat,lon,row["Commodity Listing"],) )
+			c.execute('INSERT INTO procs VALUES (?,?,?,?)', (procid,lat,lon,row["Commodity Listing"],) )
 			procid =procid+1
 	conn.commit()
 	return

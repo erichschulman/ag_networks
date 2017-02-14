@@ -1,12 +1,13 @@
 
 CREATE TABLE farms ( 
 	farmid INTEGER,
+	area INTEGER,
 	lat REAL,
 	lon REAL,
 	PRIMARY KEY(farmid) 
 );
 
-CREATE TABLE proc (
+CREATE TABLE procs (
  procid INTEGER,
  lat REAL,
  lon REAL,
@@ -33,6 +34,16 @@ CREATE TABLE fp_edges (
 );
 
 CREATE TABLE ps_edges (
+	storeid	INTEGER,
+	procid	INTEGER,
+	linedist	INTEGER,
+	routdist	INTEGER,
+	FOREIGN KEY(storeid) REFERENCES stores(storeid)
+	FOREIGN KEY (procid) REFERENCES proc(procid)
+	PRIMARY KEY(storeid, procid)
+);
+
+CREATE TABLE fs_edges (
 	storeid	INTEGER,
 	procid	INTEGER,
 	linedist	INTEGER,
