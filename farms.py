@@ -12,5 +12,11 @@ def test():
 		c1.execute('INSERT INTO stores VALUES (?,?,?,?)', (20+i,20,20,20,) )
 	conn1.commit()
 
+def test2():
+	conn1 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED')
+	c1 = conn1.cursor()
+	for row in c1.execute('SELECT * FROM ?', 'stores'):
+		print(row)
+
 if __name__ == "__main__":
-	test()
+	test2()
