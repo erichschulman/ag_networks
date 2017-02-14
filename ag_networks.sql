@@ -1,4 +1,5 @@
 
+/*initialize farms*/
 CREATE TABLE farms ( 
 	farmid INTEGER,
 	area INTEGER,
@@ -7,6 +8,8 @@ CREATE TABLE farms (
 	PRIMARY KEY(farmid) 
 );
 
+
+/*initialize intermediaries (processors)*/
 CREATE TABLE procs (
  procid INTEGER,
  lat REAL,
@@ -15,6 +18,8 @@ CREATE TABLE procs (
   PRIMARY KEY(procid) 
  );
 
+
+/*initialize stores*/
 CREATE TABLE stores ( 
 	storeid INTEGER,
 	lat REAL,
@@ -23,6 +28,8 @@ CREATE TABLE stores (
 	PRIMARY KEY(storeid)
 );
 
+
+/*initialize farm to processor edges*/
 CREATE TABLE fp_edges (
 	farmid	INTEGER,
 	procid	INTEGER,
@@ -33,6 +40,7 @@ CREATE TABLE fp_edges (
 	PRIMARY KEY(farmid, procid)
 );
 
+/*store processor edges*/
 CREATE TABLE ps_edges (
 	storeid	INTEGER,
 	procid	INTEGER,
@@ -43,6 +51,7 @@ CREATE TABLE ps_edges (
 	PRIMARY KEY(storeid, procid)
 );
 
+/*farm store edges (see other sql file)*/
 CREATE TABLE fs_edges (
 	storeid	INTEGER,
 	procid	INTEGER,
@@ -52,3 +61,4 @@ CREATE TABLE fs_edges (
 	FOREIGN KEY (procid) REFERENCES proc(procid)
 	PRIMARY KEY(storeid, procid)
 );
+
