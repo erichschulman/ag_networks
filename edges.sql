@@ -1,3 +1,4 @@
+
 /*these queries are meant to be run after the database is loaded inorder to do the optimization problem*/
 
 

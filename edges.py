@@ -5,22 +5,6 @@ import json
 
 #to start osrm osrm-routed ../maps/new-york-latest.osrm from the directory
 
-def fp_edges(db):
-	"""figures out which is the most efficient edge between farms and stores"""
-	conn1 = sqlite3.connect('db/test.db') #probably not secure, but ya know
-	c1 = conn1.cursor()
-
-	query = ("SELECT A.storeid, A.farmid, A.procid, MIN(A. dist) FROM "+ 
-	"(SELECT fp_edges.farmid as farmid, ps_edges.storeid as storeid, fp_edges.procid as procid, "+
-	"(fp_edges.routdist + ps_edges.routdist) as dist FROM ps_edges, fp_edges" +
-	" WHERE ps_edges.procid = fp_edges.procid) as "+
-	"A GROUP BY A.farmid, A.storeid;")
-
-	for row in c1.execute(query):
-		print(row)
-	return
-
-
 def proc_edges(db, farms=False):
 	"""use this to create edges between procs, farms and stores
 	set the flag to switch between farms and stores. stores by default"""
@@ -53,6 +37,65 @@ def routing(lon0,lat0,lon1,lat1):
 	osrm_raw = requests.get(req)
 	orsm =json.loads(osrm_raw.text)
 	return orsm['routes'][0]['duration']
+
+
+class FP_Edges:
+	"""figures out which is the most efficient edge between farms and stores"""
+
+	def __init__(self, db):
+		"""initialize the FP_Edges class so I can get entries from it"""
+		self.conn1 = sqlite3.connect(db, isolation_level = 'DEFERRED') #may regret this later
+		self.c1 = self.conn1.cursor()
+		self.database = db
+
+		query = ("SELECT fp_edges.farmid as farmid, ps_edges.storeid as storeid, "
+				"MIN(fp_edges.routdist + ps_edges.routdist) as dist "
+				"FROM ps_edges, fp_edges "
+				"WHERE ps_edges.procid = fp_edges.procid "
+				"GROUP BY fp_edges.farmid, ps_edges.storeid;")
+
+		self.c1.execute(query)
+
+	def next_edge(self):
+		"""return the next row in the table"""
+		return self.c1.fetchone()
+
+
+	def restart_conn(self):
+		"""restart the table from the begining"""
+		self.c1.close()
+
+		self.conn1 = sqlite3.connect(self.database, isolation_level = 'DEFERRED') #may regret this later
+		self.c1 = self.conn1.cursor()
+
+		query = ("SELECT fp_edges.farmid as farmid, ps_edges.storeid as storeid, "
+				"MIN(fp_edges.routdist + ps_edges.routdist) as dist "
+				"FROM ps_edges, fp_edges "
+				"WHERE ps_edges.procid = fp_edges.procid "
+				"GROUP BY fp_edges.farmid, ps_edges.storeid;")
+
+		self.c1.execute(query)
+
+
+
+def fp_edges(db):
+	"""print the edges as a test"""
+	edges = FP_Edges(db)
+
+	current_edge = edges.next_edge()
+	while(current_edge!=None):
+		print(current_edge)
+		current_edge = edges.next_edge()
+
+	edges.restart_conn()
+
+	print("restarted connection")
+	current_edge = edges.next_edge()
+	while(current_edge!=None):
+		print(current_edge)
+		current_edge = edges.next_edge()
+
+	return
 
 
 if __name__ == "__main__":
