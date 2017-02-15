@@ -1,5 +1,5 @@
 # Food Networks!
-This is the code repo for my Honors Thesis. Depending on who you ask, it's more interesting than chopped. I'm trying to specify a transportation problem using NYS publically available GIS data. I plan to solve the problem with the gurobi optimizer. Most of the code/data I'm using is open source or open access. Gurobi is not (but is free with an academic liscence).
+This is the code repo for my Honors Thesis. Depending on who you ask, it's more interesting than Chopped. I'm trying to specify a transportation problem using NYS publically available GIS data. I plan to solve the problem with the Gurobi Optimizer. Most of the code/data I'm using is open source or open access. Gurobi is not (but is free with an academic liscence).
 
 email me at ehs82@cornell.edu if you're interested
 
@@ -12,16 +12,43 @@ https://github.com/Project-OSRM/osrm-backend/wiki/Building-OSRM
 http://wiki.openstreetmap.org/wiki/Nominatim/Installation_on_CentOS
 http://wiki.openstreetmap.org/wiki/Nominatim/Installation
 
-
-###Reference for netflow with Gurobi
+###Reference for Minimum Cost Maximum Flow with Gurobi
 http://www.gurobi.com/documentation/7.0/examples/netflow_py.html
 
 ##Data
 
-###farm product dealers
+###Farm Product Dealers
 https://data.ny.gov/Economic-Development/Farm-Product-Dealer-Licenses-Currently-Issued/ehtk-kzxa
 
-####using the raster data with qgis
+
+###Food Retail Stores
+https://data.ny.gov/Economic-Development/Retail-Food-Stores/9a8c-vfzj
+
+Describes the store classification codes
+ https://data.ny.gov/api/views/6kqu-2c4m/files/UBDP3oW2f-K767I4f51EJaIUO8eNGPrAQQj8tSvBhbo?download=true&filename=NYSDAM_RetailFoodStoresEstablishmentTypeCodes.pdf
+
+###Sattelite Farm Data
+http://cugir.mannlib.cornell.edu/bucketinfo.jsp?id=8033
+
+
+###OSM Map of NYS
+https://www.geofabrik.de/data/download.html
+
+###Tiger Data with Street Addresses
+https://www.census.gov/geo/maps-data/data/tiger-geodatabases.html
+
+
+##Code organization
+
+###`ag_networks.sql`
+This file contains the create statements for the database
+
+###`farms.py`
+This file contains the code used for importing the .tif sattelite image into the database
+
+####Raster Data and QGis
+Originally, I planned to import the Raster data with QGis, but this process is fairly tedious and slow, so I automated it with `farms.py`. I wanted to keep track of these instructions, in case I need them later.
+
 1. start by importing the tif image. Use the raster calculator in the raster menu raster and select the appropriate band
 2. use the translate tool to set 0 to no data
 3. then polygonize
@@ -30,59 +57,27 @@ for area: `$area`
 for longitude: `x( transform(centroid( $geometry), 'EPSG:32618', 'EPSG:4326'  ) )`
 for latitude: `y( transform(centroid( $geometry), 'EPSG:32618', 'EPSG:4326'  ) )`
 
-###food retail stores
-https://data.ny.gov/Economic-Development/Retail-Food-Stores/9a8c-vfzj
 
-Describes the store classification codes
- https://data.ny.gov/api/views/6kqu-2c4m/files/UBDP3oW2f-K767I4f51EJaIUO8eNGPrAQQj8tSvBhbo?download=true&filename=NYSDAM_RetailFoodStoresEstablishmentTypeCodes.pdf
+###`stores.py`
+This file contains the codes that imports the store and intermediary into the database. `stores.py` expects OSRM to be running on the local host with the NYS OSM data. You can also configure the file to use a local instance of nominatim.
 
-###sattelite farm data
-http://cugir.mannlib.cornell.edu/bucketinfo.jsp?id=8033
-
-
-###OSM map of NYS
-https://www.geofabrik.de/data/download.html
-
-###Tiger data with street addresses
-https://www.census.gov/geo/maps-data/data/tiger-geodatabases.html
-
-##Running Code
-
-###To run nominatim server
+####To run nominatim server
 `sudo systemctl start postgresql`
 
 `sudo systemctl start httpd`
 
-###To run OSRM server (from the osrm directory)
+####To run OSRM server (from the osrm directory)
 `osrm-routed ../maps/new-york-latest.osrm`
 
 
-##Todo
-
-1. get a list of farms by using qgis
--update with sizes using qgis
--add up total size
--add percentage size
-
-2. get a list of stores using NY data
--link to size using square footage
--link to costs
--give as percentage of both
-
-3. get a list of intermediate processors
-
-4. use mapquest api to determine edge costs for farm to intermeidate
-- use mapquest api to determine edge costs for intermeidate to stores
-https://developer.mapquest.com/documentation/directions-api/route-matrix/post/
-
-5. determine optimal routes from farms to stores.
-
-for all f and s
-min:si +fi
+###`edges.py`
+This file contains the code that populates the database with edges between farms, producers and 
 
 
-6. determine prices
-(repeat for other crops?)
+###`transport.py`
+This file will eventually specify the transportation problem for the gurobi optimizer. Right now, it
+just runs an example of the minimum cost maximum flow problem.
 
-
-
+###`main.py`
+Running this file will eventually do all the steps in the project start to finish. I may include flags
+to break things up.
