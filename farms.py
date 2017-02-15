@@ -1,6 +1,6 @@
 import sqlite3
 import numpy as np
-from osgeo import gdal, gdalconst, gdalnumeric
+from osgeo import gdal, gdalconst, gdalnumeric, ogr
 import sys
 import os
 
@@ -30,20 +30,21 @@ def import_farms(file_name, band, seive):
 	band2.SetNoDataValue(0)
 	gdalnumeric.BandWriteArray(band2, data2)
 
-	#convert to no data
-
 	#close original data
 	file1 = None
 	band1 = None
-	file2 = None
-	band2 = None
-
 
 	#then polygonize
+	driver2 = ogr.GetDriverByName("ESRI Shapefile")
+	file3 = driver2.CreateDataSource(folder + "/band_" + str(band) + ".shp" )
+	data3 = file3.CreateLayer( "band_" + str(band) , srs = None )
+	gdal.Polygonize( band2, band2, data3, -1, [], callback=None )
 
 	#then sieve the data
 
 	#then calculate fields
+
+	#then move fields to db
 
 	#close dataset
 	return
