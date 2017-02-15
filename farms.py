@@ -19,7 +19,7 @@ def import_farms(file_name, band, seive):
 	data1 = gdalnumeric.BandReadAsArray(band1)
 
 	#limit band to the data i care about
-	rastercalc = np.vectorize(lambda x: 1 if x==band else None)
+	rastercalc = np.vectorize(lambda x: 1 if x==band else np.nan)
 	data2 = rastercalc(data1)
 
 	#create a new geotiff
@@ -27,6 +27,7 @@ def import_farms(file_name, band, seive):
 	file2 = driver1.Create(folder + "/band_" + str(band) + ".tiff", file1.RasterXSize, file1.RasterYSize, 1, band1.DataType)
 	gdalnumeric.CopyDatasetInfo(file1,file2)
 	band2 = file2.GetRasterBand(1)
+	band2.SetNoDataValue(0)
 	gdalnumeric.BandWriteArray(band2, data2)
 
 	#convert to no data
