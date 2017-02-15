@@ -1,4 +1,7 @@
 import sqlite3
+from osgeo import gdal, ogr
+import sys
+
 
 def test():
 	conn1 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED')
@@ -18,5 +21,15 @@ def test2():
 	for row in c1.execute('SELECT * FROM ?', 'stores'):
 		print(row)
 
+
+def import_farms(file, band):
+	gdal.UseExceptions()
+
+	ds = gdal.Open('test.tif')
+	srcband = src_ds.GetRasterBand(band)
+
+	#close dataset
+	ds = None
+
 if __name__ == "__main__":
-	test2()
+	import_farms('input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif',68):
