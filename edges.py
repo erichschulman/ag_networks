@@ -40,7 +40,8 @@ def routing(lon0,lat0,lon1,lat1):
 
 
 class FP_Edges:
-	"""figures out which is the most efficient edge between farms and stores"""
+	"""figures out which is the most efficient edge between farms and stores,
+	behavior is unspecified if multiple instances are active at the same time"""
 
 	def __init__(self, db):
 		"""initialize the FP_Edges class so I can get entries from it"""
