@@ -1,4 +1,11 @@
 
+/*associate bands with names using key.txt*/
+CREATE TABLE bands (
+	band INTEGER,
+	name TEXT,
+	PRIMARY KEY(band)
+);
+
 /*initialize farms*/
 CREATE TABLE farms ( 
 	farmid INTEGER,
@@ -6,7 +13,8 @@ CREATE TABLE farms (
 	lon REAL,
 	area INTEGER,
 	band INTEGER,
-	PRIMARY KEY(farmid) 
+	PRIMARY KEY(farmid)
+	FOREIGN KEY (band) REFERENCES bands(band)
 );
 
 
@@ -60,4 +68,3 @@ CREATE TABLE fs_edges (
 	FOREIGN KEY (procid) REFERENCES proc(procid)
 	PRIMARY KEY(storeid, procid)
 );
-

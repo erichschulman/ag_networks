@@ -5,16 +5,21 @@ from stores import *
 
 
 #to start osrm osrm-routed ../maps/new-york-latest.osrm from the directory
-
-def main(db,farms,procs,stores):
-
+def create_db(db):
+	"""run the sql file to create the db"""
 	f = open('db_create.sql','r')
 	sql = f.read()
 	con = sqlite3.connect(db) #create the db
 	cur = con.cursor()
 	cur.executescript(sql)
+	con.commit()
+
+
+def main(db,farms,procs,stores):
+	create_db(db)
 	
 	#import data
+	import_bands(db)
 	import_farms(db, farms,36,10)
 	import_proc(db,procs)
 	import_store(db,stores)
@@ -26,7 +31,7 @@ def main(db,farms,procs,stores):
 	fp_edges(db)
 
 	#commit changes
-	con.commit()
+	
 	return
 
 if __name__ == "__main__":

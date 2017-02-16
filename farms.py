@@ -5,6 +5,25 @@ import sys
 import os
 
 
+def import_bands(db):
+	"""import the pairings from key.txt into the db"""
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+
+	f = open('key.txt')
+	file_text = f.readlines()[3:58]
+
+   	for line in file_text:
+   		content = line[0:34].strip()
+   		#print("|" + content +"|")
+   		ind1 = str.rfind(content, " ")
+   		name = (content[0:ind1-1]).strip()
+   		band  = int((content[ind1:]).strip())
+   		c.execute('INSERT INTO bands VALUES (?,?)', (band,name,) )
+
+   	conn.commit() # commit changes
+
+
 def import_farms(db, file_name, band, sieve):
 	"""use this to import the farm sattelite data into the database"""
 	gdal.UseExceptions() #for debugging purposes
@@ -83,4 +102,5 @@ def import_farms(db, file_name, band, sieve):
 	return
 
 if __name__ == "__main__":
-	import_farms('db/test.db','input/test.tif',36,10)
+	import_bands('db/test.db')
+	#import_farms('db/test.db','input/test.tif',36,10)
