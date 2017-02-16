@@ -44,7 +44,6 @@ CREATE TABLE fp_edges (
 CREATE TABLE ps_edges (
 	storeid	INTEGER,
 	procid	INTEGER,
-	linedist	INTEGER,
 	routdist	INTEGER,
 	FOREIGN KEY(storeid) REFERENCES stores(storeid)
 	FOREIGN KEY (procid) REFERENCES proc(procid)

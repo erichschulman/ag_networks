@@ -19,7 +19,7 @@ http://www.gurobi.com/documentation/7.0/examples/netflow_py.html
 
 ##Code organization
 
-###`ag_networks.sql`
+###`db_create.sql`
 This file contains the create statements for the database
 
 ###`edges.sql`

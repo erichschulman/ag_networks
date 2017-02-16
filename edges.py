@@ -59,12 +59,12 @@ def proc_edges(db, farms=False):
 
 	table = 'ps_edges'
 	query1 = 'SELECT procs.procid, procs.lat, procs.lon, stores.storeid, stores.lat, stores.lon FROM procs, stores'
-	query2 = 'INSERT INTO ps_edges VALUES (?,?,?,?)'
+	query2 = 'INSERT INTO ps_edges VALUES (?,?,?)'
 	
 	if (farms):
 		table = 'fp_edges'
 		query1 = 'SELECT procs.procid, procs.lat, procs.lon, farms.farmid, farms.lat, farms.lon FROM procs, farms'
-		query2 = 'INSERT INTO fp_edges VALUES (?,?,?,?)'
+		query2 = 'INSERT INTO fp_edges VALUES (?,?,?)'
 
 	conn1 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED') #probably not secure, but ya know
 	conn2 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED')
@@ -73,7 +73,7 @@ def proc_edges(db, farms=False):
 
 	for row in c1.execute(query1):
 			duration = routing(row[2],row[1],row[5],row[4])
-			c2.execute(query2, (row[3],row[0],0,duration,))
+			c2.execute(query2, (row[3],row[0],duration,))
 	
 	conn2.commit()
 	return
