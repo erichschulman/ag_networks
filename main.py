@@ -5,6 +5,7 @@ from stores import *
 
 
 #to start osrm osrm-routed ../maps/new-york-latest.osrm
+
 def create_db(db):
 	"""run the sql file to create the db"""
 	f = open('db_create.sql','r')

@@ -2,9 +2,7 @@ import requests
 import sqlite3
 import json
 
-
-#to start osrm osrm-routed ../maps/new-york-latest.osrm from the directory
-
+#to start osrm osrm-routed ../maps/new-york-latest.osrm
 class FP_Edges:
 	"""figures out which is the most efficient edge between farms and stores,
 	behavior is unspecified if multiple instances are active at the same time"""
