@@ -6,11 +6,11 @@ import os
 
 
 def import_bands(db):
-	"""import the pairings from key.txt into the db"""
+	"""import the pairings from bands.txt into the db"""
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
 
-	f = open('input/band.txt')
+	f = open('input/bands.txt')
 	file_text = f.readlines()[3:58]
 
    	for line in file_text:
