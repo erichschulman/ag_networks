@@ -34,7 +34,6 @@ CREATE TABLE stores (
 CREATE TABLE fp_edges (
 	farmid	INTEGER,
 	procid	INTEGER,
-	linedist	INTEGER,
 	routdist	INTEGER,
 	FOREIGN KEY(farmid) REFERENCES farms(farmid)
 	FOREIGN KEY (procid) REFERENCES proc(procid)

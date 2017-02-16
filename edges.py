@@ -87,15 +87,6 @@ def fp_edges(db):
 	while(current_edge!=None):
 		print(current_edge)
 		current_edge = edges.next_edge()
-
-	edges.restart_conn()
-
-	print("restarted connection")
-	current_edge = edges.next_edge()
-	while(current_edge!=None):
-		print(current_edge)
-		current_edge = edges.next_edge()
-
 	return
 
 
