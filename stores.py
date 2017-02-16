@@ -24,16 +24,16 @@ def census_tract(lat,lon):
 	driver = ogr.GetDriverByName('ESRI Shapefile')
 	tractfile = driver.Open('input/tl_2010_36_tract10/tl_2010_36_tract10.shp')
 	tractlayer = tractfile.GetLayer()
+	point = ogr.Geometry(ogr.wkbPoint)
+	point.AddPoint(lon,lat)
+	tractlayer.SetSpatialFilter(ogr.CreateGeometryFromWkt(point.ExportToWkt()))
+
 	for feature in tractlayer:
 		#http://gis.stackexchange.com/questions/27493/is-nad-83-the-same-as-epsg4326
 		#seems as though I don't need to reproject...
+  	 	return feature.GetField("GEOID10")
 	
-  	 	print feature.GetField("GEOID10")
-
-	#figure out which feature it i
-	#get the geoid of the feature
-
-	return
+	return None #if there isn't a census tract just return
 
 
 def import_proc(db, file):

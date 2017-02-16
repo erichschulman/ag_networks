@@ -24,16 +24,12 @@ def main(db,farms,procs,stores):
 	import_farms(db, farms,36,10)
 	import_proc(db,procs)
 	import_store(db,stores)
-	
 
 	#calculate edges
 	proc_edges(db)
 	proc_edges(db, farms = True )
 	fp_edges(db)
 
-	#commit changes
-	
-	return
 
 if __name__ == "__main__":
 	main('db/test.db','input/test.tif','input/ptest.csv','input/stest.csv')
