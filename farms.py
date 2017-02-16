@@ -21,6 +21,7 @@ def import_bands(db):
    		c.execute('INSERT INTO bands VALUES (?,?)', (band,name,) )
 
    	conn.commit() # commit changes
+   	return
 
 
 def import_farms(db, file_name, band, sieve):
@@ -97,8 +98,8 @@ def import_farms(db, file_name, band, sieve):
 	#close dataset
 	file3 = None
 	layer3 = None
-
 	return
+	
 
 if __name__ == "__main__":
 	import_bands('db/test.db')

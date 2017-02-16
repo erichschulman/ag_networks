@@ -8,10 +8,10 @@ CREATE TABLE bands (
 
 
 /*import tract values for census*/
-CREATE TABLE tract_values (
+CREATE TABLE tractvalues (
+	geoid INTEGER,
 	value INTEGER,
-	tract INTEGER,
-	PRIMARY KEY(tract)
+	PRIMARY KEY(geoid)
 );
 
 
@@ -43,9 +43,9 @@ CREATE TABLE stores (
 	lat REAL,
 	lon REAL,
     sqftg INTEGER,
-    tract INTEGER,
+    geoid INTEGER,
 	PRIMARY KEY(storeid)
-	FOREIGN KEY (tract) REFERENCES tract_values(tract)
+	FOREIGN KEY (geoid) REFERENCES tract_values(geoid)
 );
 
 
@@ -63,17 +63,6 @@ CREATE TABLE fp_edges (
 CREATE TABLE ps_edges (
 	storeid	INTEGER,
 	procid	INTEGER,
-	routdist	INTEGER,
-	FOREIGN KEY(storeid) REFERENCES stores(storeid)
-	FOREIGN KEY (procid) REFERENCES proc(procid)
-	PRIMARY KEY(storeid, procid)
-);
-
-/*farm store edges (see other sql file)*/
-CREATE TABLE fs_edges (
-	storeid	INTEGER,
-	procid	INTEGER,
-	linedist	INTEGER,
 	routdist	INTEGER,
 	FOREIGN KEY(storeid) REFERENCES stores(storeid)
 	FOREIGN KEY (procid) REFERENCES proc(procid)

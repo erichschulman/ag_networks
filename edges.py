@@ -23,6 +23,7 @@ class FP_Edges:
 
 		self.c1.execute(query)
 
+
 	def next_edge(self):
 		"""return the next row in the table"""
 		return self.c1.fetchone()
