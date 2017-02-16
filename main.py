@@ -20,6 +20,7 @@ def main(db,farms,procs,stores):
 	
 	#import data
 	import_bands(db)
+	import_tracts(db)
 	import_farms(db, farms,36,10)
 	import_proc(db,procs)
 	import_store(db,stores)

@@ -10,12 +10,11 @@ def import_bands(db):
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
 
-	f = open('key.txt')
+	f = open('input/band.txt')
 	file_text = f.readlines()[3:58]
 
    	for line in file_text:
    		content = line[0:34].strip()
-   		#print("|" + content +"|")
    		ind1 = str.rfind(content, " ")
    		name = (content[0:ind1-1]).strip()
    		band  = int((content[ind1:]).strip())

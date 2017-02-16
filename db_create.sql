@@ -1,10 +1,19 @@
 
-/*associate bands with names using key.txt*/
+/*associate bands with names using input/band.txt*/
 CREATE TABLE bands (
 	band INTEGER,
 	name TEXT,
 	PRIMARY KEY(band)
 );
+
+
+/*import tract values for census*/
+CREATE TABLE tract_values (
+	value INTEGER,
+	tract INTEGER,
+	PRIMARY KEY(tract)
+);
+
 
 /*initialize farms*/
 CREATE TABLE farms ( 
@@ -24,7 +33,7 @@ CREATE TABLE procs (
  lat REAL,
  lon REAL,
  type TEXT,
- PRIMARY KEY(procid) 
+ PRIMARY KEY(procid)
  );
 
 
@@ -34,7 +43,9 @@ CREATE TABLE stores (
 	lat REAL,
 	lon REAL,
     sqftg INTEGER,
+    tract INTEGER,
 	PRIMARY KEY(storeid)
+	FOREIGN KEY (tract) REFERENCES tract_values(tract)
 );
 
 

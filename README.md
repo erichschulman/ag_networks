@@ -71,6 +71,21 @@ to break things up.
 
 Below are the data sources that I am using
 
+
+###Median Property Value Census Data
+https://factfinder.census.gov/faces/nav/jsf/pages/download_center.xhtml
+
+To Find the Data through the Portal:
+1. Start > Looking for Specific Data set
+2. Dataset> American Community Servey, 2010 ACS 5-year Selected Population Tables
+3. Topics> Housing, Value of Home
+4. Geographies> Census Tract, New York, All Counties
+
+###Tiger SHP Files with Census Tract
+For matching Census data with GPS coordinates
+https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2010&layergroup=Census+Tracts
+
+
 ###Farm Product Dealers
 https://data.ny.gov/Economic-Development/Farm-Product-Dealer-Licenses-Currently-Issued/ehtk-kzxa
 
@@ -89,4 +104,6 @@ https://www.geofabrik.de/data/download.html
 
 ###Tiger Data with Street Addresses
 https://www.census.gov/geo/maps-data/data/tiger-geodatabases.html
+
+
 
