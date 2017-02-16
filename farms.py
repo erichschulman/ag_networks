@@ -5,7 +5,7 @@ import sys
 import os
 
 
-def import_farms(file_name, band, sieve):
+def import_farms(db, file_name, band, sieve):
 	"""use this to import the farm sattelite data into the database"""
 	gdal.UseExceptions() #for debugging purposes
 
@@ -52,27 +52,35 @@ def import_farms(file_name, band, sieve):
 	band2 = None
 
 	#then import relevant information into the database
+	farmid =1
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+
 	for feature in layer3:
 
 		geom = feature.GetGeometryRef()
 		area = geom.GetArea()
 		centr = geom.Centroid()
 
-		#reproject 
+		#reproject into correct coordinate system
 		source = osr.SpatialReference()
-		source.ImportFromEPSG(2927)
+		source.ImportFromEPSG(32618) #UTM 18N
 		target = osr.SpatialReference()
 		target.ImportFromEPSG(4326)
+		transform = osr.CoordinateTransformation(source, target)
+		centr.Transform(transform)
 
-		print area
-		print centr_proj.getY()
-		print centr_proj.getX()
-
-		#then move fields to db
-
+		#insert into db
+		c.execute('INSERT INTO farms VALUES (?,?,?,?,?)', (farmid,centr.GetY(),centr.GetX(),area,band,) )
+		farmid = farmid+1
+	
+	conn.commit() # commit changes
 
 	#close dataset
+	file3 = None
+	layer3 = None
+
 	return
 
 if __name__ == "__main__":
-	import_farms('input/test.tif',36,10)
+	import_farms('db/test.db','input/test.tif',36,10)

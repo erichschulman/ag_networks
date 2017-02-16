@@ -2,9 +2,10 @@
 /*initialize farms*/
 CREATE TABLE farms ( 
 	farmid INTEGER,
-	area INTEGER,
 	lat REAL,
 	lon REAL,
+	area INTEGER,
+	band INTEGER,
 	PRIMARY KEY(farmid) 
 );
 
@@ -15,7 +16,7 @@ CREATE TABLE procs (
  lat REAL,
  lon REAL,
  type TEXT,
-  PRIMARY KEY(procid) 
+ PRIMARY KEY(procid) 
  );
 
 
