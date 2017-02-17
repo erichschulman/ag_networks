@@ -68,6 +68,7 @@ def example(output):
 	# add arbitrage constraint constraints
 	m.addConstrs( (prices[v]-prices[w]  <= costs[v,w] for v,w in edges),
  		"arbitrage")
+
 	m.write(output+'/test.lp')
 	# Compute optimal solution
 	m.optimize()
@@ -76,6 +77,7 @@ def example(output):
 		#solution = m.getAttr('prices')
 		#print(solution)
 		m.write(output+'/test.sol')
+
 
 def tranport(output, db):
 	"""pull data from the databse to solve the transportation
@@ -83,27 +85,27 @@ def tranport(output, db):
 
 	m = Model('transportation')
 
+	conn = sqlite3.connect('db/test.db')
+	c = conn1.cursor()
+	query1 = 'SELECT * FROM farms'
+	query2 = 'SELECT * FROM stores'
+
+	farms = {}
+	#add farms
+	for row in c1.execute(query1):
+		farms[row['farmid'] = m.addVar( obj=row['sqftg'], name=str(row[storeid]) )
+
+	stores {}
+	#add stores
+	for row in c1.execute(query2):
+		stores[row['storeid'] = m.addVar( obj=row['sqftg'], name=(str(row[storeid]) )
+
 	#add edge constraints
 	edges = FP_Edges(db)
 	current_edge = edges.next_edge()
 	while(current_edge!=None):
-		print(current_edge)
+		m.addConstr(farms[row['farmid']] - stores[row['storeid']] <= row['routdist'], "row_%s+%s"%(row['farmid'],row['storeid']) #not sure about this?
 		current_edge = edges.next_edge()
-
-
-	#add variables
-	# Alternate version:
-	# m.addConstrs(
-	#   (quicksum(flow[h,i,j] for i,j in arcs.select('*',j)) + inflow[h,j] ==
-	#     quicksum(flow[h,j,k] for j,k in arcs.select(j,'*'))
-	#     for h in commodities for j in nodes), "node")
-
-	#add cost constraints
-	# for i,j in arcs:
-	#   m.addConstr(sum(flow[h,i,j] for h in commodities) <= capacity[i,j],
-	#               "cap[%s,%s]" % (i, j))
-
-	
 
 	m.write(output+'/test.lp')
 	# Compute optimal solution
@@ -115,6 +117,5 @@ def tranport(output, db):
 		m.write(output+'/test.sol')
 
 
-
 if __name__ == "__main__":
-	example('output')
+	example('output')9

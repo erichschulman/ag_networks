@@ -4,6 +4,7 @@ import json
 
 #to start osrm osrm-routed ../maps/new-york-latest.osrm
 
+
 def routing(lon0,lat0,lon1,lat1):
 	"""wrapper for doing routing with OSRM"""
 	req = "http://0.0.0.0:5000/route/v1/table/%s,%s;%s,%s"%(lon0,lat0,lon1,lat1)
