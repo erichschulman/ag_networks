@@ -111,7 +111,7 @@ def tranport(output, db):
 	edges = FP_Edges(db)
 	current_edge = edges.next_edge()
 	while(current_edge!=None):
-		m.addConstr(farms[current_edge[0]] - stores[current_edge[1]] <= current_edge[2], "row_%s+%s"%(current_edge[0],current_edge[1])) #not sure about this?
+		m.addConstr(farms[current_edge[0]] - stores[current_edge[1]] <= current_edge[2], "row_%s_%s"%(current_edge[0],current_edge[1])) #not sure about this?
 		current_edge = edges.next_edge()
 
 	m.write(output+'/ag_networks.lp')

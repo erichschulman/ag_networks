@@ -7,6 +7,13 @@ farms, (SELECT CAST(SUM(area) as FLOAT) as tot FROM farms);
 
 
 /*this query returns stores and their area*census value (by median property value) as percent of total*/
+SELECT storeid, (100*value*sqftg/tot) as tota 
+FROM
+(SELECT * FROM stores AS S, tractvalues AS T
+WHERE T.geoid = S.geoid),
+(SELECT CAST(sum(value*sqftg) AS FLOAT) as tot
+FROM stores AS S, tractvalues AS T
+
 
 /*this query finds the min, dist between farms including proc id*/
 SELECT  A.storeid, A.farmid, B.procid, A.dist
