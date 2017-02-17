@@ -1,6 +1,12 @@
 
 /*these queries are meant to be run after the database is loaded inorder to do the optimization problem*/
 
+/*this query returns farms and their area as a percentage of the total*/
+SELECT farmid, (100*area/tot) as tota FROM
+farms, (SELECT CAST(SUM(area) as FLOAT) as tot FROM farms);
+
+
+/*this query returns stores and their area*census value (by median property value) as percent of total*/
 
 /*this query finds the min, dist between farms including proc id*/
 SELECT  A.storeid, A.farmid, B.procid, A.dist

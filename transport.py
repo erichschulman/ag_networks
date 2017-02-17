@@ -61,6 +61,7 @@ def example(output):
 		'store3':20,
 		'farm1':-30,
 		'farm2':-30}
+
 	# Create optimization model
 	m = Model('transportation')
 	# Create prices
@@ -86,36 +87,42 @@ def tranport(output, db):
 	m = Model('transportation')
 
 	conn = sqlite3.connect('db/test.db')
-	c = conn1.cursor()
-	query1 = 'SELECT * FROM farms'
-	query2 = 'SELECT * FROM stores'
+	c = conn.cursor()
+	query1 = ('SELECT farmid, (100*area/tot) as tota FROM ' +
+				'farms, (SELECT CAST(SUM(area) as FLOAT) as tot FROM farms);')
+	query2 = ('SELECT storeid, (100*value*sqftg/tot) as tota FROM'
+			'(SELECT * FROM stores AS S, tractvalues AS T '+
+			'WHERE T.geoid = S.geoid), '+
+			'(SELECT CAST(sum(value*sqftg) AS FLOAT) as tot '+
+			'FROM stores AS S, tractvalues AS T '+
+			'WHERE T.geoid = S.geoid);')
 
 	farms = {}
 	#add farms
-	for row in c1.execute(query1):
-		farms[row['farmid'] = m.addVar( obj=row['sqftg'], name=str(row[storeid]) )
+	for row in c.execute(query1):
+		farms[row[0]] = m.addVar( obj=(-row[1]), name=('farm_%s'% row[0]) )
 
-	stores {}
+	stores = {}
 	#add stores
-	for row in c1.execute(query2):
-		stores[row['storeid'] = m.addVar( obj=row['sqftg'], name=(str(row[storeid]) )
+	for row in c.execute(query2):
+		stores[row[0]] = m.addVar( obj=row[1], name=('store_%s'% row[0]) )
 
 	#add edge constraints
 	edges = FP_Edges(db)
 	current_edge = edges.next_edge()
 	while(current_edge!=None):
-		m.addConstr(farms[row['farmid']] - stores[row['storeid']] <= row['routdist'], "row_%s+%s"%(row['farmid'],row['storeid']) #not sure about this?
+		m.addConstr(farms[current_edge[0]] - stores[current_edge[1]] <= current_edge[2], "row_%s+%s"%(current_edge[0],current_edge[1])) #not sure about this?
 		current_edge = edges.next_edge()
 
-	m.write(output+'/test.lp')
+	m.write(output+'/ag_networks.lp')
 	# Compute optimal solution
 	m.optimize()
 	# Print solutio
 	if m.status == GRB.Status.OPTIMAL:
 		#solution = m.getAttr('prices')
 		#print(solution)
-		m.write(output+'/test.sol')
+		m.write(output+'/ag_networks.sol')
 
 
 if __name__ == "__main__":
-	example('output')9
+	tranport('output','db/test.db')
