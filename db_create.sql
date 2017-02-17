@@ -71,6 +71,15 @@ CREATE TABLE ps_edges (
 );
 
 
+/*list possible edges between farms producers as an intermediate step before routing*/
+CREATE VIEW farm_proc_bands AS
+SELECT procs.procid, procs.lat, procs.lon, farms.farmid, farms.lat, farms.lon,
+bands.band, bands.name, procs.type
+FROM procs, farms, bands
+WHERE farms.band = bands.band AND /*associate each band with a type of produce (band)*/
+(instr(procs.type, bands.name) > 0 OR instr(procs.type, 'Vegetables') > 0 OR instr(procs.type, 'Fruit'));
+
+
 /*this query returns farms and their area AS a percentage of the total*/
 CREATE VIEW farm_percents AS
 SELECT A.farmid, (100*area/tot) AS percent, A.band
@@ -89,7 +98,8 @@ WHERE T.geoid = S.geoid),
 FROM stores AS S, tractvalues AS T);
 
 
-/*this query finds the min, dist between farms without proc id*/
+/*this query finds the min, dist between farms. It only considers edges where the
+band matches the processor type. Does not return a proc id*/
 CREATE VIEW fs_edges AS 
 SELECT fp_edges.farmid AS farmid, ps_edges.storeid AS storeid,
 MIN(fp_edges.routdist + ps_edges.routdist) AS dist

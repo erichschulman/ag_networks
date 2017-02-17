@@ -71,7 +71,6 @@ def import_farms(db, file_name, band, sieve):
 	band2 = None
 
 	#then import relevant information into the database
-	farmid =1
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
 
@@ -90,8 +89,7 @@ def import_farms(db, file_name, band, sieve):
 		centr.Transform(transform)
 
 		#insert into db
-		c.execute('INSERT INTO farms VALUES (?,?,?,?,?)', (farmid,centr.GetY(),centr.GetX(),area,band,) )
-		farmid = farmid+1
+		c.execute('INSERT INTO farms VALUES (NULL,?,?,?,?)', (centr.GetY(),centr.GetX(),area,band,) )
 	
 	conn.commit() # commit changes
 

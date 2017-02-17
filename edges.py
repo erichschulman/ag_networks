@@ -18,16 +18,16 @@ def proc_edges(db, farms=False):
 	set the flag to switch between farms and stores. stores by default"""
 
 	table = 'ps_edges'
-	query1 = 'SELECT procs.procid, procs.lat, procs.lon, stores.storeid, stores.lat, stores.lon FROM procs, stores'
-	query2 = 'INSERT INTO ps_edges VALUES (?,?,?)'
+	query1 = 'SELECT procs.procid, procs.lat, procs.lon, stores.storeid, stores.lat, stores.lon FROM procs, stores;'
+	query2 = 'INSERT INTO ps_edges VALUES (?,?,?);'
 	
 	if (farms):
 		table = 'fp_edges'
-		query1 = 'SELECT procs.procid, procs.lat, procs.lon, farms.farmid, farms.lat, farms.lon FROM procs, farms'
-		query2 = 'INSERT INTO fp_edges VALUES (?,?,?)'
+		query1 = 'SELECT * FROM farm_proc_bands;'
+		query2 = 'INSERT INTO fp_edges VALUES (?,?,?);'
 
-	conn1 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED') #probably not secure, but ya know
-	conn2 = sqlite3.connect('db/test.db', isolation_level = 'DEFERRED')
+	conn1 = sqlite3.connect(db, isolation_level = 'DEFERRED') #probably not secure, but ya know
+	conn2 = sqlite3.connect(db, isolation_level = 'DEFERRED')
 	c1 = conn1.cursor()
 	c2 = conn2.cursor()
 
@@ -39,15 +39,7 @@ def proc_edges(db, farms=False):
 	return
 
 
-def fp_edges(db):
-	"""print the edges as a test"""
-	edges = FP_Edges(db)
 
-	current_edge = edges.next_edge()
-	while(current_edge!=None):
-		print(current_edge)
-		current_edge = edges.next_edge()
-	return
 
 
 if __name__ == "__main__":

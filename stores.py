@@ -42,12 +42,10 @@ def import_proc(db, file):
 	c = conn.cursor()
 	with open(file) as csvfile:
 		reader = csv.DictReader(csvfile)
-		procid = 1
 		for row in reader:
 			addr = '%s,%s,%s' %(row['Street  Address'], row['City'], row['State'])
 			lat,lon = geolocate(addr)
-			c.execute('INSERT INTO procs VALUES (?,?,?,?)', (procid,lat,lon,row['Commodity Listing'],) )
-			procid =procid+1
+			c.execute('INSERT INTO procs VALUES (NULL,?,?,?)', (lat,lon,row['Commodity Listing'],) )
 	conn.commit()
 	return
 
@@ -73,7 +71,6 @@ def import_store(db,file):
 	c = conn.cursor()
 	with open(file) as csvfile:
 		reader = csv.DictReader(csvfile)
-		storeid = 1
 		for row in reader:
 			#string slicing to find the location
 			loc_raw = row['Location']
@@ -83,10 +80,9 @@ def import_store(db,file):
 			lat = float(loc_raw[ind1+1:ind1+ind3])
 			lon = float(loc_raw[ind1+ind3+2:ind2])
 			tract = census_tract(lat,lon) #determine census tract to match with property values
-			if(str.find(row['Establishment Type'],'')!=-1):
-				c.execute('INSERT INTO stores VALUES (?,?,?,?,?)', (storeid,lat,lon,row['Square Footage'],tract,) )
+			if(str.find(row['Establishment Type'],'JAC')>-1): #may get more sophisticated with what counts later
+				c.execute('INSERT INTO stores VALUES (NULL,?,?,?,?)', (lat,lon,row['Square Footage'],tract,) )
 				#eventually will filter store types
-				storeid =storeid+1
 	conn.commit()
 	return
 
