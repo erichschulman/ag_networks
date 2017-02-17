@@ -73,8 +73,10 @@ CREATE TABLE ps_edges (
 
 /*this query returns farms and their area AS a percentage of the total*/
 CREATE VIEW farm_percents AS
-SELECT farmid, (100*area/tot) AS percent FROM
-farms, (SELECT CAST(SUM(area) AS FLOAT) AS tot FROM farms);
+SELECT A.farmid, (100*area/tot) AS percent, A.band
+FROM farms AS A, 
+(SELECT CAST(SUM(area) AS FLOAT) AS tot, band FROM farms GROUP BY BAND) AS B
+WHERE A.band = B.band;
 
 
 /*this query returns stores and their area*census value (by median property value) AS percent of total*/
