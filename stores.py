@@ -83,9 +83,10 @@ def import_store(db,file):
 			lat = float(loc_raw[ind1+1:ind1+ind3])
 			lon = float(loc_raw[ind1+ind3+2:ind2])
 			tract = census_tract(lat,lon) #determine census tract to match with property values
-			c.execute('INSERT INTO stores VALUES (?,?,?,?,?)', (storeid,lat,lon,row['Square Footage'],tract,) )
-			#eventually will filter store types
-			storeid =storeid+1
+			if(str.find(row['Establishment Type'],'')!=-1):
+				c.execute('INSERT INTO stores VALUES (?,?,?,?,?)', (storeid,lat,lon,row['Square Footage'],tract,) )
+				#eventually will filter store types
+				storeid =storeid+1
 	conn.commit()
 	return
 
