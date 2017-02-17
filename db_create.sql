@@ -90,12 +90,12 @@ WHERE A.band = B.band;
 
 /*this query returns stores and their area*census value (by median property value) AS percent of total*/
 CREATE VIEW store_percents AS
-SELECT storeid, (100*value*sqftg/tot) AS percent
-FROM
-(SELECT * FROM stores AS S, tractvalues AS T
-WHERE T.geoid = S.geoid),
-(SELECT CAST(sum(value*sqftg) AS FLOAT) AS tot
-FROM stores AS S, tractvalues AS T);
+SELECT storeid, (100*value*sqftg/tot) as tota FROM
+(SELECT * FROM stores AS S, tractvalues AS T 
+WHERE T.geoid = S.geoid), 
+(SELECT CAST(sum(value*sqftg) AS FLOAT) as tot 
+FROM stores AS S, tractvalues AS T 
+WHERE T.geoid = S.geoid);
 
 
 /*this query finds the min, dist between farms. It only considers edges where the
