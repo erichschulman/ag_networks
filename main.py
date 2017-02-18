@@ -25,8 +25,8 @@ def main(db,farms,procs,stores):
 	print('Loading Census Data into the DB...')
 	import_tractvalues(db, 'input/ACS_10_SF4_B25077/ACS_10_SF4_B25077_with_ann.csv')
 	print('Loading Farms into the DB...')
-	import_farms(db, farms,1,10)
-	import_farms(db, farms,36,10)
+	import_farms(db, farms,68,10)
+	#import_farms(db, farms,36,10)
 	print('Loading Processors into the DB...')
 	import_proc(db,procs)
 	print('Loading Stores into the DB...')
@@ -42,4 +42,4 @@ def main(db,farms,procs,stores):
 
 
 if __name__ == "__main__":
-	main('db/test2.db','input/test.tif','input/ptest.csv','input/stest.csv')
+	main('db/ag_networks.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv')
