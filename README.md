@@ -76,6 +76,7 @@ Below are the data sources that I am using
 https://factfinder.census.gov/faces/nav/jsf/pages/download_center.xhtml
 
 To Find the Data through the Portal:
+
 1. Start > Looking for Specific Data set
 2. Dataset> American Community Servey, 2010 ACS 5-year Selected Population Tables
 3. Topics> Housing, Value of Home
