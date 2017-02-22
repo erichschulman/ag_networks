@@ -24,13 +24,14 @@ def main(db,farms,procs,stores):
 	import_bands(db)
 	print('Loading Census Data into the DB...')
 	import_tractvalues(db, 'input/ACS_10_SF4_B25077/ACS_10_SF4_B25077_with_ann.csv')
-	print('Loading Farms into the DB...')
-	import_farms(db, farms,68,10)
-	#import_farms(db, farms,36,10)
+	
 	print('Loading Processors into the DB...')
 	import_proc(db,procs)
 	print('Loading Stores into the DB...')
 	import_store(db,stores)
+	print('Loading Farms into the DB...')
+	import_farms(db, farms,68,7)
+	#import_farms(db, farms,36,10)
 
 	#calculate edges
 	print('Building Store Edges...')

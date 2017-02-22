@@ -8,13 +8,22 @@ from osgeo import gdal, gdalconst, gdalnumeric, ogr, osr
 import sys
 import os
 
-def geolocate(addr):
+def geolocate(street, city):
 	"""code for querying nominatim"""
+	addr = '%s,%s'%(street,city)
 	#query = 'http://localhost/nominatim/search?q=%s&format=json&polygon=1&addressdetails=1' %addr
 	req = 'http://nominatim.openstreetmap.org/search?q=%s&format=json&polygon=1&addressdetails=1' %addr
 	resp = requests.get(req)
-	outp = json.loads(resp.text)
-	return outp[0]['lat'], outp[0]['lon']
+	try:
+		outp = json.loads(resp.text)
+		lat, lon = outp[0]['lat'], outp[0]['lon']
+	except:
+		req = 'http://nominatim.openstreetmap.org/search?q=%s&format=json&polygon=1&addressdetails=1' %city
+		resp = requests.get(req)
+		outp = json.loads(resp.text)
+		lat, lon = outp[0]['lat'], outp[0]['lon']
+	return lat,lon
+		
 
 
 def census_tract(lat,lon):
@@ -43,8 +52,9 @@ def import_proc(db, file):
 	with open(file) as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
-			addr = '%s,%s,%s' %(row['Street  Address'], row['City'], row['State'])
-			lat,lon = geolocate(addr)
+			street = row['Street  Address']
+			city = '%s,%s' %(row['City'], row['State'])
+			lat,lon = geolocate(street, city)
 			c.execute('INSERT INTO procs VALUES (NULL,?,?,?)', (lat,lon,row['Commodity Listing'],) )
 	conn.commit()
 	return
@@ -72,17 +82,16 @@ def import_store(db,file):
 	with open(file) as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
-			#string slicing to find the location
-			loc_raw = row['Location']
-			ind1 = string.find(loc_raw, '(')
-			ind2 = string.find(loc_raw, ')')
-			ind3 = string.find(loc_raw[ind1:ind2],', ')
-			lat = float(loc_raw[ind1+1:ind1+ind3])
-			lon = float(loc_raw[ind1+ind3+2:ind2])
-			tract = census_tract(lat,lon) #determine census tract to match with property values
-			if(str.find(row['Establishment Type'],'JAC')>-1): #may get more sophisticated with what counts later
+			loc_raw = row['Location']	#string slicing to find the location
+			ind1 = string.find(loc_raw, '(4') #exploit the fact that NY is on 40th parallel
+			if(str.find(row['Establishment Type'],'JAC')>-1 and ind1>-1 ):
+				ind2 = string.find(loc_raw[ind1:], ')') +ind1
+				ind3 = string.find(loc_raw[ind1:ind2],', ')
+				lat = float(loc_raw[ind1+1:ind1+ind3])
+				lon = float(loc_raw[ind1+ind3+2:ind2])
+				tract = census_tract(lat,lon) #determine census tract to match with property values
+				 #may get more sophisticated with what counts later
 				c.execute('INSERT INTO stores VALUES (NULL,?,?,?,?)', (lat,lon,row['Square Footage'],tract,) )
-				#eventually will filter store types
 	conn.commit()
 	return
 
