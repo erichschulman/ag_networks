@@ -123,3 +123,11 @@ fp_edges.routdist AS fp_dist, ps_edges.routdist AS ps_dist
 FROM ps_edges, fp_edges
 WHERE ps_edges.procid = fp_edges.procid) AS B
 WHERE A.storeid = B.storeid AND A.farmid = B.farmid AND A.dist = B.dist;
+
+/*this query groups the stores by census district (i.e. compressed stores)*/
+CREATE VIEW compstores AS 
+SELECT tractvalues.geoid, sum(stores.sqftg), tractvalues.value
+FROM stores, tractvalues
+WHERE stores.geoid = tractvalues.geoid
+GROUP BY tractvalues.geoid, tractvalues.value;
+
