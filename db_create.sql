@@ -108,7 +108,8 @@ WHERE ps_edges.procid = fp_edges.procid
 GROUP BY fp_edges.farmid, ps_edges.storeid;
 
 
-/*this query finds the min, dist between farms including proc id*/
+/*this query finds the min, dist between farms including proc id (may not work if using 
+consolidate stores)*/
 CREATE VIEW fps_edges AS 
 SELECT  A.storeid, A.farmid, B.procid, B.fp_dist, B.ps_dist
 FROM
@@ -124,10 +125,18 @@ FROM ps_edges, fp_edges
 WHERE ps_edges.procid = fp_edges.procid) AS B
 WHERE A.storeid = B.storeid AND A.farmid = B.farmid AND A.dist = B.dist;
 
-/*this query groups the stores by census district (i.e. compressed stores)*/
-CREATE VIEW compstores AS 
-SELECT tractvalues.geoid, sum(stores.sqftg), tractvalues.value
+
+/*this query groups the stores by census district (i.e. consolidated stores)*/
+CREATE VIEW constores AS 
+SELECT tractvalues.geoid AS geoid, sum(stores.sqftg) AS sqftg,  avg(stores.lat) AS lat, avg(stores.lon) AS lon, tractvalues.value AS value
 FROM stores, tractvalues
 WHERE stores.geoid = tractvalues.geoid
 GROUP BY tractvalues.geoid, tractvalues.value;
 
+
+/*this query returns census tracts (i.e. consolidated stores) as percent of total*/
+CREATE VIEW constore_percents AS
+SELECT T.geoid, T.value*T.sqftg/tot as tota
+FROM constores as T, 
+(SELECT CAST(sum(value*sqftg) AS FLOAT) as tot 
+FROM constores);

@@ -39,7 +39,7 @@ def example(output):
 		m.write(output+'/test.sol')
 
 
-def tranport(output, db, band):
+def tranport(output, db, band, constores = True):
 	"""pull data from the databse to solve the transportation
 	problem for NYS. This is it!"""
 
@@ -49,6 +49,8 @@ def tranport(output, db, band):
 	c = conn.cursor()
 	query1 = 'SELECT * FROM farm_percents WHERE band=?'
 	query2 = 'SELECT * FROM store_percents;'
+	if(constores): #in this case we are using consolidated stores by census tract
+		query2 = 'SELECT * FROM constore_percents;'
 	query3 = 'SELECT * FROM fs_edges;'
 
 	farms = {}

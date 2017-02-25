@@ -13,12 +13,14 @@ def routing(lon0,lat0,lon1,lat1):
 	return orsm['routes'][0]['duration']
 
 
-def proc_edges(db, farms=False):
+def proc_edges(db, farms=False, constores = True):
 	"""use this to create edges between procs, farms and stores
 	set the flag to switch between farms and stores. stores by default"""
 
 	table = 'ps_edges'
 	query1 = 'SELECT procs.procid, procs.lat, procs.lon, stores.storeid, stores.lat, stores.lon FROM procs, stores;'
+	if (constores): #in this case we are using consolidated stores by census tract
+		query1 = 'SELECT procs.procid, procs.lat, procs.lon, constores.geoid, constores.lat, constores.lon FROM procs, constores'
 	query2 = 'INSERT INTO ps_edges VALUES (?,?,?);'
 	
 	if (farms):

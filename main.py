@@ -30,7 +30,7 @@ def main(db,farms,procs,stores):
 	print('Loading Stores into the DB...')
 	import_store(db,stores)
 	print('Loading Farms into the DB...')
-	import_farms(db, farms,68,7)
+	import_farms(db, farms,68,20)
 	#import_farms(db, farms,36,10)
 
 	#calculate edges
@@ -43,4 +43,5 @@ def main(db,farms,procs,stores):
 
 
 if __name__ == "__main__":
-	main('db/ag_networks.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv')
+	#main('db/ag_networks.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv')
+	main('db/test.db', 'input/test.tif', 'input/ptest.csv', 'input/stest.csv' )
