@@ -71,7 +71,7 @@ def tranport(output, db, band, constores = True):
 	m.write(output+'/test2.lp')
 	# Compute optimal solution
 	m.optimize()
-	# Print solutio
+	# Print solution
 	if m.status == GRB.Status.OPTIMAL:
 		#solution = m.getAttr('prices')
 		#print(solution)
@@ -79,4 +79,4 @@ def tranport(output, db, band, constores = True):
 
 
 if __name__ == "__main__":
-	tranport('output','db/test.db', 36)
+	tranport('output','db/test.db', 68)
