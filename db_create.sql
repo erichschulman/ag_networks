@@ -70,6 +70,17 @@ CREATE TABLE ps_edges (
 	PRIMARY KEY(storeid, procid)
 );
 
+/*These views are used to make building edeges easier*/
+
+/*This query creates a list of store edges that need to be created, using the processors 
+inolved with store edges*/
+CREATE VIEW conprocs AS 
+SELECT procs.procid, procs.lat, procs.lon, bands.band
+FROM procs, farms, bands
+WHERE farms.band = bands.band AND /*associate each band with a type of produce (band)*/
+(instr(procs.type, bands.name) > 0 OR instr(procs.type, 'Vegetables') > 0 OR instr(procs.type, 'Fruit'))
+GROUP BY procs.procid, procs.lat, procs.lon, bands.band;
+
 
 /*list possible edges between farms producers as an intermediate step before routing*/
 CREATE VIEW farm_proc_bands AS
@@ -79,6 +90,25 @@ FROM procs, farms, bands
 WHERE farms.band = bands.band AND /*associate each band with a type of produce (band)*/
 (instr(procs.type, bands.name) > 0 OR instr(procs.type, 'Vegetables') > 0 OR instr(procs.type, 'Fruit'));
 
+
+/*list out the edges that need to be made based on what farms actually connect to intermediaries*/
+CREATE VIEW ps_list AS
+SELECT conprocs.procid, conprocs.lat, conprocs.lon, 
+constores.geoid, constores.lat, constores.lon
+FROM (SELECT conprocs.procid, conprocs.lat, conprocs.lon
+FROM conprocs
+GROUP BY conprocs.procid, conprocs.lat, conprocs.lon) AS conprocs , constores;
+
+/*list out the edges that need to be made based on what farms actually connect to intermediaries
+(only don't group by census tracts)*/
+CREATE VIEW ps_list2 AS
+SELECT conprocs.procid, conprocs.lat, conprocs.lon, 
+stores.geoid, stores.lat, stores.lon
+FROM (SELECT conprocs.procid, conprocs.lat, conprocs.lon
+FROM conprocs
+GROUP BY conprocs.procid, conprocs.lat, conprocs.lon) AS conprocs ,stores;
+
+/*These set of queries are for building capacities in the linear program*/
 
 /*this query returns farms and their area AS a percentage of the total*/
 CREATE VIEW farm_percents AS
@@ -96,6 +126,25 @@ WHERE T.geoid = S.geoid),
 (SELECT CAST(sum(value*sqftg) AS FLOAT) as tot 
 FROM stores AS S, tractvalues AS T 
 WHERE T.geoid = S.geoid);
+
+
+/*this query groups the stores by census district (i.e. consolidated stores)*/
+CREATE VIEW constores AS 
+SELECT tractvalues.geoid AS geoid, sum(stores.sqftg) AS sqftg,  avg(stores.lat) AS lat, avg(stores.lon) AS lon, tractvalues.value AS value
+FROM stores, tractvalues
+WHERE stores.geoid = tractvalues.geoid
+GROUP BY tractvalues.geoid, tractvalues.value;
+
+
+/*this query returns census tracts (i.e. consolidated stores) as percent of total*/
+CREATE VIEW constore_percents AS
+SELECT T.geoid, T.value*T.sqftg/tot as tota
+FROM constores as T, 
+(SELECT CAST(sum(value*sqftg) AS FLOAT) as tot 
+FROM constores);
+
+
+/*I wrote these, but it turned out that they weren't useful*/
 
 
 /*this query finds the min, dist between farms. It only considers edges where the
@@ -126,17 +175,3 @@ WHERE ps_edges.procid = fp_edges.procid) AS B
 WHERE A.storeid = B.storeid AND A.farmid = B.farmid AND A.dist = B.dist;
 
 
-/*this query groups the stores by census district (i.e. consolidated stores)*/
-CREATE VIEW constores AS 
-SELECT tractvalues.geoid AS geoid, sum(stores.sqftg) AS sqftg,  avg(stores.lat) AS lat, avg(stores.lon) AS lon, tractvalues.value AS value
-FROM stores, tractvalues
-WHERE stores.geoid = tractvalues.geoid
-GROUP BY tractvalues.geoid, tractvalues.value;
-
-
-/*this query returns census tracts (i.e. consolidated stores) as percent of total*/
-CREATE VIEW constore_percents AS
-SELECT T.geoid, T.value*T.sqftg/tot as tota
-FROM constores as T, 
-(SELECT CAST(sum(value*sqftg) AS FLOAT) as tot 
-FROM constores);

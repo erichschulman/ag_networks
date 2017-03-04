@@ -18,9 +18,7 @@ def proc_edges(db, farms=False, constores = True):
 	set the flag to switch between farms and stores. stores by default"""
 
 	table = 'ps_edges'
-	query1 = 'SELECT procs.procid, procs.lat, procs.lon, stores.storeid, stores.lat, stores.lon FROM procs, stores;'
-	if (constores): #in this case we are using consolidated stores by census tract
-		query1 = 'SELECT procs.procid, procs.lat, procs.lon, constores.geoid, constores.lat, constores.lon FROM procs, constores'
+	query1 = 'SELECT * FROM ps_list' if constores else 'SELECT * FROM ps_list2' #leaving the option to have all stores
 	query2 = 'INSERT INTO ps_edges VALUES (?,?,?);'
 	
 	if (farms):

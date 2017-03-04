@@ -15,12 +15,12 @@ def example(output):
 		('farm1',  'proc2'):   120,
 		('farm2',  'proc2'): 120,
 		('farm3',  'proc2'):  120,
-		('proc1', 'store1'): 100,
-		('proc1', 'store2'): 100,
+		('proc1', 'store1'): 160,
+		('proc1', 'store2'): 120,
 		('proc1', 'store3'): 100,
-		('proc2', 'store1'): 100,
-		('proc2', 'store2'): 100,
-		('proc2', 'store3'): 100 })
+		('proc2', 'store1'): 140,
+		('proc2', 'store2'): 30,
+		('proc2', 'store3'): 170 })
 
 	flows = {'store1':40,
 		'store2':20,
@@ -52,32 +52,40 @@ def example(output):
 
 def tranport(output, db, band, constores = True):
 	"""pull data from the databse to solve the transportation
-	problem for NYS. This is it!"""
+	problem for NYS."""
 
 	m = Model('transportation')
 
-	conn = sqlite3.connect('db/test.db')
+	conn = sqlite3.connect(db)
 	c = conn.cursor()
 	query1 = 'SELECT * FROM farm_percents WHERE band=?'
-	query2 = 'SELECT * FROM store_percents;'
-	if(constores): #in this case we are using consolidated stores by census tract
-		query2 = 'SELECT * FROM constore_percents;'
-	query3 = 'SELECT * FROM fs_edges;'
+	#figured I'd keep the option to use individual stores, not gonna really pursue it though
+	query2 = 'SELECT * FROM constore_percents;' if constores else 'SELECT * FROM store_percents;'
+	query3 = 'SELECT procid, 0 FROM conprocs GROUP BY procid' #create a list of processors (with flow constraints)
+	
+	#query the database for edges
+	query4 = 'SELECT * FROM fp_edges;'
+	query5 = 'SELECT * FROM ps_edges;'
 
-	farms = {}
-	#add farms
+	farms = {} #add farms
 	for row in c.execute(query1, (band,)):
-		farms[row[0]] = m.addVar( obj=(-row[1]), name=('farm_%s'% row[0]) )
+		farms[row[0]] = m.addVar( obj=row[1], name=('farm_%s'% row[0]) )
 
-	stores = {}
-	#add stores
+	stores = {} #add stores
 	for row in c.execute(query2):
-		stores[row[0]] = m.addVar( obj=row[1], name=('store_%s'% row[0]) )
+		stores[row[0]] = m.addVar( obj=(-row[1]), name=('store_%s'% row[0]) )
 
-	#add edge constraints
-
+	procs = {} #add processors to the problem
 	for row in c.execute(query3):
-		m.addConstr(farms[row[0]] - stores[row[1]] <= row[2], "row_%s_%s"%(row[0],row[1])) #not sure about this?
+		procs[row[0]] = m.addVar( obj=row[1], name=('proc_%s'% row[0]) )
+
+	#add constraints representing farm to processors
+	for row in c.execute(query4):
+		m.addConstr(farms[row[0]] - procs[row[1]] <= row[2], "row_%s_%s"%(row[0],row[1])) #not sure about this?
+
+	#add constraints representing processor to store
+	for row in c.execute(query5):
+		m.addConstr(procs[row[1]] - stores[row[0]] <= row[2], "row_%s_%s"%(row[0],row[1])) #not sure about this?
 
 	m.write(output+'/test2.lp')
 	# Compute optimal solution
@@ -90,5 +98,5 @@ def tranport(output, db, band, constores = True):
 
 
 if __name__ == "__main__":
-	#tranport('output','db/test.db', 68)
+	tranport('output','db/test2.db', 1)
 	example('output')
