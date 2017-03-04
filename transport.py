@@ -23,11 +23,11 @@ def example(output):
 		('proc2', 'store3'): 170 })
 
 	flows = {'store1':40,
-		'store2':20,
-		'store3':30,
-		'farm1':-50,
+		'store2':-20,
+		'store3':-30,
+		'farm1':50,
 		'farm2':-30,
-		'farm3':-10,
+		'farm3':10,
 		'proc1':0,
 		'proc2':0}
 
@@ -73,11 +73,11 @@ def tranport(output, db, band, constores = True):
 
 	stores = {} #add stores
 	for row in c.execute(query2):
-		stores[row[0]] = m.addVar( obj=(-row[1]), name=('store_%s'% row[0]) )
+		stores[row[0]] = m.addVar( obj=row[1], name=('store_%s'% row[0]) )
 
 	procs = {} #add processors to the problem
 	for row in c.execute(query3):
-		procs[row[0]] = m.addVar( obj=row[1], name=('proc_%s'% row[0]) )
+		procs[row[0]] = m.addVar( obj=(-row[1]), name=('proc_%s'% row[0]) )
 
 	#add constraints representing farm to processors
 	for row in c.execute(query4):
@@ -99,4 +99,4 @@ def tranport(output, db, band, constores = True):
 
 if __name__ == "__main__":
 	tranport('output','db/test2.db', 1)
-	example('output')
+	#example('output')
