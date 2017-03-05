@@ -50,4 +50,4 @@ def main(db, farms, procs, stores, band):
 if __name__ == "__main__":
 	#double check right band
 	#main('db/ag_networks2.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv', 36)
-	main('db/test2.db', 'input/test.tif', 'input/ptest.csv', 'input/stest.csv' , 1)
+	main('db/test2.db', 'input/test.tif', 'input/ptest.csv', 'input/stest.csv' , 49)
