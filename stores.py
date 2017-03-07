@@ -45,17 +45,22 @@ def census_tract(lat,lon):
 	return 0 #if there isn't a census tract just return 0
 
 
-def import_proc(db, file):
+def import_proc(db, file, band):
 	"""use this to import processors into the data into the db"""
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
+	c.execute('SELECT * FROM bands WHERE band = ?;', (band,))
+	croptype = c.fetchone()[1]
 	with open(file) as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
-			street = row['Street  Address']
-			city = '%s,%s' %(row['City'], row['State'])
-			lat,lon = geolocate(street, city)
-			c.execute('INSERT INTO procs VALUES (NULL,?,?,?)', (lat,lon,row['Commodity Listing'],) )
+			#if this proc matches the correct band
+			commodity = row['Commodity Listing']
+			if(commodity.find(croptype)>-1 or commodity.find('Fruit') > -1 or commodity.find('Vegetable') > -1):
+				street = row['Street  Address']
+				city = '%s,%s' %(row['City'], row['State'])
+				lat,lon = geolocate(street, city)
+				c.execute('INSERT INTO procs VALUES (NULL,?,?,?)', (lat,lon,row['Commodity Listing'],) )
 	conn.commit()
 	return
 

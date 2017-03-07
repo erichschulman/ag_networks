@@ -78,7 +78,7 @@ CREATE VIEW conprocs AS
 SELECT procs.procid, procs.lat, procs.lon, bands.band
 FROM procs, farms, bands
 WHERE farms.band = bands.band AND /*associate each band with a type of produce (band)*/
-(instr(procs.type, bands.name) > 0 OR instr(procs.type, 'Vegetables') > 0 OR instr(procs.type, 'Fruit'))
+(instr(procs.type, bands.name) > 0 OR instr(procs.type, 'Vegetable') > 0 OR instr(procs.type, 'Fruit'))
 GROUP BY procs.procid, procs.lat, procs.lon, bands.band;
 
 

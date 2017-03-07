@@ -20,6 +20,8 @@ def create_db(db):
 	con.commit()
 
 
+#243 ,49, 
+
 def main(db, farms, procs, stores, band):
 	create_db(db)
 	
@@ -30,7 +32,7 @@ def main(db, farms, procs, stores, band):
 	import_tractvalues(db, 'input/ACS_10_SF4_B25077/ACS_10_SF4_B25077_with_ann.csv')
 	
 	print('Loading Processors into the DB...')
-	import_proc(db,procs)
+	import_proc(db,procs,band)
 	print('Loading Stores into the DB...')
 	import_store(db,stores)
 	print('Loading Farms into the DB...')
@@ -49,5 +51,5 @@ def main(db, farms, procs, stores, band):
 
 if __name__ == "__main__":
 	#double check right band
-	#main('db/ag_networks2.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv', 36)
-	main('db/test2.db', 'input/test.tif', 'input/ptest.csv', 'input/stest.csv' , 49)
+	main('db/band_243.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv', 243)
+	#main('db/test2.db', 'input/test.tif', 'input/ptest.csv', 'input/stest.csv' , 1)
