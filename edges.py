@@ -18,17 +18,15 @@ def proc_edges(db, farms=False, constores = True):
 	set the flag to switch between farms and stores. stores by default"""
 
 	table = 'ps_edges'
-	query1 = 'SELECT * FROM ps_list LEFT OUTER JOIN ps_edges ON ps_list.geoid = ps_edges.storeid AND ps_edges.procid = ps_list.procid;'
-	#breaking compatibility with individual stores
+	query1 = 'SELECT * FROM ps_list' if constores else 'SELECT * FROM ps_list2' #leaving the option to have all stores
 	query2 = 'INSERT INTO ps_edges VALUES (?,?,?);'
-	index = 8
+	query3 = 'SELECT * FROM ps_edges WHERE procid = ? AND storeid = ?'
 	
 	if (farms):
 		table = 'fp_edges'
-		query1 = 'SELECT * FROM farm_proc_bands LEFT OUTER JOIN fp_edges ON farm_proc_bands.farmid = fp_edges.farmid AND farm_proc_bands.procid = fp_edges.procid;'
+		query1 = 'SELECT * FROM farm_proc_bands;'
 		query2 = 'INSERT INTO fp_edges VALUES (?,?,?);'
 		query3 = 'SELECT * FROM fp_edges WHERE procid = ? AND farmid = ?'
-		index = 9
 
 	conn1 = sqlite3.connect(db, isolation_level = 'DEFERRED') #probably not secure, but ya know
 	conn2 = sqlite3.connect(db, isolation_level = 'DEFERRED')
@@ -36,12 +34,12 @@ def proc_edges(db, farms=False, constores = True):
 	c2 = conn2.cursor()
 
 	for row in c1.execute(query1):
-		if( not farms):
-			print(row[index])
-		if(row[index] == None): #ensure this edge doesn't already exist
+		c2.execute(query3,(row[0],row[3],))
+		result = c2.fetchone()
+		if(result == None): #ensure this edge doesn't already exist
 			duration = routing(row[2],row[1],row[5],row[4])
 			c2.execute(query2, (row[3],row[0],duration,))
-			conn2.commit()
+	conn2.commit()
 	return
 
 

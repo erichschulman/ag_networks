@@ -64,11 +64,12 @@ def tranport(output, db, band, constores = True):
 	query3 = 'SELECT procid, 0 FROM conprocs GROUP BY procid' #create a list of processors (with flow constraints)
 	
 	#query the database for edges
-	query4 = ('SELECT fp_edges.farmid, fp_edges.procid, fp_edges.routdist FROM fp_edges, conprocs'+
-	' WHERE fp_edges.procid = conprocs.procid AND conprocs.band = ?')
-	query5 = ('SELECT ps_edges.storeid, ps_edges.procid, ps_edges.routdist FROM ps_edges, conprocs'+
-	' WHERE ps_edges.procid = conprocs.procid AND conprocs.band = ?')
-
+	query4 = ('SELECT fp_edges.farmid, fp_edges.procid, fp_edges.routdist '+
+			'FROM fp_edges, farms '+
+			'WHERE fp_edges.farmid = farms.farmid AND farms.band = ?')
+	query5 = ('SELECT ps_edges.storeid, ps_edges.procid, ps_edges.routdist '
+			'FROM ps_edges, conprocs ' +
+			'WHERE ps_edges.procid = conprocs.procid AND conprocs.band = ?;')
 
 	farms = {} #add farms
 	for row in c.execute(query1, (band,)):
@@ -87,7 +88,7 @@ def tranport(output, db, band, constores = True):
 		m.addConstr( -farms[row[0]] + procs[row[1]] <= row[2], "row_%s_%s"%(row[0],row[1])) #not sure about this?
 
 	#add constraints representing processor to store
-	for row in c.execute(query5, (band,)):
+	for row in c.execute(query5, (band,) ):
 		m.addConstr(-procs[row[1]] +  stores[row[0]] <= row[2], "row_%s_%s"%(row[0],row[1])) #not sure about this?
 
 	m.write('%s/band_%d.lp'%(output,band))
