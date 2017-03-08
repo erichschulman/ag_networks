@@ -22,22 +22,22 @@ def create_db(db):
 
 #243 ,49, 
 
-def main(db, farms, procs, stores, band):
+def main(db, farms, procs, stores, bands):
 	create_db(db)
 	
 	#import data
 	print('Loading Bands into the DB...')
 	import_bands(db)
 	print('Loading Census Data into the DB...')
-	import_tractvalues(db, 'input/ACS_10_SF4_B25077/ACS_10_SF4_B25077_with_ann.csv')
-	
-	print('Loading Processors into the DB...')
-	import_proc(db,procs,band)
+	import_tractvalues(db, 'input/ACS_10_SF4_B25077/ACS_10_SF4_B25077_with_ann.csv')	
 	print('Loading Stores into the DB...')
 	import_store(db,stores)
-	print('Loading Farms into the DB...')
-	#import_farms(db, farms,68,20)
-	import_farms(db, farms, band ,10)
+	
+	for b in bands:
+		print('Loading Band %d Processors into the DB...'%b )
+		import_proc(db,procs,b)
+		print('Loading Band %d Farms into the DB...'%b )
+		import_farms(db, farms, b ,10)
 
 	#calculate edges
 	print('Building Store Edges...')
@@ -45,11 +45,12 @@ def main(db, farms, procs, stores, band):
 	print('Building Farm Edges...')
 	proc_edges(db, farms = True )
 	print('DB Complete!')
-	tranport('output',db, band)
+	for b in bands:
+		tranport('output',db, b)
 	return
 
 
 if __name__ == "__main__":
 	#double check right band
-	main('db/band_243.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv', 243)
-	#main('db/test2.db', 'input/test.tif', 'input/ptest.csv', 'input/stest.csv' , 1)
+	#main('db/band_243.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv', [243,49])
+	main('db/test2.db', 'input/test.tif', 'input/ptest.csv', 'input/stest.csv' , [1,68])

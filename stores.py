@@ -52,15 +52,20 @@ def import_proc(db, file, band):
 	c.execute('SELECT * FROM bands WHERE band = ?;', (band,))
 	croptype = c.fetchone()[1]
 	with open(file) as csvfile:
+		procid = 1 #keep track of procid's using row # (so that I don't repeat any)
 		reader = csv.DictReader(csvfile)
 		for row in reader:
 			#if this proc matches the correct band
+			c.execute('SELECT procid FROM procs WHERE procid = ?;', (procid,))
+			exists_procid = c.fetchone()
 			commodity = row['Commodity Listing']
-			if(commodity.find(croptype)>-1 or commodity.find('Fruit') > -1 or commodity.find('Vegetable') > -1):
+			commodity_constraint = (commodity.find(croptype)>-1 or commodity.find('Fruit') > -1 or commodity.find('Vegetable') > -1)
+			if( commodity_constraint and exists_procid==None ):
 				street = row['Street  Address']
 				city = '%s,%s' %(row['City'], row['State'])
 				lat,lon = geolocate(street, city)
-				c.execute('INSERT INTO procs VALUES (NULL,?,?,?)', (lat,lon,row['Commodity Listing'],) )
+				c.execute('INSERT INTO procs VALUES (?,?,?,?)', (procid,lat,lon,row['Commodity Listing'],) )
+			procid = procid + 1 #keep track of procid's using row #
 	conn.commit()
 	return
 
