@@ -17,13 +17,11 @@ from osgeo import gdal, gdalconst, gdalnumeric, ogr, osr
 
 def census_tract(geoid):
 	"""given geoid, return it's corresponding census tract as a feature"""
-
 	#load census tract shapefile
 	driver = ogr.GetDriverByName('ESRI Shapefile')
 	tractfile = driver.Open('input/tl_2010_36_tract10/tl_2010_36_tract10.shp')
 	tractlayer = tractfile.GetLayer()
 	tractlayer.SetAttributeFilter("GEOID10 = '%d'"%geoid)
-
 	for feature in tractlayer:
 		return feature
 	
@@ -32,13 +30,12 @@ def census_tract(geoid):
 
 def color_ramp(file, name):
 	"""format the qgis file with the appropriate color ramp"""
+	#TODO: make this work!
 	QgsApplication.setPrefixPath("/usr/bin/", True)
 	qgs = QgsApplication([], False)
 	qgs.initQgis()
 	print(os.path.abspath(file))
-
 	layer = QgsVectorLayer(os.path.abspath(file), name, "ogr")
-
 	for cat in layer.rendererV2().categories():
 		print "%s: %s :: %s" % (cat.value().toString(), cat.label(), str(cat.symbol()))
 	qgs.exitQgis()
@@ -47,11 +44,9 @@ def color_ramp(file, name):
 def test1(db, inf, outf, band):	
 	"""create a shapefile with all the census districts and prices"""
 
-	#create a folder with the name
-	folder = "%s/band_%d"%(outf, band)
+	folder = "%s/band_%d"%(outf, band) #create a folder with the name if necessary
 	if not os.path.exists(folder):
 		os.makedirs(folder)
-
 
 	driver = ogr.GetDriverByName('ESRI Shapefile')
 
@@ -69,7 +64,6 @@ def test1(db, inf, outf, band):
 	
 	layer.CreateField(pricefield)
 	layer.CreateField(geoidfield)
-
 
 	for line in f:
 		index = string.find(line, 'store_')
@@ -89,12 +83,31 @@ def test1(db, inf, outf, band):
 
 			layer.CreateFeature(outFeature)
 
-
 	#close the resultant files
 	file = None
 	layer = None
-	#return file name
 
+
+def test2(db,outf,band):
+	""""draw the network in 3d"""
+
+	query1 = 'SELECT * FROM farms WHERE band=?'
+	#figured I'd keep the option to use individual stores, not gonna really pursue it though
+	query2 = 'SELECT * FROM constores'
+	query3 = 'SELECT * FROM conprocs WHERE band=?' #create a list of processors (with flow constraints)
+
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+
+	for
+		line = ogr.Geometry(ogr.wkbLineString)
+		line.AddPoint(flat, flon)
+		line.AddPoint(plat, plot)
+		for 
+
+
+def test3(db,inf,outf,band):
+	""""add all the points to a shapefile with prices""""
 
 
 if __name__ == "__main__":
