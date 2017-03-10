@@ -40,14 +40,14 @@ def example(output):
  		"arbitrage")
 
 	today = datetime.date.today() #set the date for orginizational
-	m.write(output+today.strftime('/test_%m_%d.lp'))
+	m.write(output+today.strftime('test/test_%m_%d.lp'))
 	# Compute optimal solution
 	m.optimize()
 	# Print solutio
 	if m.status == GRB.Status.OPTIMAL:
 		#solution = m.getAttr('prices')
 		#print(solution)
-		m.write(output+today.strftime('/test_%m_%d.sol'))
+		m.write(output+today.strftime('test/test_%m_%d.sol'))
 
 
 def tranport(output, db, band, constores = True):
@@ -91,14 +91,17 @@ def tranport(output, db, band, constores = True):
 	for row in c.execute(query5, (band,) ):
 		m.addConstr(-procs[row[1]] +  stores[row[0]] <= row[2], "row_%s_%s"%(row[0],row[1])) #not sure about this?
 
-	m.write('%s/band_%d.lp'%(output,band))
+
+	folder = "%s/result_%d"%(output, band)
+	if not os.path.exists(folder):
+		os.makedirs(folder)
+
+	m.write('%s/band_%d.lp'%(folder,band))
 	# Compute optimal solution
 	m.optimize()
 	# Print solution
 	if m.status == GRB.Status.OPTIMAL:
-		#solution = m.getAttr('prices')
-		#print(solution)
-		m.write('%s/band_%d.sol'%(output,band))
+		m.write('%s/band_%d.sol'%(folder,band))
 
 
 if __name__ == "__main__":
