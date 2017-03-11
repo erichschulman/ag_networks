@@ -6,111 +6,190 @@ import numpy as np
 from osgeo import gdal, gdalconst, gdalnumeric, ogr, osr
 
 
-#overlay farms, congressional district centroids, and processors 
-#draw lines between each one
+class Solution_Parser:
+	"""converts a solution into a feature"""
+	
+	def __init__(self, fname):
+		self.fname = fname
 
-#show farms with colors
-#show procs with colors
-#show cong district centroids with colors
-#show cong district with colors
+		open_file = open(self.fname)
+		file = open_file.readlines()
+		self.flen =len(file)
 
 
-def census_tract(geoid):
-	"""given geoid, return it's corresponding census tract as a feature"""
-	#load census tract shapefile
+		#initial values (i.e. first one in solution file)	
+		self.farm1 =0
+		for line in file:
+			if(string.find(line,'farm_')>-1):
+				break
+			self.farm1 = self.farm1+1
+
+		self.store1 = 0
+		for line in file:
+			if(string.find(line,'store_')>-1):
+				break
+			self.store1 = self.store1+1
+
+		self.proc1 = 0
+		for line in file:
+			if(string.find(line,'proc_')>-1):
+				break
+			self.proc1 = self.proc1+1
+		
+		#initial indexes
+		self.sindex = self.store1
+		self.findex = self.farm1
+		self.pindex = self.proc1
+
+
+	def parse_line(self, line_index, ltype):
+		"""use this to parse a line in the solution file"""
+		open_file = open(self.fname)
+		file = open_file.readlines()
+		
+		if(line_index < self.flen):
+			line = file[line_index]
+			index = string.find(line, ltype)
+			if index > -1:
+				index2 = string.find(line, ' ')
+				name = int(line[index+len(ltype):index2])
+				price = float(line[1+index2:-1])
+				return name,price
+		return None, None
+
+	
+	def next_store(self):
+		"""return the next store in the solution file with geoid, price"""
+		result = self.parse_line(self.sindex,'store_')
+		self.sindex = self.sindex + 1
+		return result
+
+
+	def next_farm(self):
+		"""return the next farm in solution file with farmid, price"""
+		result = self.parse_line(self.findex,'farm_')
+		self.sindex = self.sindex + 1
+		return result
+
+
+	def next_proc(self):
+		"""return the next proc in the solution file with procid, price"""
+		result = self.parse_line(self.pindex,'proc_')
+		self.sindex = self.sindex + 1
+		return result
+
+
+class Ag_Figure:
+	"""this class is designed to make all the figures easy to make
+	features in figures have 2 fields: name, price, and type
+	figures also can have edges"""
+
+
+	def __init__(self, fname):
+		"""initialize the figure, file is the name of the output file"""
+		driver = ogr.GetDriverByName('ESRI Shapefile')
+		
+		self.file = driver.CreateDataSource(fname)
+		self.layer = self.file.CreateLayer('layer_1')
+
+		name = ogr.FieldDefn("name", ogr.OFTString)
+		price = ogr.FieldDefn("price", ogr.OFTReal)
+		ftype = ogr.FieldDefn("ftype", ogr.OFTInteger) #1 - farms, 2 - procs, 3 - stores
+
+		self.layer.CreateField(price)
+		self.layer.CreateField(name)
+		self.layer.CreateField(ftype)
+
+	
+	def create_feature(self, geom, name, price, ftype):
+		"""use this to add a feature to the layer in the figure
+		also returns the result so it you can make edges between 
+		features"""
+		outFeature = ogr.Feature(self.layer.GetLayerDefn())
+		outFeature.SetGeometry(geom)
+		outFeature.SetField('price', price)
+		outFeature.SetField('name', name)
+		outFeature.SetField('ftype', ftype)
+		self.layer.CreateFeature(outFeature)
+		return outFeature
+	
+
+	def create_edge(start,end):
+		"""use this to create edges in between 2 features"""
+		pass
+
+
+	def close(self):
+		"""close the figure"""
+		self.layer = None
+		self.file = None
+
+
+def get_coord(db, name, table):
+	"""return the location of this id as a point geometry"""
+	query1 = None #set the query based on which table
+	if (table == 'stores'):
+		query1 = 'SELECT * FROM constores WHERE geoid = ?'
+	elif (table == 'farms'):
+		query1 = 'SELECT * FROM farms where farmid = ?'
+	elif (table == 'procs'):
+		query1 = 'SELECT * FROM procs where procid = ?'
+	else :
+		return None
+
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+	c.execute(query1,name)
+	
+	query_result = c.fetchone()
+	lat, lon = query_result[1],query_result[2]
+
+	point = ogr.Geometry(ogr.wkbPoint)
+	point.AddPoint(lon,lat)
+
+	return ogr.CreateGeometryFromWkt(point.ExportToWkt())
+
+
+def get_tract(geoid):
+	"""given geoid, return the geometry of it's corresponding census tract"""
 	driver = ogr.GetDriverByName('ESRI Shapefile')
-	tractfile = driver.Open('input/tl_2010_36_tract10/tl_2010_36_tract10.shp')
+	tractfile = driver.Open('input/tl_2010_36_tract10/tl_2010_36_tract10.shp') #load census tract shapefile
 	tractlayer = tractfile.GetLayer()
 	tractlayer.SetAttributeFilter("GEOID10 = '%d'"%geoid)
-	for feature in tractlayer:
-		return feature
-	
-	return None #if there isn't a census tract just return 0
+	feature = tractlayer.GetNextFeature()
+	return feature
 
 
-def color_ramp(file, name):
-	"""format the qgis file with the appropriate color ramp"""
-	#TODO: make this work!
-	QgsApplication.setPrefixPath("/usr/bin/", True)
-	qgs = QgsApplication([], False)
-	qgs.initQgis()
-	print(os.path.abspath(file))
-	layer = QgsVectorLayer(os.path.abspath(file), name, "ogr")
-	for cat in layer.rendererV2().categories():
-		print "%s: %s :: %s" % (cat.value().toString(), cat.label(), str(cat.symbol()))
-	qgs.exitQgis()
-
-
-def test1(db, inf, outf, band):	
+def test1(sol, outfolder):	
 	"""create a shapefile with all the census districts and prices"""
-
-	folder = "%s/band_%d"%(outf, band) #create a folder with the name if necessary
+	folder = 'figures/'+ outfolder
 	if not os.path.exists(folder):
 		os.makedirs(folder)
 
-	driver = ogr.GetDriverByName('ESRI Shapefile')
+	filename = folder + '/test1.shp'
+	solp = Solution_Parser(sol)
+	agfig = Ag_Figure(filename)
 
-	file = driver.CreateDataSource('%s/band_%d.shp'%(folder,band))
-	layer = file.CreateLayer('%s/band_%d'%(folder,band))
+	geoid,price = solp.next_store()
+	while(geoid != None):
+		#needs to be this way because scope in python isn't right
+		feature = get_tract(geoid)
+		geom = feature.GetGeometryRef() 
 
-	#cycle through the results and get the geoid as a key
-	conn = sqlite3.connect(db)
-	c = conn.cursor()
+		agfig.create_feature(geom, geoid, price, 3)
+		geoid,price = solp.next_store()
 
-	f = open('%s/result_%d/band_%d.sol'%(inf,band,band) )
-
-	geoidfield = ogr.FieldDefn("GEOID", ogr.OFTString)
-	pricefield = ogr.FieldDefn("price", ogr.OFTReal)
-	
-	layer.CreateField(pricefield)
-	layer.CreateField(geoidfield)
-
-	for line in f:
-		index = string.find(line, 'store_')
-		if index > -1:
-			index2 = string.find(line, ' ')
-			geoid = int(line[index+6:index2])
-			price = float(line[1+index2:-1])
-			#print('geoid: |%s| price: |%s|'%(geoid,price))
-			
-			feature = census_tract(geoid)
-			geom = feature.GetGeometryRef()
-
-			outFeature = ogr.Feature(layer.GetLayerDefn())
-			outFeature.SetGeometry(geom)
-			outFeature.SetField('price', price)
-			outFeature.SetField('GEOID', geoid)
-
-			layer.CreateFeature(outFeature)
-
-	#close the resultant files
-	file = None
-	layer = None
+	agfig.close()
 
 
-def test2(db,outf,band):
-	""""draw the network in 3d"""
 
-	query1 = 'SELECT * FROM farms WHERE band=?'
-	#figured I'd keep the option to use individual stores, not gonna really pursue it though
-	query2 = 'SELECT * FROM constores'
-	query3 = 'SELECT * FROM conprocs WHERE band=?' #create a list of processors (with flow constraints)
-
-	conn = sqlite3.connect(db)
-	c = conn.cursor()
-
-	for
-		line = ogr.Geometry(ogr.wkbLineString)
-		line.AddPoint(flat, flon)
-		line.AddPoint(plat, plot)
-		for 
-
-
-def test3(db,inf,outf,band):
-	""""add all the points to a shapefile with prices""""
-
+def test2(db, sol, outfolder):
+	""""draw the network with prices (with or without edges)"""
+	folder = 'figures/'+ outfolder
+	if not os.path.exists(folder):
+		os.makedirs(folder)
 
 if __name__ == "__main__":
 	#out1 = test1('ag_networks.db', 'output','figures',49)
-	out1 = test1('test2.db', 'output','figures',1)
+	out1 = test1('output/result_1/band_1.sol','band_1' )
 	#color_ramp('figures/band_1/band_1.shp','band_1')
