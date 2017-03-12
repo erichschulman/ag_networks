@@ -52,6 +52,10 @@ def main(db, farms, procs, stores, bands):
 
 
 if __name__ == "__main__":
-	#double check right band
-	#main('db/band_243.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv', [243,49])
+	#onions - 49
+	#cherries - 66
+	#cabbage - 243
+	#grapes - 69
+
+	#main('db/band_243.db','input/NASSnyc2010.036.tif.8033/cdl_tm_r_ny_2010_utm18.tif','input/Farm_Product_Dealer_Licenses_Currently_Issued.csv','input/Retail_Food_Stores.csv', [243,49,66,69])
 	main('db/test2.db', 'input/test.tif', 'input/ptest.csv', 'input/stest.csv' , [1,68])

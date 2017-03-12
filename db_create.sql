@@ -130,7 +130,7 @@ WHERE T.geoid = S.geoid);
 
 /*this query groups the stores by census district (i.e. consolidated stores)*/
 CREATE VIEW constores AS 
-SELECT tractvalues.geoid AS geoid, sum(stores.sqftg) AS sqftg,  avg(stores.lat) AS lat, avg(stores.lon) AS lon, tractvalues.value AS value
+SELECT tractvalues.geoid AS geoid, avg(stores.lat) AS lat, avg(stores.lon) AS lon, sum(stores.sqftg) AS sqftg, tractvalues.value AS value
 FROM stores, tractvalues
 WHERE stores.geoid = tractvalues.geoid
 GROUP BY tractvalues.geoid, tractvalues.value;

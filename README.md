@@ -99,6 +99,11 @@ Describes the store classification codes
 ###Sattelite Farm Data
 http://cugir.mannlib.cornell.edu/bucketinfo.jsp?id=8033
 
+The bands I've selected for my analysis are as follows
+1. onions - 49
+2. cherries - 66
+3. cabbage - 243
+4. grapes - 69
 
 ###OSM Map of NYS
 https://www.geofabrik.de/data/download.html
@@ -106,5 +111,5 @@ https://www.geofabrik.de/data/download.html
 ###Tiger Data with Street Addresses
 https://www.census.gov/geo/maps-data/data/tiger-geodatabases.html
 
-
-
+###Other useful maps of NYS (for the write up)
+http://gis.ny.gov/gisdata/inventories/details.cfm?DSID=927

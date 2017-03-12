@@ -60,7 +60,7 @@ def import_proc(db, file, band):
 			exists_procid = c.fetchone()
 			commodity = row['Commodity Listing']
 			commodity_constraint = (commodity.find(croptype)>-1 or commodity.find('Fruit') > -1 or commodity.find('Vegetable') > -1)
-			if( commodity_constraint and exists_procid==None ):
+			if( commodity_constraint and exists_procid==None and row['State']=='NY' ):
 				street = row['Street  Address']
 				city = '%s,%s' %(row['City'], row['State'])
 				lat,lon = geolocate(street, city)
@@ -100,7 +100,7 @@ def import_store(db,file):
 				lat = float(loc_raw[ind1+1:ind1+ind3])
 				lon = float(loc_raw[ind1+ind3+2:ind2])
 				tract = census_tract(lat,lon) #determine census tract to match with property values
-				 #may get more sophisticated with what counts later
+				#may get more sophisticated with what counts later
 				c.execute('INSERT INTO stores VALUES (NULL,?,?,?,?)', (lat,lon,row['Square Footage'],tract,) )
 	conn.commit()
 	return

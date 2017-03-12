@@ -68,14 +68,14 @@ class Solution_Parser:
 	def next_farm(self):
 		"""return the next farm in solution file with farmid, price"""
 		result = self.parse_line(self.findex,'farm_')
-		self.sindex = self.sindex + 1
+		self.findex = self.findex + 1
 		return result
 
 
 	def next_proc(self):
 		"""return the next proc in the solution file with procid, price"""
 		result = self.parse_line(self.pindex,'proc_')
-		self.sindex = self.sindex + 1
+		self.pindex = self.pindex + 1
 		return result
 
 
@@ -89,8 +89,12 @@ class Ag_Figure:
 		"""initialize the figure, file is the name of the output file"""
 		driver = ogr.GetDriverByName('ESRI Shapefile')
 		
+
+		sr = osr.SpatialReference()
+		res = sr.ImportFromEPSG(4326)
+
 		self.file = driver.CreateDataSource(fname)
-		self.layer = self.file.CreateLayer('layer_1')
+		self.layer = self.file.CreateLayer('layer_1', srs = sr)
 
 		name = ogr.FieldDefn("name", ogr.OFTString)
 		price = ogr.FieldDefn("price", ogr.OFTReal)
@@ -125,6 +129,16 @@ class Ag_Figure:
 		self.file = None
 
 
+def make_folder(outfolder):
+	"""makes a folder in the figures directory with the
+	specified name
+	returns the name of the folder"""
+	folder = 'figures/'+ outfolder
+	if not os.path.exists(folder):
+		os.makedirs(folder)
+	return folder
+
+
 def get_coord(db, name, table):
 	"""return the location of this id as a point geometry"""
 	query1 = None #set the query based on which table
@@ -139,7 +153,7 @@ def get_coord(db, name, table):
 
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
-	c.execute(query1,name)
+	c.execute(query1,(name,))
 	
 	query_result = c.fetchone()
 	lat, lon = query_result[1],query_result[2]
@@ -162,9 +176,7 @@ def get_tract(geoid):
 
 def test1(sol, outfolder):	
 	"""create a shapefile with all the census districts and prices"""
-	folder = 'figures/'+ outfolder
-	if not os.path.exists(folder):
-		os.makedirs(folder)
+	folder = make_folder(outfolder)
 
 	filename = folder + '/test1.shp'
 	solp = Solution_Parser(sol)
@@ -182,14 +194,65 @@ def test1(sol, outfolder):
 	agfig.close()
 
 
-
 def test2(db, sol, outfolder):
-	""""draw the network with prices (with or without edges)"""
-	folder = 'figures/'+ outfolder
-	if not os.path.exists(folder):
-		os.makedirs(folder)
+	"""draw the network with prices (with or without edges)"""
+	folder = make_folder(outfolder)
+
+	filename = folder + '/test2.shp'
+	solp = Solution_Parser(sol)
+	agfig = Ag_Figure(filename)
+
+	#print("stores")
+	geoid,price = solp.next_store()
+	while(geoid != None):
+		geom = get_coord(db,geoid,'stores')
+		agfig.create_feature(geom, geoid, price, 3)
+		geoid,price = solp.next_store()
+
+	#print("procs")
+	procid,price = solp.next_proc()
+	while(procid != None):
+		geom = get_coord(db,procid,'procs')
+		agfig.create_feature(geom, geoid, price, 2)
+		procid,price = solp.next_proc()
+
+	#print("farms")
+	farmid,price = solp.next_farm()
+	while(farmid != None):
+		geom = get_coord(db,farmid,'farms')
+		agfig.create_feature(geom, farmid, price, 1)
+		farmid,price = solp.next_farm()
+
+	agfig.close()
+
+
+def test3(db, outfolder):
+	"""plot all the stores in NYS"""
+	folder = make_folder(outfolder)
+	filename = folder + '/test3.shp'
+	agfig = Ag_Figure(filename)
+
+
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+	query = 'SELECT * FROM stores'
+
+	for row in c.execute(query):
+
+		lat, lon = row[1],row[2]
+		point = ogr.Geometry(ogr.wkbPoint)
+		point.AddPoint(lon,lat)
+		geom = ogr.CreateGeometryFromWkt(point.ExportToWkt())
+		
+		agfig.create_feature(geom, row[0], 0, 3)
+
+	
+
+
 
 if __name__ == "__main__":
-	#out1 = test1('ag_networks.db', 'output','figures',49)
-	out1 = test1('output/result_1/band_1.sol','band_1' )
-	#color_ramp('figures/band_1/band_1.shp','band_1')
+	#out1 = test1('output/result_49/band_49.sol','band_49' )
+	#out1 = test1('output/result_1/band_1.sol','band_1' )
+	#out2 = test2('db/test2.db', 'output/result_1/band_1.sol', 'band_1')
+	#out3 = test2('db/ag_networks.db', 'output/result_49/band_49.sol', 'band_49')
+	out5 = test3('db/ag_networks.db', 'stores')
