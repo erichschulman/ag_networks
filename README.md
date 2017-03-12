@@ -100,6 +100,7 @@ Describes the store classification codes
 http://cugir.mannlib.cornell.edu/bucketinfo.jsp?id=8033
 
 The bands I've selected for my analysis are as follows
+
 1. onions - 49
 2. cherries - 66
 3. cabbage - 243
