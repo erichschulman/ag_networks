@@ -43,9 +43,6 @@ def proc_edges(db, farms=False, constores = True):
 	return
 
 
-
-
-
 if __name__ == "__main__":
 	#proc_edges("db/test.db")
 	#proc_edges("db/test.db", farms = True )

@@ -1,3 +1,4 @@
+from solutions import *
 import sqlite3
 import string
 import os
@@ -5,78 +6,6 @@ from qgis.core import *
 import numpy as np
 from osgeo import gdal, gdalconst, gdalnumeric, ogr, osr
 
-
-class Solution_Parser:
-	"""converts a solution into a feature"""
-	
-	def __init__(self, fname):
-		self.fname = fname
-
-		open_file = open(self.fname)
-		file = open_file.readlines()
-		self.flen =len(file)
-
-
-		#initial values (i.e. first one in solution file)	
-		self.farm1 =0
-		for line in file:
-			if(string.find(line,'farm_')>-1):
-				break
-			self.farm1 = self.farm1+1
-
-		self.store1 = 0
-		for line in file:
-			if(string.find(line,'store_')>-1):
-				break
-			self.store1 = self.store1+1
-
-		self.proc1 = 0
-		for line in file:
-			if(string.find(line,'proc_')>-1):
-				break
-			self.proc1 = self.proc1+1
-		
-		#initial indexes
-		self.sindex = self.store1
-		self.findex = self.farm1
-		self.pindex = self.proc1
-
-
-	def parse_line(self, line_index, ltype):
-		"""use this to parse a line in the solution file"""
-		open_file = open(self.fname)
-		file = open_file.readlines()
-		
-		if(line_index < self.flen):
-			line = file[line_index]
-			index = string.find(line, ltype)
-			if index > -1:
-				index2 = string.find(line, ' ')
-				name = int(line[index+len(ltype):index2])
-				price = float(line[1+index2:-1])
-				return name,price
-		return None, None
-
-	
-	def next_store(self):
-		"""return the next store in the solution file with geoid, price"""
-		result = self.parse_line(self.sindex,'store_')
-		self.sindex = self.sindex + 1
-		return result
-
-
-	def next_farm(self):
-		"""return the next farm in solution file with farmid, price"""
-		result = self.parse_line(self.findex,'farm_')
-		self.findex = self.findex + 1
-		return result
-
-
-	def next_proc(self):
-		"""return the next proc in the solution file with procid, price"""
-		result = self.parse_line(self.pindex,'proc_')
-		self.pindex = self.pindex + 1
-		return result
 
 
 class Ag_Figure:
@@ -129,11 +58,11 @@ class Ag_Figure:
 		self.file = None
 
 
-def make_folder(outfolder):
+def make_folder(band):
 	"""makes a folder in the figures directory with the
 	specified name
 	returns the name of the folder"""
-	folder = 'figures/'+ outfolder
+	folder = 'maps/map_%d'%band
 	if not os.path.exists(folder):
 		os.makedirs(folder)
 	return folder
@@ -174,11 +103,11 @@ def get_tract(geoid):
 	return feature
 
 
-def test1(sol, outfolder):	
+def map1(sol, band):	
 	"""create a shapefile with all the census districts and prices"""
-	folder = make_folder(outfolder)
+	folder = make_folder(band)
 
-	filename = folder + '/test1.shp'
+	filename = folder + '/map_1_%d.shp'%band
 	solp = Solution_Parser(sol)
 	agfig = Ag_Figure(filename)
 
@@ -194,11 +123,11 @@ def test1(sol, outfolder):
 	agfig.close()
 
 
-def test2(db, sol, outfolder):
+def map_2(db, sol, band):
 	"""draw the network with prices (with or without edges)"""
-	folder = make_folder(outfolder)
+	folder = make_folder(band)
 
-	filename = folder + '/test2.shp'
+	filename = folder + '/map_2_%d.shp'%band
 	solp = Solution_Parser(sol)
 	agfig = Ag_Figure(filename)
 
@@ -226,10 +155,9 @@ def test2(db, sol, outfolder):
 	agfig.close()
 
 
-def test3(db, outfolder):
+def map_3(db):
 	"""plot all the stores in NYS"""
-	folder = make_folder(outfolder)
-	filename = folder + '/test3.shp'
+	filename = folder + 'stores/map_3.shp'
 	agfig = Ag_Figure(filename)
 
 
@@ -247,12 +175,12 @@ def test3(db, outfolder):
 		agfig.create_feature(geom, row[0], 0, 3)
 
 	
-
+def run(db, list):
+	for i in list:
+		infile = 'solutions/solution_%d/band_%d.sol'%(i,i)
+		map_1(infile, i)
+		map_2(db, infile, i)
 
 
 if __name__ == "__main__":
-	#out1 = test1('output/result_49/band_49.sol','band_49' )
-	#out1 = test1('output/result_1/band_1.sol','band_1' )
-	#out2 = test2('db/test2.db', 'output/result_1/band_1.sol', 'band_1')
-	#out3 = test2('db/ag_networks.db', 'output/result_49/band_49.sol', 'band_49')
-	out5 = test3('db/ag_networks.db', 'stores')
+	run('db/ag_networks2.db', [243,49,66,69])

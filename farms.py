@@ -29,7 +29,7 @@ def import_farms(db, file_name, band, sieve):
 	gdal.UseExceptions() #for debugging purposes
 
 	#create a folder for the band output
-	folder = "output/band_" + str(band)
+	folder = "maps/map_" + str(band)
 	if not os.path.exists(folder):
 		os.makedirs(folder)
 
@@ -44,7 +44,7 @@ def import_farms(db, file_name, band, sieve):
 
 	#create a new geotiff to store this information
 	driver1 = gdal.GetDriverByName("GTiff")
-	file2 = driver1.Create(folder + "/band_" + str(band) + ".tiff", file1.RasterXSize, file1.RasterYSize, 1, band1.DataType)
+	file2 = driver1.Create(folder + "/farm_" + str(band) + ".tiff", file1.RasterXSize, file1.RasterYSize, 1, band1.DataType)
 	gdalnumeric.CopyDatasetInfo(file1,file2)
 	band2 = file2.GetRasterBand(1)
 	gdalnumeric.BandWriteArray(band2, data2)
@@ -62,8 +62,8 @@ def import_farms(db, file_name, band, sieve):
 	srs2=osr.SpatialReference(wkt=prj2) #adding a coordinate system the shapefile
 
 	driver2 = ogr.GetDriverByName("ESRI Shapefile")
-	file3 = driver2.CreateDataSource(folder + "/band_" + str(band) + ".shp" )
-	layer3 = file3.CreateLayer( "band_" + str(band) , srs = srs2)
+	file3 = driver2.CreateDataSource(folder + "/farm_" + str(band) + ".shp" )
+	layer3 = file3.CreateLayer( "farm_" + str(band) , srs = srs2)
 	gdal.Polygonize( band2, band2, layer3, -1, [], callback=None )
 
 	#close the resultant files

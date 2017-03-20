@@ -47,7 +47,7 @@ def main(db, farms, procs, stores, bands):
 	print('DB Complete!')
 	for b in bands:
 		print('Running LP for Band %d...'%b)
-		tranport('output',db, b)
+		tranport(db, b)
 	return
 
 

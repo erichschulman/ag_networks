@@ -48,9 +48,9 @@ def example(output):
 		#solution = m.getAttr('prices')
 		#print(solution)
 		m.write(output+today.strftime('test/test_%m_%d.sol'))
+	return output+today.strftime('test/test_%m_%d.lp')
 
-
-def tranport(output, db, band, constores = True):
+def tranport(db, band, constores = True):
 	"""pull data from the databse to solve the transportation
 	problem for NYS."""
 
@@ -92,18 +92,22 @@ def tranport(output, db, band, constores = True):
 		m.addConstr(-procs[row[1]] +  stores[row[0]] <= row[2], "row_%s_%s"%(row[0],row[1])) #not sure about this?
 
 
-	folder = "%s/result_%d"%(output, band)
+	folder = 'solutions/solution_%d'%(band)
 	if not os.path.exists(folder):
 		os.makedirs(folder)
 
-	m.write('%s/band_%d.lp'%(folder,band))
+	m.write('solutions/solution_%d/band_%d.lp'%(band,band))
 	# Compute optimal solution
 	m.optimize()
 	# Print solution
 	if m.status == GRB.Status.OPTIMAL:
-		m.write('%s/band_%d.sol'%(folder,band))
+		m.write('solutions/solution_%d/band_%d.sol'%(band,band))
 
+
+def test1(output, band):
+	filename = output+ 'solution_%d/solution_%d.lp'%(band,band)
+	m = read(filename)
 
 if __name__ == "__main__":
-	tranport('output','db/test2.db', 1)
-	#example('output')
+	#tranport('output','db/test2.db', 1)
+	#test1('output/', 49)
