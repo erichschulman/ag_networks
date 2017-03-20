@@ -17,6 +17,17 @@ http://wiki.openstreetmap.org/wiki/Nominatim/Installation
 ### Reference for Minimum Cost Maximum Flow with Gurobi
 http://www.gurobi.com/documentation/7.0/examples/netflow_py.html
 
+## File System organization
+
+To run the code, you should make an `input` folder where you put the data.
+
+Running the code should create the following folders
+
+
+1. `db` - stores the databases
+2. `maps` - stores the maps created by the program
+3. `solutions` - stores the linear program outputs
+
 ## Code organization
 
 ### `db_create.sql`
@@ -64,8 +75,13 @@ This file will eventually specify the transportation problem for the Gurobi Opti
 just runs an example of the minimum cost maximum flow problem.
 
 ### `main.py`
-Running this file will eventually do all the steps in the project start to finish. I may include flags
-to break things up.
+Running this file will eventually does all steps in the project start to finish.
+
+### `maps.py`
+Running this file creates maps for each of the different types of crops to better visualize the results. Parsing large .sol files is pretty lame.
+
+### `solutions.py`
+This file lets me experiment with solutions to the linear programming problem to check what else might be feasible.
 
 ## Data
 
