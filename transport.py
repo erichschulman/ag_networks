@@ -104,9 +104,6 @@ def tranport(db, band, constores = True):
 		m.write('solutions/solution_%d/band_%d.sol'%(band,band))
 
 
-def test1(output, band):
-	filename = output+ 'solution_%d/solution_%d.lp'%(band,band)
-	m = read(filename)
 
 if __name__ == "__main__":
 	#tranport('output','db/test2.db', 1)
