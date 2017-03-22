@@ -103,49 +103,47 @@ def get_tract(geoid):
 	return feature
 
 
-def map1(sol, band):	
+def map_1(band):	
 	"""create a shapefile with all the census districts and prices"""
 	folder = make_folder(band)
-
+	sol = 'solutions/solution_%d/band_%d.sol'%(band,band)
 	filename = folder + '/map_1_%d.shp'%band
 	solp = Solution_Parser(sol)
 	agfig = Ag_Figure(filename)
-
 	geoid,price = solp.next_store()
 	while(geoid != None):
 		#needs to be this way because scope in python isn't right
 		feature = get_tract(geoid)
 		geom = feature.GetGeometryRef() 
-
 		agfig.create_feature(geom, geoid, price, 3)
 		geoid,price = solp.next_store()
-
 	agfig.close()
 
 
-def map_2(db, sol, band):
+def map_2(db, band):
 	"""draw the network with prices (with or without edges)"""
 	folder = make_folder(band)
+	sol = 'solutions/solution_%d/band_%d.sol'%(band,band)
 
 	filename = folder + '/map_2_%d.shp'%band
 	solp = Solution_Parser(sol)
 	agfig = Ag_Figure(filename)
 
-	#print("stores")
+	#draw stores
 	geoid,price = solp.next_store()
 	while(geoid != None):
 		geom = get_coord(db,geoid,'stores')
 		agfig.create_feature(geom, geoid, price, 3)
 		geoid,price = solp.next_store()
 
-	#print("procs")
+	#draw procs
 	procid,price = solp.next_proc()
 	while(procid != None):
 		geom = get_coord(db,procid,'procs')
 		agfig.create_feature(geom, geoid, price, 2)
 		procid,price = solp.next_proc()
 
-	#print("farms")
+	#draw farms
 	farmid,price = solp.next_farm()
 	while(farmid != None):
 		geom = get_coord(db,farmid,'farms')
@@ -157,30 +155,70 @@ def map_2(db, sol, band):
 
 def map_3(db):
 	"""plot all the stores in NYS"""
-	filename = folder + 'stores/map_3.shp'
+	filename = 'misc/map_3.shp'
 	agfig = Ag_Figure(filename)
-
-
 	conn = sqlite3.connect(db)
 	c = conn.cursor()
 	query = 'SELECT * FROM stores'
-
 	for row in c.execute(query):
-
 		lat, lon = row[1],row[2]
 		point = ogr.Geometry(ogr.wkbPoint)
 		point.AddPoint(lon,lat)
-		geom = ogr.CreateGeometryFromWkt(point.ExportToWkt())
-		
+		geom = ogr.CreateGeometryFromWkt(point.ExportToWkt())		
 		agfig.create_feature(geom, row[0], 0, 3)
 
-	
+
+def compare_1(db, band1,band2):
+	"""difference prices for 2 different band"""
+	filename = 'maps/misc/compare_1_%d_%d.shp'%(band1,band2)
+	agfig = Ag_Figure(filename)
+	solfile1 = 'solutions/solution_%d/band_%d.sol'%(band1,band1)
+	solfile2 = 'solutions/solution_%d/band_%d.sol'%(band2,band2)
+	solp1 = Solution_Parser(solfile1)
+	solp2 = Solution_Parser(solfile2)
+
+	name1,price1 = solp1.next_store()
+
+	#add the stores to the shape file
+	while name1 != None:
+		name2,price2 = solp2.next_store()
+		while name2 != None:
+			if(name1 == name2):
+				geom = get_coord(db,name1,'stores')
+				agfig.create_feature(geom, name1, price1-price2, 3)
+				break
+		name1,price1 = solp1.next_store()
+
+
+def compare_2(db, band1,band2):
+	"""do the same thing as compare 1 only do it with procs"""
+	filename = 'maps/misc/compare_2_%d_%d.shp'%(band1,band2)
+	agfig = Ag_Figure(filename)
+	solfile1 = 'solutions/solution_%d/band_%d.sol'%(band1,band1)
+	solfile2 = 'solutions/solution_%d/band_%d.sol'%(band2,band2)
+	solp1 = Solution_Parser(solfile1)
+	solp2 = Solution_Parser(solfile2)
+
+	#add the procs to the shape file
+	name1,price1 = solp1.next_proc()
+	while name1 != None:
+		name2,price2 = solp2.next_proc()
+		while name2 != None:
+			if(name1 == name2):
+				geom = get_coord(db,name1,'procs')
+				agfig.create_feature(geom, name1, price1-price2, 2)
+				break
+		name1,price1 = solp1.next_proc()
+
+
 def run(db, list):
 	for i in list:
-		infile = 'solutions/solution_%d/band_%d.sol'%(i,i)
-		map_1(infile, i)
-		map_2(db, infile, i)
+		map_1(i)
+		map_2(db, i)
 
 
 if __name__ == "__main__":
-	run('db/ag_networks2.db', [243,49,66,69])
+	#run('db/ag_networks2.db', [243,49,66,69])
+	#run('db/test2.db',[1,68])
+	compare_1('db/test2.db',1,68)
+	compare_2('db/test2.db',1,68)

@@ -15,8 +15,6 @@ class Solution_Parser:
 		#save value of objective
 		self.objective = float(file[1][20:-1])
 
-		#save min store
-
 		#initial values (i.e. first one in solution file)	
 		self.farm1 =0
 		for line in file:
@@ -79,6 +77,22 @@ class Solution_Parser:
 		return result
 
 
+	def reset_store(self):
+		"""rest to the first store"""
+		self.sindex = self.store1
+
+
+	def reset_farm(self):
+		"""reset to the first farm"""
+		self.findex = self.farm1
+
+
+	def reset_proc(self):
+		"""reset to the first proc"""
+		self.pindex = self.proc1
+
+
+
 	def get_extreme(self,ltype,compare):
 		"""find the use the compare argument to find the max or min (depending on your preference).
 		Yes, I think i'm clever..."""
@@ -118,7 +132,7 @@ def test_sol(band, compare, sense, ltype, descrip):
 		m.write('solutions/solution_%d/%s_%d.sol'%(band, descrip, band))
 
 
-def parse_line2(line):
+def general_parse_line(line):
 	"""a second line parsing helper, for comparing files"""
 	index = string.find(line, ' ')
 	name,price = None,None
@@ -146,9 +160,9 @@ def compare_sol_helper(fname1,fname2,output):
 	result.write('Name 1,Price 1,Name 2,Price 2\n')
 	for line1 in file1[2:]:
 		found = False
-		name1, price1 = parse_line2(line1)
+		name1, price1 = general_parse_line(line1)
 		for line2 in file2[2:]:
-			name2, price2 = parse_line2(line2)
+			name2, price2 = general_parse_line2(line2)
 			if ( name1 == name2):
 				found = True
 				if(price1 != price2):
@@ -183,5 +197,5 @@ def run(bands):
 
 
 if __name__ == "__main__":
-	run([243,49,66,69])
-	#compare_sol(49)
+	#run([243,49,66,69])
+	compare_sol(1)
