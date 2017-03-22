@@ -1,4 +1,5 @@
 import string
+import os
 from gurobipy import *
 
 class Solution_Parser:
@@ -95,7 +96,6 @@ class Solution_Parser:
 		return result
 
 
-
 def test_sol(band, compare, sense, ltype, descrip):	
 	"""use this to test whether the maximum price is flexible"""
 	m = read('solutions/solution_%d/band_%d.lp'%(band,band))
@@ -118,13 +118,70 @@ def test_sol(band, compare, sense, ltype, descrip):
 		m.write('solutions/solution_%d/%s_%d.sol'%(band, descrip, band))
 
 
+def parse_line2(line):
+	"""a second line parsing helper, for comparing files"""
+	index = string.find(line, ' ')
+	name,price = None,None
+	if(index > -1):
+		name = line[:index]
+		price = float(line[1+index:-1])
+	return name,price
+
+
+def compare_sol_helper(fname1,fname2,output):
+	"""helper that actuall does the comparisons between solution files
+	essential ignores differences that are below """
+	open_file1 = open(fname1)
+	file1 = open_file1.readlines()
+		
+	open_file2 = open(fname2)
+	file2 = open_file2.readlines()
+	
+	result = open(output+'.csv', 'w+')
+
+	obj1= float(file1[1][20:-1])
+	obj2 = float(file1[1][20:-1])
+
+	result.write( 'Objective 1,%f,Objective 2,%f\n\n'%(obj1,obj2) )
+	result.write('Name 1,Price 1,Name 2,Price 2\n')
+	for line1 in file1[2:]:
+		found = False
+		name1, price1 = parse_line2(line1)
+		for line2 in file2[2:]:
+			name2, price2 = parse_line2(line2)
+			if ( name1 == name2):
+				found = True
+				if(price1 != price2):
+					result.write("%s,%f,%s,%f \n"%(name1,price1,name2,price2) )
+				break
+
+		if(not found):
+			result.write("%s,%f,None,None\n"%(name1,price1))
+	result.close()
+
+
+def compare_sol(band):
+	"""use this to compare the solution files for each band"""
+	band_directory = 'solutions/solution_%d/'%band
+	band_solution = 'band_%d.sol'%band
+
+	for file in os.listdir(band_directory):
+		if file.endswith(".sol") and file != band_solution:
+			print("Starting on %s..."%file)
+			output_name = band_directory + file[:-4]
+			compare_sol_helper(band_directory + band_solution, band_directory + file, output_name)
+
+
 def run(bands):
+	"""helper function with the relevant checks I want to run against the lp"""
 	for b in bands:
 		test_sol(b, lambda x,y: x > y,  GRB.GREATER_EQUAL, 'store_', 'gt_max')
 		test_sol(b, lambda x,y: x > y, GRB.LESS_EQUAL, 'store_', 'lt_max')
 		test_sol(b, lambda x,y: x < y,  GRB.GREATER_EQUAL, 'store_', 'gt_min')
 		test_sol(b, lambda x,y: x < y, GRB.LESS_EQUAL, 'store_', 'lt_min')
+		compare_sol(b)
 
 
 if __name__ == "__main__":
 	run([243,49,66,69])
+	#compare_sol(49)
