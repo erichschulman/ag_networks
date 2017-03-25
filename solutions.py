@@ -8,6 +8,10 @@ class Solution_Parser:
 	def __init__(self, fname):
 		self.fname = fname
 
+		self.avg_store = None
+		self.avg_farm = None
+		self.avg_proc = None
+
 		open_file = open(self.fname)
 		file = open_file.readlines()
 		self.flen =len(file)
@@ -91,7 +95,99 @@ class Solution_Parser:
 		"""reset to the first proc"""
 		self.pindex = self.proc1
 
+	def get_avg_store(self):
+		if(self.avg_store == None):
+			temp = self.sindex
+			self.reset_store()
+			name, price = self.next_store()
+			quotient = 1
+			total = 0
+			while (name != None):
+				total = total + price
+				name, price = self.next_store()
+				quotient = quotient +1
+			self.sindex = temp
+			self.avg_store = total/quotient
+		return self.avg_store
 
+
+	def get_avg_proc(self):
+		if(self.avg_proc == None):
+			temp = self.pindex
+			self.reset_proc()
+			name, price = self.next_proc()
+			quotient = 1
+			total = 0
+			while (name != None):
+				total = total + price
+				name, price = self.next_proc()
+				quotient = quotient +1
+			self.pindex = temp
+			self.avg_proc = total/quotient
+		return self.avg_proc
+
+
+	def get_avg_farm(self):
+		if(self.avg_farm == None):
+			temp = self.findex
+			self.reset_farm()
+			name, price = self.next_farm()
+			quotient = 1
+			total = 0
+			while (name != None):
+				total = total + price
+				name, price = self.next_farm()
+				quotient = quotient +1
+			self.findex = temp
+			self.avg_farm = total/quotient
+		return self.avg_farm
+
+
+	def var_store(self):
+		temp = self.sindex
+		self.reset_store()
+		name, price = self.next_store()
+		quotient = 1
+		total = 0
+		avg = self.get_avg_store()
+		while (name != None):
+			total = total + (avg - price)*(avg - price)
+			name, price = self.next_store()
+			quotient = quotient +1
+		self.sindex = temp
+		return total/quotient
+
+
+
+	def var_proc(self):
+		temp = self.pindex
+		self.reset_proc()
+		name, price = self.next_proc()
+		quotient = 1
+		total = 0
+		avg = self.get_avg_proc()
+		while (name != None):
+			total = total + (avg - price)*(avg - price)
+			name, price = self.next_proc()
+			quotient = quotient +1
+		self.pindex = temp
+		return total/quotient
+
+
+	def var_farm(self):
+		temp = self.findex
+		self.reset_farm()
+		name, price = self.next_farm()
+		quotient = 1
+		total = 0
+		avg = self.get_avg_farm()
+		while (name != None):
+			total = total + (avg - price)*(avg - price)
+			name, price = self.next_farm()
+			quotient = quotient +1
+		self.findex = temp
+		return total/quotient
+		
 
 	def get_extreme(self,ltype,compare):
 		"""find the use the compare argument to find the max or min (depending on your preference).
@@ -196,6 +292,42 @@ def run(bands):
 		compare_sol(b)
 
 
+def stats(bands):
+	result = open('solutions/stats.csv', 'w+')
+	result.write('Band,Type,Max,Min,Average,Variance,Deviation\n')
+	
+	for band in bands:	
+		solp = Solution_Parser('solutions/solution_%s/band_%s.sol'%(band,band))
+
+		#do the calculations for farms
+		max_farm = solp.get_extreme('farm_',lambda x,y: x > y)[1]
+		min_farm = solp.get_extreme('farm_',lambda x,y: x < y)[1]
+		avg_farm = solp.get_avg_farm()
+		var_farm = solp.var_farm()
+		sd_farm = var_farm**(.5)
+		result.write('%s,Farms,%s,%s,%s,%s,%s\n'%(band,max_farm,min_farm,avg_farm,var_farm,sd_farm))
+		
+		#do calculations for stores
+		max_store = solp.get_extreme('store_',lambda x,y: x > y)[1]
+		min_store = solp.get_extreme('store_',lambda x,y: x < y)[1]
+		avg_store = solp.get_avg_store()
+		var_store = solp.var_store()
+		sd_store = var_store**(.5)
+		result.write('%s,Store,%s,%s,%s,%s,%s\n'%(band,max_store,min_store,avg_store,var_store,sd_store))
+		
+		#finally do calcs for procs
+		max_proc = solp.get_extreme('proc_',lambda x,y: x > y)[1]
+		min_proc = solp.get_extreme('proc_',lambda x,y: x > y)[1]
+		avg_proc = solp.get_avg_proc()
+		var_proc = solp.var_proc()
+		sd_proc = var_proc**(.5)
+		result.write('%s,Processors,%s,%s,%s,%s,%s\n'%(band,max_proc,min_proc,avg_proc,var_proc,sd_proc))
+
+	result.close()
+
+
+
+
+
 if __name__ == "__main__":
-	#run([243,49,66,69])
-	compare_sol(1)
+	stats([243,66,69,49])
