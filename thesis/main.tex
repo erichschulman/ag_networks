@@ -14,17 +14,28 @@
 
 %Figures
 \usepackage{graphicx}
+\graphicspath{ {figures/} }
 \usepackage{tikz}
 \usepackage{pgfmath}
 \usepackage{framed}
 \usepackage{csvsimple}
+
+%For the cover page...
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\normalsize#1\end{center}
+    \vskip0.5em}%
+}
 
 %Header
 \lhead{Schulman}
 \rhead{Page \thepage}
 
 %Title
-\title{Food Networks} 
+\title{Food Networks\\~\\ \normalsize A Thesis Presented to the Faculty of the Economics Department of Cornell University in Partial Fulfillment of the Requirements for the Degree of Bachelor of Arts in Economics with Honors} 
+\subtitle{}
 \author{Eric Schulman}
 \date{May 2017}
 
