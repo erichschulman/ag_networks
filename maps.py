@@ -168,9 +168,23 @@ def map_3(db):
 		agfig.create_feature(geom, row[0], 0, 3)
 
 
+def map_4(db):
+	"""plot census tracts against the median household income"""
+	agfig = Ag_Figure('maps/misc/map_4.shp')
+	conn = sqlite3.connect(db)
+	c = conn.cursor()
+	query = 'SELECT * FROM tractvalues'
+	for row in c.execute(query):
+		feature = get_tract(row[0])
+		geom = feature.GetGeometryRef() 
+		agfig.create_feature(geom, row[0], row[1], 0)
+	agfig.close()
+
+
+
 def compare_1(db, band1,band2):
 	"""difference prices for 2 different band"""
-	filename = 'maps/misc/compare_1_%d_%d.shp'%(band1,band2)
+	filename = 'maps/compare/compare_1_%d_%d.shp'%(band1,band2)
 	agfig = Ag_Figure(filename)
 	solfile1 = 'solutions/solution_%d/band_%d.sol'%(band1,band1)
 	solfile2 = 'solutions/solution_%d/band_%d.sol'%(band2,band2)
@@ -184,7 +198,8 @@ def compare_1(db, band1,band2):
 		name2,price2 = solp2.next_store()
 		while name2 != None:
 			if(name1 == name2):
-				geom = get_coord(db,name1,'stores')
+				feature = get_tract(name1)
+				geom = feature.GetGeometryRef() 
 				agfig.create_feature(geom, name1, price1-price2, 3)
 				break
 		name1,price1 = solp1.next_store()
@@ -192,7 +207,7 @@ def compare_1(db, band1,band2):
 
 def compare_2(db, band1,band2):
 	"""do the same thing as compare 1 only do it with procs"""
-	filename = 'maps/misc/compare_2_%d_%d.shp'%(band1,band2)
+	filename = 'maps/compare/compare_2_%d_%d.shp'%(band1,band2)
 	agfig = Ag_Figure(filename)
 	solfile1 = 'solutions/solution_%d/band_%d.sol'%(band1,band1)
 	solfile2 = 'solutions/solution_%d/band_%d.sol'%(band2,band2)
@@ -220,5 +235,10 @@ def run(db, list):
 if __name__ == "__main__":
 	#run('db/ag_networks2.db', [243,49,66,69])
 	#run('db/test2.db',[1,68])
-	compare_1('db/test2.db',1,68)
-	compare_2('db/test2.db',1,68)
+	compare_1('db/ag_networks2.db',243,66)
+	compare_1('db/ag_networks2.db',243,69)
+	compare_1('db/ag_networks2.db',243,49)
+	#compare_2('db/ag_networks2.db',243,66)
+	#compare_2('db/ag_networks2.db',243,69)
+	#compare_2('db/ag_networks2.db',243,49)
+	map_4('db/ag_networks2.db')

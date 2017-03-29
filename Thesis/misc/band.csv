@@ -1,0 +1,5 @@
+Type,Band,Correct Pixels,Accuracy, Omission Error
+Onions, 49 , 900 , 87.04 , 12.96 
+Cherries, 66 , 45,22.50 , 77.50
+Grapes , 69,2254 , 66.16 , 33.84
+Cabbage , 243 , 1067,54.97 , 45.03

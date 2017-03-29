@@ -1,0 +1,36 @@
+\contentsline {chapter}{\numberline {1}Background}{1}
+\contentsline {section}{\numberline {1.1}Related Work}{1}
+\contentsline {subsection}{\numberline {1.1.1}Demographics, Policy and Nutrition}{1}
+\contentsline {subsection}{\numberline {1.1.2}Spatial Data and Nutrition}{1}
+\contentsline {subsection}{\numberline {1.1.3}Optimization Problem and Food}{1}
+\contentsline {section}{\numberline {1.2}Simplex Algorithm}{2}
+\contentsline {subsection}{\numberline {1.2.1}Computational Complexity}{2}
+\contentsline {section}{\numberline {1.3}Minimum Cost Flow}{2}
+\contentsline {section}{\numberline {1.4}Minimum Cost Cycles}{2}
+\contentsline {section}{\numberline {1.5}Worked out Example}{2}
+\contentsline {section}{\numberline {1.6}Primal Problem}{4}
+\contentsline {section}{\numberline {1.7}Dual Problem}{6}
+\contentsline {subsection}{\numberline {1.7.1}Characterizing Solutions}{7}
+\contentsline {subsection}{\numberline {1.7.2}Software}{7}
+\contentsline {chapter}{\numberline {2}Problem Specification}{8}
+\contentsline {section}{\numberline {2.1}Reduction to Minimum Cost Flow}{8}
+\contentsline {section}{\numberline {2.2}Dual Problem Formulation}{9}
+\contentsline {section}{\numberline {2.3}Data Sources}{9}
+\contentsline {subsection}{\numberline {2.3.1}Farms}{9}
+\contentsline {subsection}{\numberline {2.3.2}Intermediate Processors}{10}
+\contentsline {subsection}{\numberline {2.3.3}Stores}{10}
+\contentsline {subsection}{\numberline {2.3.4}Edge Costs}{12}
+\contentsline {chapter}{\numberline {3}Results}{13}
+\contentsline {section}{\numberline {3.1}Onion Farms}{13}
+\contentsline {section}{\numberline {3.2}Cherry Farms}{13}
+\contentsline {section}{\numberline {3.3}Grape Farms}{13}
+\contentsline {section}{\numberline {3.4}Cabbage Farms}{13}
+\contentsline {chapter}{\numberline {4}Discussion}{22}
+\contentsline {section}{\numberline {4.1}Robustness of Solutions}{22}
+\contentsline {section}{\numberline {4.2}Comparing Different Results}{22}
+\contentsline {subsection}{\numberline {4.2.1}Farms}{25}
+\contentsline {subsection}{\numberline {4.2.2}Intermediate Processors}{25}
+\contentsline {subsection}{\numberline {4.2.3}Stores}{25}
+\contentsline {section}{\numberline {4.3}Checking the Uniqueness of Results}{25}
+\contentsline {section}{\numberline {4.4}Transportation Problem Assumptions}{28}
+\contentsline {chapter}{\numberline {5}Conclusion}{29}
