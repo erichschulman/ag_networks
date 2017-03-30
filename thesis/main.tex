@@ -20,22 +20,12 @@
 \usepackage{framed}
 \usepackage{csvsimple}
 
-%For the cover page...
-\usepackage{titling}
-\newcommand{\subtitle}[1]{%
-  \posttitle{%
-    \par\end{center}
-    \begin{center}\normalsize#1\end{center}
-    \vskip0.5em}%
-}
-
 %Header
 \lhead{Schulman}
 \rhead{Page \thepage}
 
 %Title
-\title{Food Networks\\~\\ \normalsize A Thesis Presented to the Faculty of the Economics Department of Cornell University in Partial Fulfillment of the Requirements for the Degree of Bachelor of Arts in Economics with Honors} 
-\subtitle{}
+\title{Food Networks \\~\\ \normalsize A Thesis Presented to the Faculty of the Economics Department of Cornell University in Partial Fulfillment of the Requirements for the Degree of Bachelor of Arts in Economics with Honors} 
 \author{Eric Schulman}
 \date{May 2017}
 
@@ -48,56 +38,45 @@
 \pagebreak
 
 \begin{abstract}
-For my proposal, I ask whether towns centrally located in the network of farms, processors, and vendors enjoy lower costs and higher availability of fresh produce. To answer this question, I estimate prices for apples, grapes, cabbage, onions, and cherries based on transportation costs to each registered food retailer in New York as an optimization problem using linear programming software packages. To specify the problem, I use New York's publicly available geographic information system (GIS) data on agricultural land use, farm product dealers and food vendor permits. All of the code to used to complete this project is publicly available on GitHub.
-\end{abstract}
+For my thesis, I ask how produce prices relate to the structure of the network of farms, intermediate buyers, and stores. To answer this question, I estimate the relative cost of transporting grapes, cabbage, onions, and cherries in to each census tract in New York State. My estimates come from an optimization problem specified using publicly available sattelite data regarding crop cover and New York's records on food vendor permits. I solve the problem using linear programming software packages. All of the code to used to complete this project is publicly available on GitHub.
 
+\end{abstract}
 
 \chapter{Background}
 
 \section{Related Work}
+
 \subsection{Demographics, Policy and Nutrition}
+
 Researchers have studied the statistical relationship between transfer programs, demographics and nutritional outcomes for a long time. Calculating these statistical relationships is straightforward for the US because the Census Bureau publishes a monthly current population survey monthly and nutrition supplement. 
 
 This literature finds reducing costs and increasing availability of nutritional foods improves health outcomes. One study evaluated the Farmers' Market Nutrition Program, a national program intended to increase consumption of fresh fruits and vegetables by providing coupons and information. Researchers found subsidizing nutritionally rich food with coupons leads to increased consumption when complemented with information \cite{Just}. The literature also found nutritional outcomes are related to systemic factors. For example, researchers analyzed nutritional outcomes in Oregon between 1999 and 2001, when Oregon had the highest average rate of hunger in the nation. The study found county-level factors like residential location and housing costs were most related to food insecurity \cite{Bernell}. 
 
 
 \subsection{Spatial Data and Nutrition}
+
 Researchers realized state-level data has its limitations limitations. To understand systemic nutritional patterns, researchers began describing food supply in detail using spatial coordinates and mapping software.  One study conducted among grocery stores across inner cities and suburbs within the Minneapolis and St. Paul metropolitan concluded the urban poor pay marginally more for food because supermarket chains don't open in inner cities \cite{Chung}. Researchers began applying the label "food deserts" to inner cities. With more data becoming available online, researchers continue describing food supply in more detail to understand systemic food insecurity. In one project, researchers leveraged Google Maps, and local online news to build a graphical representation of food availability in Bogota, Columbia \cite{Hwang}. Another study used online directories of grocery stores to index neighborhoods' vulnerability to food insecurity in the twin cities area \cite{Larson}.
  
 \subsection{Optimization Problem and Food}
+
 Food allocation is closely related with nutrition and often studied using a transportation problem. Transportation problems are an optimization problem designed to find the cheapest possible way of sending a certain amount of supply through a network. A typical application of this problem involves finding the best delivery route from a factory to a warehouse where the road network has some capacity and cost associated. Solving the problem involves finding a vector with an economic interpretation of optimal prices from a social planning perspective. It can be solved efficiently using the network simplex algorithm and linear programming software packages \cite{Cook}. Researchers have often applied transportation problems to food allocation. One paper studies maize allocation in South Africa where rails carry maize from supply and demand points, scattered throughout the country. Researchers minimize the total rail cost, as is standard, but add a secondary objective of distributing costs fairly among all users \cite{Stewart}.
 
-\section{Simplex Algorithm}
-The simplex algorithm is a relatively common tool in optimization. It's like the ordinary least squares of optimization. As you can imagine, people have written textbooks about it describing it's properties. Since this is an honors thesis in economics I'll explain the intuition for why it works. Essentially it finds a solution to the optimization problem that is the lowest maximum and highest minimum. These happen to coincide, so as a result you know you've found a maximum.
+\section{Optimal Transportation}
 
-\subsection{Computational Complexity}
-Another point to talk about is the computational complexity of my problem. Computer scientists often concern themselves with how efficient an algorithm is. However, measuring a programs efficiency by factors like how long it takes to run or how many lines of code it takes can vary with the computer and the compiler. It is also variable with the input to the program. As a result, in order to have a more universal measure of efficiency Computer scientists measure efficiency using run-time bounds. Basically, run-time bounds tell you an upper bound on the number of steps you need to solve the problem, given the input.
+I've decided to devote a section of my thesis explaining the nature of the optimization problem I specify and solve. My chosen application for the transportation problem is novel, but the problem its self is not. It's actually taught in most undergraduate optimization courses. Since I recognize that this is a different direction than projects from the past, I want to make sure it's clear what I've done and the tools that I used to do it.
 
-The simplex algorithm's run time bound is actually very bad as far as we know. It can be $O(2^n)$. Meaning that if there $2^n$ inputs, the number of instructions is some factor of $2^n$. Proving that it has a low average run time bound is an area of active research. The general rule of thumb is that the simplex algorithm has a run time that is some polynomial of $n$.
+\subsection{Problem Description}
 
-\section{Minimum Cost Flow}
+The optimization problem plan to specify and solve is called a transportation problem. It actually has a few names. It's usually called minimum-cost flow. This is because the it tries to maximize the amount of flow (in my case units of goods flowing through a network) at the minimum cost. I've decided to refer to it as a transportation problem because of how I'm using it. It's essentially a more general version of a matching market. There are suppliers and demand-ers connected in a network. Like a matching market, the goal is to match supply with demand. The catch is that edges in this problem are not all equal. Certain edges are more expensive than others. The difference betweeen this and a normal matching market is that this problem tries to find the cheapest possible way to match supply with demand. The problem inputs are list of suppliers and demand-ers with capacities and edges with costs. It tells you how much of each good each supplier should send to each demand-er.
 
-The minimum-cost flow problem (MCFP) is an optimization and decision problem to find the cheapest possible way of sending a certain amount of flow through a flow network. A typical application of this problem involves finding the best delivery route from a factory to a warehouse where the road network has some capacity and cost associated. The minimum cost flow problem is one of the most fundamental among all flow and circulation problems because most other such problems can be cast as a minimum cost flow problem and also that it can be solved very efficiently using the network simplex algorithm.
+\subsection{Solving the Problem}
 
-There can be multiple solutions to the algorithm
+Finding the minimum cost of sending goods through the network works a lot like finding the optimal matching for a matching market. You can start by maximizing the amount of goods you've sent through the network without worrying about cost. This works exactly like a normal matching market. You can use the augmenting path to do this. After finding the maximum amount of goods flowing through the network, the algorithm tries to find the optimal cost. You do so by finding a reduced cost path. This works exactly like an augmenting path in a matching market. You start at a supply node and trace a path alternating between supply and demand until you reach your original node. If you can trace back to your initial node then you've reduced the cost. You repeat this process until you've exhausted all of the reduced cost cycles.
 
 
-\section{Minimum Cost Cycles}
+\subsection{Worked out Example}
 
-The dual definitely says the problem in a less straightfoward way, the way to understand it is to understand that the algorithm has no miminum cost cycles. This is a condition for optimaility.
-
-In this case, a suitable set of prices are just the edge costs (1,2,1)
-The reduced cost of an edge (v, w) is cp(v, w) = c(v, w) + p(v) − p(w).
-We can think of the reduced cost as the cost of buying a widget at v, shipping it to w and selling it
-there. Note that if cp(v, w) is positive, we would therefore not ship the item from v to w.
-Using this definition, we can say that a price function is feasible for a residual graph if no residual
-edge has a negative reduced cost.
-
-
-\section{Worked out Example}
-
-I used the network simplex algorithm implemented in Gurobi, I've worked out a quick example of the minimum cost flow.
-Below is an example network of suppliers and demanders
+To get a better sense of the problem and how to solve it, I've worked out an example of a transportation problem with a network of 5 nodes.
 
 \begin{figure}
 \centering
@@ -105,15 +84,12 @@ Below is an example network of suppliers and demanders
 \begin{tikzpicture}[
 node/.style={circle, draw=black!70, fill=white!5, very thick, minimum size=9mm}
 ]
-
 %Nodes
 \node[node]      (s1)                                        {$s_1= 3$};
 \node[node]      (s2)     [below of =s1, yshift= -2cm]       {$s_2 = 4$};
 \node[node]      (d1)     [right of =s1 , xshift= 2cm]       {$d_1 = 3$};
 \node[node]      (d2)     [below of = d1, yshift= -2cm]       {$d_2 = 2$};
 \node[node]      (d3)     [below of = d2, yshift= -2cm]      {$d_3 = 2$};
-
- 
 %Lines
 \draw[->] (s1) -- (d1) node [midway, fill=white] {$c= 1$};
 \draw[->] (s1) -- (d2) node [near start, fill=white] {$c = 2$};
@@ -122,11 +98,9 @@ node/.style={circle, draw=black!70, fill=white!5, very thick, minimum size=9mm}
 \draw[->] (s2) -- (d2) node [near start, fill=white] {$c = 2$};
 \draw[->] (s2) -- (d3) node [near start, fill=white] {$c = 1$};
 \end{tikzpicture}
-\caption{This shows something}
+\caption{This picture represents the network for which we will be finding minimum cost flow. The supply and demand nodes are labeled with their corresponding capacities.  The edges between each supply and demand node are labled according to their cost. To make the problem easier, you can assume all edges have unlimited capacity meaning suppliers can send as much goods as they want over them.}
 \end{framed}
 \end{figure}
-
-We start by looking to match supply with demand and draw edges with according units of flow. This solution is not optimal.
 
 \begin{figure}
 \centering
@@ -134,26 +108,21 @@ We start by looking to match supply with demand and draw edges with according un
 \begin{tikzpicture}[
 node/.style={circle, draw=black!70, fill=white!5, very thick, minimum size=9mm}
 ]
-
 %Nodes
 \node[node]      (s1)                                        {$s_1= 3$};
 \node[node]      (s2)     [below of =s1, yshift= -2cm]       {$s_2 = 4$};
 \node[node]      (d1)     [right of =s1 , xshift= 2cm]       {$d_1 = 3$};
 \node[node]      (d2)     [below of = d1, yshift= -2cm]       {$d_2 = 2$};
 \node[node]      (d3)     [below of = d2, yshift= -2cm]      {$d_3 = 2$};
-
- 
 %Lines
 \draw[->] (s1) -- (d2) node [near start, fill=white] {$u = 1$};
 \draw[->] (s1) -- (d3) node [near end, fill=white] {$u = 2$};
 \draw[->] (s2) -- (d1) node [near end, fill=white] {$u = 3$};
 \draw[->] (s2) -- (d2) node [near start, fill=white] {$u = 1$};
 \end{tikzpicture}
-\caption{This shows something}
+\caption{The algorithm starts by matching the capacities on the supply nodes with the capacities on the demand nodes. This is trivial because there are no edge capacities and every node is connected.}
 \end{framed}
 \end{figure}
-
-This works out to a total cost of 14, we can see by labeling the edges with the cost they incur
 
 \begin{figure}
 \centering
@@ -161,26 +130,21 @@ This works out to a total cost of 14, we can see by labeling the edges with the 
 \begin{tikzpicture}[
 node/.style={circle, draw=black!70, fill=white!5, very thick, minimum size=9mm}
 ]
-
 %Nodes
 \node[node]      (s1)                                        {$s_1= 3$};
 \node[node]      (s2)     [below of =s1, yshift= -2cm]       {$s_2 = 4$};
 \node[node]      (d1)     [right of =s1 , xshift= 2cm]       {$d_1 = 3$};
 \node[node]      (d2)     [below of = d1, yshift= -2cm]       {$d_2 = 2$};
 \node[node]      (d3)     [below of = d2, yshift= -2cm]      {$d_3 = 2$};
-
 %Lines
-\draw[->] (s1) -- (d2) node [near start, fill=white] {$ 2$};
-\draw[->] (s1) -- (d3) node [near end, fill=white] {$ 6$};
-\draw[->] (s2) -- (d1) node [near end, fill=white] {$2 $};
-\draw[->] (s2) -- (d2) node [near start, fill=white] {$4$};
+\draw[->] (s1) -- (d2) node [near start, fill=white] {$c_e = 2$};
+\draw[->] (s1) -- (d3) node [near end, fill=white] {$c_e = 6$};
+\draw[->] (s2) -- (d1) node [near end, fill=white] {$c_e = 2$};
+\draw[->] (s2) -- (d2) node [near start, fill=white] {$c_e = 4$};
 \end{tikzpicture}
-\caption{This shows something}
+\caption{This solution is not optimal in terms of cost (yet). I've labled each edge in this figure with the cost each edge has incurred. It works out to 14. The edge costs are just the amount of flow on each edge times its cost.}
 \end{framed}
 \end{figure}
-
-
-This flow is not optimal, in order to improve it we find a reduced cost cycle, by traversing the cycle we can reduce the cost by 4 to the optimal amount.
 
 \begin{figure}
 \centering
@@ -188,98 +152,83 @@ This flow is not optimal, in order to improve it we find a reduced cost cycle, b
 \begin{tikzpicture}[
 node/.style={circle, draw=black!70, fill=white!5, very thick, minimum size=9mm}
 ]
-
 %Nodes
 \node[node]      (s1)                                        {$s_1= 3$};
 \node[node]      (s2)     [below of =s1, yshift= -2cm]       {$s_2 = 4$};
 \node[node]      (d1)     [right of =s1 , xshift= 2cm]       {$d_1 = 3$};
 \node[node]      (d2)     [below of = d1, yshift= -2cm]       {$d_2 = 2$};
 \node[node]      (d3)     [below of = d2, yshift= -2cm]      {$d_3 = 2$};
-
- 
 %Lines
-\draw[->] (s1) -- (d1) node [midway, fill=white] {$2$};
-\draw[->] (s1) -- (d2) node [near start, fill=white] {$1$};
-\draw[->] (s2) -- (d1) node [near end, fill=white] {$1$};
-\draw[->] (s2) -- (d2) node [near start, fill=white] {$1$};
-\draw[->] (s2) -- (d3) node [near start, fill=white] {$2$};
+\draw[->] (s1) -- (d1) node [midway, fill=white] {$c_r=+2$};
+\draw[<-] (s1) -- (d3) node [midway, fill=white] {$c_r= -6$};
+\draw[<-] (s2) -- (d1) node [near end, fill=white] {$c_r=-2 $};
+\draw[->] (s2) -- (d3) node [midway, fill=white] {$c_r=+2$};
 \end{tikzpicture}
-\caption{This shows something}
+\caption{In order to improve the cost of flow through the network, we look for a reduced cost cycle. The cycle needs to start and end on the same node. It also needs to alternate between suppliers and demand nodes. This is because you delete costly edges and replace them with less expensive ones. By traversing the cycle we see can reduce the cost by 4 to the optimal amount. Edges in the cycle are labled with their reduced cost (i.e. how much they improve the total cost)}
 \end{framed}
 \end{figure}
-
-There are no more reduced cost cycles, so we know our solution is optimal. Below is the result
 
 \begin{figure}
 \centering
 \begin{framed}
-
 \begin{tikzpicture}[
 node/.style={circle, draw=black!70, fill=white!5, very thick, minimum size=9mm}
 ]
-
 %Nodes
 \node[node]      (s1)                                        {$s_1= 3$};
 \node[node]      (s2)     [below of =s1, yshift= -2cm]       {$s_2 = 4$};
 \node[node]      (d1)     [right of =s1 , xshift= 2cm]       {$d_1 = 3$};
 \node[node]      (d2)     [below of = d1, yshift= -2cm]       {$d_2 = 2$};
 \node[node]      (d3)     [below of = d2, yshift= -2cm]      {$d_3 = 2$};
-
- 
 %Lines
-\draw[->] (s1) -- (d1) node [midway, fill=white] {$+2$};
-\draw[<-] (s1) -- (d3) node [midway, fill=white] {$ -6$};
-\draw[<-] (s2) -- (d1) node [near end, fill=white] {$-2 $};
-\draw[->] (s2) -- (d3) node [midway, fill=white] {$+2$};
+\draw[->] (s1) -- (d1) node [midway, fill=white] {$u=2$};
+\draw[->] (s1) -- (d2) node [near start, fill=white] {$u=1$};
+\draw[->] (s2) -- (d1) node [near end, fill=white] {$u=1$};
+\draw[->] (s2) -- (d2) node [near start, fill=white] {$u=1$};
+\draw[->] (s2) -- (d3) node [near start, fill=white] {$u=2$};
 \end{tikzpicture}
-\caption{This shows something}
+\caption{At this point, there are no more reduced cost cylces, so we've found an optimal solution in terms of cost. The edges reflect the amount of units flowing from supply to demand in this solution.}
 \end{framed}
 \end{figure}
-
-Keep in mind that there are other possible solutions as 0 cost cycles exist in this simple network. Below would be one such example.
 
 \begin{figure}
 \centering
 \begin{framed}
-
 \begin{tikzpicture}[
 node/.style={circle, draw=black!70, fill=white!5, very thick, minimum size=9mm}
 ]
-
 %Nodes
 \node[node]      (s1)                                        {$s_1= 3$};
 \node[node]      (s2)     [below of =s1, yshift= -2cm]       {$s_2 = 4$};
 \node[node]      (d1)     [right of =s1 , xshift= 2cm]       {$d_1 = 1$};
 \node[node]      (d2)     [below of = d1, yshift= -2cm]       {$d_2 = 2$};
 \node[node]      (d3)     [below of = d2, yshift= -2cm]      {$d_3 = 2$};
-
- 
 %Lines
-\draw[->] (s1) -- (d1) node [midway, fill=white] {$3$};
-\draw[->] (s2) -- (d2) node [midway, fill=white] {$2$};
-\draw[->] (s2) -- (d3) node [midway, fill=white] {$2$};
+\draw[->] (s1) -- (d1) node [midway, fill=white] {$u=3$};
+\draw[->] (s2) -- (d2) node [midway, fill=white] {$u=2$};
+\draw[->] (s2) -- (d3) node [midway, fill=white] {$u=2$};
 \end{tikzpicture}
-\caption{This shows something}
+\caption{As long as there aren't minimum cost cylces we've found a solution. Zero-cost cycles exists in this simple network. As a result, there is more than 1 solution that optimizes cost and flow. This figure shows that example.}
 \end{framed}
 \end{figure}
 
+\section{Linear Programming}
 
+\subsection{The Simplex Algorithm}
 
-
-
-
+There are a few ways to solve this problem. Because I have a lot of variables I want to solve for, I plan on specifying this problem as linear program and solving it with the simplex algorithm. This algorithm is essentially like the ordinary least squares of optimization. People have written textbooks describing it's properties and variation. A quick google search would do a better job of explaining than me, but I'll try any way. The algorithm finds the solution to a linear objective (i.e. $a x_1 +b x_2 + ...$ ) subjected to linear constraints. The intuition behind how it works is that it states the problem in two ways and finds the lowest maximum and highest minimum. When these happen to coincide,  you know you've found a maximum. At first glance, the  linear nature of the problem function might look like OLS, but they are very different. In OLS, the estimated coefficinets are used to approximate some variable of interests. In linear programming, you get point values for each of the variables of interest to minimize the objective function.
 
 \section{Primal Problem}
 
-As we stated before, the problem tries to send as much units of a good from a suppliers $s$ in the set $S$ to demanders $d$ in the set $D$. However, there are costs for sending a unit of good across every route between suppliers and demand-ers. We want to minimize these costs which leads to our objective function (in the objective $c$ is costs and $u$ is units of the good).
+In order to use linear programming packages, we need to formally state the problem. The statement is fairly intuitive. As we said before, the problem tries to send as much units of a good from a suppliers $s$ in the set $S$ to demanders $d$ in the set $D$. However, there are costs for sending a unit of good across every route between suppliers and demand-ers. We want to minimize these costs which leads to our objective function (in the objective $c$ is costs and $u$ is units of the good).
 
 $$\operatorname{Minimize} \sum_{s,d \in \text{Routes}} c_{s,d} u_{s,d}$$
 
-The constraints on the objective function reflects the fact demand must be satisfied. First we have that supply must be met
+The constraints on the objective function reflect the fact that supply and demand must should balance. The first set of contraints require that demand be satisfied.
 
 $$\sum_{s,d \in \text{Routes}} \text{u}_{s,d}= \text{demand at } d \text{ (for all demand-ers } s \in S)$$
 
-The second constraint reflects the fact that no supply goes to waste. In other words, no product is just left at suppliers. In this case, supply is a negative quantity because supply leaves the supply nodes and flows to demand nodes.
+The second set of constraint requires that no supply goes to waste. In other words, no product is just left at suppliers. In this case, supply is a negative quantity because supply leaves the supply nodes and flows to demand nodes.
 
 $$\sum_{s,d \in \text{Routes}} \text{u}_{s,d}= \text{supply at } s \text{ (for all suppliers } d \in D)$$
 
@@ -287,28 +236,27 @@ Finally, we can't have negative amounts of units flow across the routes.
 
 $$0 \leq u_{s,d}, \forall s,d \in \text{Routes}$$
 
-Putting it all together we have
+Putting it all together, supply in demand balance because suppliers are required to send a certain amount of flow and demand-ers must receive a certain amount.
 $$\operatorname{Minimize} \sum_{s,d \in \text{Routes}} c_{s,d} u_{s,d}$$
 $$\text{subject to}$$
 $$\sum_{s,d \in \text{Routes}} \text{u}_{s,d}= \text{demand at } d \text{ (for all suppliers } s \in S)$$
 $$\sum_{s,d \in \text{Routes}} \text{u}_{s,d}= \text{supply at } s \text{ (for all demand-ers } d \in D)$$
 $$0 \leq u_{s,d}, \forall s,d \in \text{Routes}$$
 
-The objective function minimizes total costs. The first and second constraints ensure nodes either produce or consume based on their type; the third ensures supply moves forward from supply to demand.
+To summarize, the objective function minimizes total costs. The first and second constraints ensure nodes either produce or consume based on their type; the third ensures supply moves forward from supply to demand.  In the case, when supply doesn't equal demand you can add an extra node to the problem. You let other nodes send supply or recieve goods from this node at 0 cost (depending on whether there is too much supply or demand). The amount flow from this node to others represents a shortage or surplus.
+
 
 \section{Dual Problem}
 
-The intution behind the dual problem comes from the fact that you are trying to get rid of augmenting cylces.
+Every linear program has an equivalent dual problem. In the dual, the constraints become the variables of interest and the variables of interest become constraints. The intuition behind the dual problem for the transportation problem comes from the desire to get rid of augmenting cycles. The dual formalizes this idea.
 
-Below I state the problem formally.
+Essentially we introduce a slack variable at each node $p$. When we compute the costs of cycles we can trivially add and subtract $p$ at each node. As long as the slack variables cancel we haven't changed the nature of the problem. However, since this is a slack variable, it can take what ever value we want. We can use it to encode the amount by which firms "missed the mark" from the optimal solution. For this reason, in the optimal solution we want
 
-\noindent The dual problem actually yields a more intuitive economic description of the system. Basically, instead of finding the amount of units sent between each pair of suppliers and demand-ers, we can look at the amount of flow going between suppliers and demanders.
+$$ p_d -p_s - c_{s,d}\leq 0$$
+
+If this holds then we know we know that we've found the optimal solution. It helps to think of the dual variable and a price. Firms $s$ earns $p_d$ for sending their product to $d$ but looses $p_s + c_{s,w}$. The constraint prevents arbitrage through the network. If it didn't hold, all the firms would send their product across this edge.
 
 $$\operatorname{Maximize} \sum_{d \in D}  (\text{demand at } d) \cdot p_{d} -   \sum_{s \in S}  (\text{supply at } s) \cdot p_{s} $$
-
-Where $p$ is a price. The dual variable $y_v$ can be interpreted as optimal prices from a social planning perspective. The problem maximizes profits from a social planning perspective.
-
-The constraint that arbitrage profits do not exist in the network. The price you pay at the demand node $p_d$, cannot exceed the price you pay at the supplier $p_s$ plus the cost of sending the unit of good $c_{d,s}$. This has to do with the fact that the algorithm completes when the reduced costs cycles are exhausted.
 
 $$ -p_s + p_d \leq c_{s,d}, \forall s,d\in \textrm{Routes}$$
 
@@ -318,17 +266,25 @@ $$\operatorname{Maximize} \sum_{d \in D}  (\text{demand at } d) \cdot p_{d} -   
 $$ \text{ subject to}$$
 $$ -p_s + p_d \leq c_{s,d}, \forall s,d\in \textrm{Routes}$$
 
+The dual problem actually yields a more interesting economic description of the system. Basically, instead of finding the amount of units sent between each pair of suppliers and demand-ers, we can look prices that reflect the relative cost of sending goods to certain demanders.
+
+The dual variable $p_v$ can be interpreted as optimal prices from a social planning perspective. The problem maximizes profits from a social planning perspective. The constraint that arbitrage profits do not exist in the network. The price you pay at the demand node $p_d$, cannot exceed the price you pay at the supplier $p_s$ plus the cost of sending the unit of good $c_{d,s}$. This has to do with the fact that the algorithm completes when the reduced costs cycles are exhausted.
+
 \subsection{Characterizing Solutions}
 
 As an economist, I would hope you are skeptical of any solution to this problem involving supply and demand found by the simplex algorithm. First of all, I am making point estimates as opposed to 
 
 The algorithm can actually return more than one solution. Going back to the previous example, You can see that the problem actually has more than one Solution.
 
-
 \subsection{Software}
 In order to actually solve the problem, I had to write a bit of code. Specifically, solving the optimization problem involved installing a software package that implemented the simplex algorithm. Additionally, since the results produce point estimates, a matrix with 5000 prices isn't readable. As a result, I wrote code to parse some descriptive statistics from the solution files.
 
 I'm a big believer in open source code. As a result, I've made all the code I wrote for this project publicly available on GitHub with a detailed explanation about how to get it running. Since open source is important to me, most of the software dependencies that need to be installed in order to get my code working are open source. The one exception is the linear optimizer. In this case, I used Gurobi which is free with an academic license.
+
+\subsection{Computational Complexity}
+A final thing worth mentioning is the efficiency of the simplex algorithm (i.e. comp. However, measuring a programs efficiency by factors like how long it takes to run or how many lines of code it takes can vary with the computer and the compiler. It is also variable with the input to the program. As a result, in order to have a more universal measure of efficiency Computer scientists measure efficiency using run-time bounds. Basically, run-time bounds tell you an upper bound on the number of steps you need to solve the problem, given the input.
+
+The simplex algorithm's run time bound is actually very bad as far as we know. It can be $O(2^n)$. Meaning that if there $2^n$ inputs, the number of instructions is some factor of $2^n$. Proving that it has a low average run time bound is an area of active research. The general rule of thumb is that the simplex algorithm has a run time that is some polynomial of $n$.
 
 \chapter{Problem Specification}
 

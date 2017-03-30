@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.29)  29 MAR 2017 02:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.29)  29 MAR 2017 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2016/03/31>
-Babel <3.9r> and hyphenation patterns for 80 language(s) loaded.
+Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -496,26 +496,25 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \c@csvcol=\count133
 \csv@out=\write4
 )
-(/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
-Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip61
-\thanksmargin=\skip62
-\droptitle=\skip63
-) (./main.aux)
+! Undefined control sequence.
+l.29 \subtitle
+              {}
+? 
+(./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -579,321 +578,3 @@ Package pdftexcmds Info: \pdfdraftmode found.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-ABD: EveryShipout initializing macros [1
-
-{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc
-)
-\tf@toc=\write5
-\openout5 = `main.toc'.
-
- [1
-
-] [1]
-Chapter 1.
-[1
-
-]
-Missing character: There is no â in font cmr10!
-Missing character: There is no ˆ in font cmr10!
-Missing character: There is no ’ in font cmr10!
- [2] [3] [4] [5] [6] [7]
-Chapter 2.
-[8
-
-] [9] <figures/map_3.png, id=54, 1240.635pt x 651.18282pt>
-File: figures/map_3.png Graphic file (type png)
-
-<use figures/map_3.png>
-Package pdftex.def Info: figures/map_3.png used on input line 450.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 450--451
- [][] 
- []
-
-<figures/map_4.png, id=56, 1240.635pt x 651.18282pt>
-File: figures/map_4.png Graphic file (type png)
- <use figures/map_4.png>
-Package pdftex.def Info: figures/map_4.png used on input line 460.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 460--461
- [][] 
- []
-
-[10] [11 <./figures/map_3.png> <./figures/map_4.png>] [12]
-Chapter 3.
-<figures/farms_49.png, id=69, 1240.635pt x 651.18282pt>
-File: figures/farms_49.png Graphic file (type png)
-
-<use figures/farms_49.png>
-Package pdftex.def Info: figures/farms_49.png used on input line 552.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 552--553
- [][] 
- []
-
-<figures/network_49.png, id=70, 1240.635pt x 651.18282pt>
-File: figures/network_49.png Graphic file (type png)
-
-<use figures/network_49.png>
-Package pdftex.def Info: figures/network_49.png used on input line 560.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 560--561
- [][] 
- []
-
-<figures/prices_49.png, id=71, 1240.635pt x 651.18282pt>
-File: figures/prices_49.png Graphic file (type png)
-
-<use figures/prices_49.png>
-Package pdftex.def Info: figures/prices_49.png used on input line 568.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 568--569
- [][] 
- []
-
-<figures/farms_66.png, id=72, 1240.635pt x 651.18282pt>
-File: figures/farms_66.png Graphic file (type png)
-
-<use figures/farms_66.png>
-Package pdftex.def Info: figures/farms_66.png used on input line 602.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 602--603
- [][] 
- []
-
-<figures/network_66.png, id=73, 1240.635pt x 651.18282pt>
-File: figures/network_66.png Graphic file (type png)
-
-<use figures/network_66.png>
-Package pdftex.def Info: figures/network_66.png used on input line 610.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 610--611
- [][] 
- []
-
-<figures/prices_66.png, id=74, 1240.635pt x 651.18282pt>
-File: figures/prices_66.png Graphic file (type png)
-
-<use figures/prices_66.png>
-Package pdftex.def Info: figures/prices_66.png used on input line 618.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 618--619
- [][] 
- []
-
-<figures/farms_69.png, id=75, 1240.635pt x 651.18282pt>
-File: figures/farms_69.png Graphic file (type png)
-
-<use figures/farms_69.png>
-Package pdftex.def Info: figures/farms_69.png used on input line 652.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 652--653
- [][] 
- []
-
-<figures/network_69.png, id=76, 1240.635pt x 651.18282pt>
-File: figures/network_69.png Graphic file (type png)
-
-<use figures/network_69.png>
-Package pdftex.def Info: figures/network_69.png used on input line 660.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 660--661
- [][] 
- []
-
-<figures/prices_69.png, id=77, 1240.635pt x 651.18282pt>
-File: figures/prices_69.png Graphic file (type png)
-
-<use figures/prices_69.png>
-Package pdftex.def Info: figures/prices_69.png used on input line 668.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 668--669
- [][] 
- []
-
-<figures/farms_243.png, id=78, 1240.635pt x 651.18282pt>
-File: figures/farms_243.png Graphic file (type png)
-
-<use figures/farms_243.png>
-Package pdftex.def Info: figures/farms_243.png used on input line 702.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 702--703
- [][] 
- []
-
-<figures/network_243.png, id=79, 1240.635pt x 651.18282pt>
-File: figures/network_243.png Graphic file (type png)
-
-<use figures/network_243.png>
-Package pdftex.def Info: figures/network_243.png used on input line 710.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 710--711
- [][] 
- []
-
-<figures/prices_243.png, id=80, 1240.635pt x 651.18282pt>
-File: figures/prices_243.png Graphic file (type png)
-
-<use figures/prices_243.png>
-Package pdftex.def Info: figures/prices_243.png used on input line 718.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 718--719
- [][] 
- []
-
-[13
-
-] [14 <./figures/farms_49.png>] [15 <./figures/network_49.png> <./figures/price
-s_49.png>] [16 <./figures/farms_66.png> <./figures/network_66.png>] [17 <./figu
-res/prices_66.png>] [18 <./figures/farms_69.png> <./figures/network_69.png>] [1
-9 <./figures/prices_69.png>] [20 <./figures/farms_243.png> <./figures/network_2
-43.png>] [21 <./figures/prices_243.png>]
-Chapter 4.
-<figures/procs_243_49.png, id=121, 1240.635pt x 651.18282pt>
-File: figures/procs_243_49.png Graphic file (type png)
-
-<use figures/procs_243_49.png>
-Package pdftex.def Info: figures/procs_243_49.png used on input line 832.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 832--833
- [][] 
- []
-
-<figures/procs_243_66.png, id=122, 1240.635pt x 651.18282pt>
-File: figures/procs_243_66.png Graphic file (type png)
-
-<use figures/procs_243_66.png>
-Package pdftex.def Info: figures/procs_243_66.png used on input line 840.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 840--841
- [][] 
- []
-
-<figures/procs_243_69.png, id=123, 1240.635pt x 651.18282pt>
-File: figures/procs_243_69.png Graphic file (type png)
-
-<use figures/procs_243_69.png>
-Package pdftex.def Info: figures/procs_243_69.png used on input line 848.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 848--849
- [][] 
- []
-
-<figures/stores_243_49.png, id=124, 1240.635pt x 651.18282pt>
-File: figures/stores_243_49.png Graphic file (type png)
-
-<use figures/stores_243_49.png>
-Package pdftex.def Info: figures/stores_243_49.png used on input line 858.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 858--859
- [][] 
- []
-
-[22
-
-] [23] [24 <./figures/procs_243_49.png> <./figures/procs_243_66.png>]
-<figures/stores_243_66.png, id=137, 1240.635pt x 651.18282pt>
-File: figures/stores_243_66.png Graphic file (type png)
-
-<use figures/stores_243_66.png>
-Package pdftex.def Info: figures/stores_243_66.png used on input line 866.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 866--867
- [][] 
- []
-
-<figures/stores_243_69.png, id=138, 1240.635pt x 651.18282pt>
-File: figures/stores_243_69.png Graphic file (type png)
-
-<use figures/stores_243_69.png>
-Package pdftex.def Info: figures/stores_243_69.png used on input line 874.
-(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
-
-Overfull \hbox (45.29018pt too wide) in paragraph at lines 874--875
- [][] 
- []
-
-[25 <./figures/procs_243_69.png>] [26 <./figures/stores_243_49.png> <./figures/
-stores_243_66.png>] [27 <./figures/stores_243_69.png>] [28]
-Chapter 5.
-[29
-
-] [30
-
-] (./main.aux) ) 
-Here is how much of TeX's memory you used:
- 14409 strings out of 493039
- 282642 string characters out of 6136943
- 352021 words of memory out of 5000000
- 17643 multiletter control sequences out of 15000+600000
- 10235 words of font info for 37 fonts, out of 8000000 for 9000
- 1137 hyphenation exceptions out of 8191
- 55i,12n,60p,1138b,698s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (33 pages, 3910111 bytes).
-PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 0 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
-
