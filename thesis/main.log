@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.29)  29 MAR 2017 17:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.29)  31 MAR 2017 02:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2016/03/31>
-Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
+Babel <3.9r> and hyphenation patterns for 80 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -171,6 +171,116 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \c@@ppsavesec=\count109
 \c@@ppsaveapp=\count110
 )
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/05/21 v6.83p Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen130
+\Hy@linkcounter=\count111
+\Hy@pagecounter=\count112
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/05/21 v6.83p Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count113
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4486.
+Package hyperref Info: Link nesting OFF on input line 4491.
+Package hyperref Info: Hyper index ON on input line 4494.
+Package hyperref Info: Plain pages OFF on input line 4501.
+Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4735.
+\c@Hy@tempcnt=\count114
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5088.
+\XeTeXLinkMargin=\dimen131
+\Fld@menulength=\count115
+\Field@Width=\dimen132
+\Fld@charsize=\dimen133
+Package hyperref Info: Hyper figures OFF on input line 6342.
+Package hyperref Info: Link nesting OFF on input line 6347.
+Package hyperref Info: Hyper index ON on input line 6350.
+Package hyperref Info: backreferencing OFF on input line 6357.
+Package hyperref Info: Link coloring OFF on input line 6362.
+Package hyperref Info: Link coloring with OCG OFF on input line 6367.
+Package hyperref Info: PDF/A mode OFF on input line 6372.
+LaTeX Info: Redefining \ref on input line 6412.
+LaTeX Info: Redefining \pageref on input line 6416.
+\Hy@abspage=\count116
+\c@Item=\count117
+\c@Hfootnote=\count118
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2016/05/21 v6.83p Hyperref driver for pdfTeX
+\Fld@listcount=\count119
+\c@bookmark@seq@number=\count120
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip60
+)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -187,25 +297,18 @@ Package graphics Info: Driver file: pdftex.def on input line 96.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count111
+\Gread@gobject=\count121
 ))
-\Gin@req@height=\dimen130
-\Gin@req@width=\dimen131
+\Gin@req@height=\dimen134
+\Gin@req@width=\dimen135
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks23
-\pgfutil@tempdima=\dimen132
-\pgfutil@tempdimb=\dimen133
+\pgfutil@tempdima=\dimen136
+\pgfutil@tempdimb=\dimen137
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -231,20 +334,20 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 ex
 \pgfkeys@tmptoks=\toks26
 ))
-\pgf@x=\dimen134
-\pgf@y=\dimen135
-\pgf@xa=\dimen136
-\pgf@ya=\dimen137
-\pgf@xb=\dimen138
-\pgf@yb=\dimen139
-\pgf@xc=\dimen140
-\pgf@yc=\dimen141
+\pgf@x=\dimen138
+\pgf@y=\dimen139
+\pgf@xa=\dimen140
+\pgf@ya=\dimen141
+\pgf@xb=\dimen142
+\pgf@yb=\dimen143
+\pgf@xc=\dimen144
+\pgf@yc=\dimen145
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count112
-\c@pgf@countb=\count113
-\c@pgf@countc=\count114
-\c@pgf@countd=\count115
+\c@pgf@counta=\count122
+\c@pgf@countb=\count123
+\c@pgf@countc=\count124
+\c@pgf@countd=\count125
 \t@pgf@toka=\toks27
 \t@pgf@tokb=\toks28
 \t@pgf@tokc=\toks29
@@ -263,8 +366,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count116
-\pgfsyssoftpath@bigbuffer@items=\count117
+\pgfsyssoftpath@smallbuffer@items=\count126
+\pgfsyssoftpath@bigbuffer@items=\count127
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -293,8 +396,8 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen142
-\pgfmath@count=\count118
+\pgfmath@dimen=\dimen146
+\pgfmath@count=\count128
 \pgfmath@box=\box30
 \pgfmath@toks=\toks30
 \pgfmath@stack@operand=\toks31
@@ -318,37 +421,37 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count119
+\c@pgfmathroundto@lastzeros=\count129
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen143
-\pgf@picmaxx=\dimen144
-\pgf@picminy=\dimen145
-\pgf@picmaxy=\dimen146
-\pgf@pathminx=\dimen147
-\pgf@pathmaxx=\dimen148
-\pgf@pathminy=\dimen149
-\pgf@pathmaxy=\dimen150
-\pgf@xx=\dimen151
-\pgf@xy=\dimen152
-\pgf@yx=\dimen153
-\pgf@yy=\dimen154
-\pgf@zx=\dimen155
-\pgf@zy=\dimen156
+\pgf@picminx=\dimen147
+\pgf@picmaxx=\dimen148
+\pgf@picminy=\dimen149
+\pgf@picmaxy=\dimen150
+\pgf@pathminx=\dimen151
+\pgf@pathmaxx=\dimen152
+\pgf@pathminy=\dimen153
+\pgf@pathmaxy=\dimen154
+\pgf@xx=\dimen155
+\pgf@xy=\dimen156
+\pgf@yx=\dimen157
+\pgf@yy=\dimen158
+\pgf@zx=\dimen159
+\pgf@zy=\dimen160
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen157
-\pgf@path@lasty=\dimen158
+\pgf@path@lastx=\dimen161
+\pgf@path@lasty=\dimen162
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen159
-\pgf@shorten@start@additional=\dimen160
+\pgf@shorten@end@additional=\dimen163
+\pgf@shorten@start@additional=\dimen164
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
@@ -356,19 +459,19 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box31
 \pgf@hbox=\box32
 \pgf@layerbox@main=\box33
-\pgf@picture@serial@count=\count120
+\pgf@picture@serial@count=\count130
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen161
+\pgflinewidth=\dimen165
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen162
-\pgf@pt@y=\dimen163
-\pgf@pt@temp=\dimen164
+\pgf@pt@x=\dimen166
+\pgf@pt@y=\dimen167
+\pgf@pt@temp=\dimen168
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -384,12 +487,12 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen165
+\pgfarrowsep=\dimen169
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen166
-\pgf@sys@shading@range@num=\count121
+\pgf@max=\dimen170
+\pgf@sys@shading@range@num=\count131
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -420,8 +523,8 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen167
-\pgf@nodesepend=\dimen168
+\pgf@nodesepstart=\dimen171
+\pgf@nodesepend=\dimen172
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -435,8 +538,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen169
-\pgffor@skip=\dimen170
+\pgffor@iter=\dimen173
+\pgffor@skip=\dimen174
 \pgffor@stack=\toks33
 \pgffor@toks=\toks34
 ))
@@ -446,31 +549,31 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count122
-\pgfplotmarksize=\dimen171
+\pgf@plot@mark@count=\count132
+\pgfplotmarksize=\dimen175
 )
-\tikz@lastx=\dimen172
-\tikz@lasty=\dimen173
-\tikz@lastxsaved=\dimen174
-\tikz@lastysaved=\dimen175
-\tikzleveldistance=\dimen176
-\tikzsiblingdistance=\dimen177
+\tikz@lastx=\dimen176
+\tikz@lasty=\dimen177
+\tikz@lastxsaved=\dimen178
+\tikz@lastysaved=\dimen179
+\tikzleveldistance=\dimen180
+\tikzsiblingdistance=\dimen181
 \tikz@figbox=\box36
 \tikz@figbox@bg=\box37
 \tikz@tempbox=\box38
 \tikz@tempbox@bg=\box39
-\tikztreelevel=\count123
-\tikznumberofchildren=\count124
-\tikznumberofcurrentchild=\count125
-\tikz@fig@count=\count126
+\tikztreelevel=\count133
+\tikznumberofchildren=\count134
+\tikznumberofcurrentchild=\count135
+\tikz@fig@count=\count136
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count127
-\pgfmatrixcurrentcolumn=\count128
-\pgf@matrix@numberofcolumns=\count129
+\pgfmatrixcurrentrow=\count137
+\pgfmatrixcurrentcolumn=\count138
+\pgf@matrix@numberofcolumns=\count139
 )
-\tikz@expandcount=\count130
+\tikz@expandcount=\count140
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -478,11 +581,11 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip60
-\fb@frw=\dimen178
-\fb@frh=\dimen179
-\FrameRule=\dimen180
-\FrameSep=\dimen181
+\OuterFrameSep=\skip61
+\fb@frw=\dimen182
+\fb@frh=\dimen183
+\FrameRule=\dimen184
+\FrameSep=\dimen185
 )
 (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
 Package: csvsimple 2014/07/14 version 1.12 LaTeX CSV file processing
@@ -491,16 +594,11 @@ Package: csvsimple 2014/07/14 version 1.12 LaTeX CSV file processing
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \csv@file=\read2
-\c@csvinputline=\count131
-\c@csvrow=\count132
-\c@csvcol=\count133
+\c@csvinputline=\count141
+\c@csvrow=\count142
+\c@csvcol=\count143
 \csv@out=\write4
-)
-! Undefined control sequence.
-l.29 \subtitle
-              {}
-? 
-(./main.aux)
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -514,6 +612,8 @@ LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 
 *geometry* driver: auto-detecting
@@ -550,31 +650,359 @@ LaTeX Font Info:    ... okay on input line 33.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\AtBeginShipoutBox=\box40
+Package hyperref Info: Link coloring OFF on input line 33.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count144
+)
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
+
+(./main.out) (./main.out)
+\@outlinefile=\write5
+\openout5 = `main.out'.
+
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count134
-\scratchdimen=\dimen182
-\scratchbox=\box40
-\nofMPsegments=\count135
-\nofMParguments=\count136
+\scratchcounter=\count145
+\scratchdimen=\dimen186
+\scratchbox=\box41
+\nofMPsegments=\count146
+\nofMParguments=\count147
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count137
-\MPscratchDim=\dimen183
-\MPnumerator=\count138
-\makeMPintoPDFobject=\count139
+\MPscratchCnt=\count148
+\MPscratchDim=\dimen187
+\MPnumerator=\count149
+\makeMPintoPDFobject=\count150
 \everyMPtoPDFconversion=\toks36
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros [1
+
+{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warni
+ng (ext4): destination with the same identifier (name{page.1}) has been already
+ used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.41 \end{abstract}
+                    [1]pdfTeX warning (ext4): destination with the same identif
+ier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.48 \end{abstract}
+                    [1] (./main.toc)
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.52 \chapter
+             {Background} [1
+
+]
+Chapter 1.
+[2
+
+] [3] [4] [5] [6] [7] [8] [9]
+Chapter 2.
+[10
+
+] [11] [12] [13] <figures/map_3.png, id=316, 1240.635pt x 651.18282pt>
+File: figures/map_3.png Graphic file (type png)
+
+<use figures/map_3.png>
+Package pdftex.def Info: figures/map_3.png used on input line 483.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 483--484
+ [][] 
+ []
+
+<figures/map_4.png, id=319, 1240.635pt x 651.18282pt>
+File: figures/map_4.png Graphic file (type png)
+ <use figures/map_4.png>
+Package pdftex.def Info: figures/map_4.png used on input line 507.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 507--508
+ [][] 
+ []
+
+[14] [15 <./figures/map_3.png>] [16 <./figures/map_4.png>] [17]
+Chapter 3.
+<figures/farms_49.png, id=348, 1240.635pt x 651.18282pt>
+File: figures/farms_49.png Graphic file (type png)
+
+<use figures/farms_49.png>
+Package pdftex.def Info: figures/farms_49.png used on input line 596.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 596--597
+ [][] 
+ []
+
+<figures/network_49.png, id=349, 1240.635pt x 651.18282pt>
+File: figures/network_49.png Graphic file (type png)
+
+<use figures/network_49.png>
+Package pdftex.def Info: figures/network_49.png used on input line 605.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 605--606
+ [][] 
+ []
+
+<figures/prices_49.png, id=350, 1240.635pt x 651.18282pt>
+File: figures/prices_49.png Graphic file (type png)
+
+<use figures/prices_49.png>
+Package pdftex.def Info: figures/prices_49.png used on input line 613.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 613--614
+ [][] 
+ []
+
+<figures/farms_66.png, id=351, 1240.635pt x 651.18282pt>
+File: figures/farms_66.png Graphic file (type png)
+
+<use figures/farms_66.png>
+Package pdftex.def Info: figures/farms_66.png used on input line 647.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 647--648
+ [][] 
+ []
+
+<figures/network_66.png, id=352, 1240.635pt x 651.18282pt>
+File: figures/network_66.png Graphic file (type png)
+
+<use figures/network_66.png>
+Package pdftex.def Info: figures/network_66.png used on input line 656.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 656--657
+ [][] 
+ []
+
+<figures/prices_66.png, id=353, 1240.635pt x 651.18282pt>
+File: figures/prices_66.png Graphic file (type png)
+
+<use figures/prices_66.png>
+Package pdftex.def Info: figures/prices_66.png used on input line 664.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 664--665
+ [][] 
+ []
+
+<figures/farms_69.png, id=354, 1240.635pt x 651.18282pt>
+File: figures/farms_69.png Graphic file (type png)
+
+<use figures/farms_69.png>
+Package pdftex.def Info: figures/farms_69.png used on input line 698.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 698--699
+ [][] 
+ []
+
+<figures/network_69.png, id=355, 1240.635pt x 651.18282pt>
+File: figures/network_69.png Graphic file (type png)
+
+<use figures/network_69.png>
+Package pdftex.def Info: figures/network_69.png used on input line 707.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 707--708
+ [][] 
+ []
+
+<figures/prices_69.png, id=356, 1240.635pt x 651.18282pt>
+File: figures/prices_69.png Graphic file (type png)
+
+<use figures/prices_69.png>
+Package pdftex.def Info: figures/prices_69.png used on input line 715.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 715--716
+ [][] 
+ []
+
+[18
+
+] [19 <./figures/farms_49.png>] [20 <./figures/network_49.png> <./figures/price
+s_49.png>] [21 <./figures/farms_66.png> <./figures/network_66.png>] [22 <./figu
+res/prices_66.png>] [23 <./figures/farms_69.png> <./figures/network_69.png>] <f
+igures/farms_243.png, id=406, 1240.635pt x 651.18282pt>
+File: figures/farms_243.png Graphic file (type png)
+
+<use figures/farms_243.png>
+Package pdftex.def Info: figures/farms_243.png used on input line 752.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 752--754
+ [][] 
+ []
+
+<figures/network_243.png, id=407, 1240.635pt x 651.18282pt>
+File: figures/network_243.png Graphic file (type png)
+
+<use figures/network_243.png>
+Package pdftex.def Info: figures/network_243.png used on input line 761.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 761--762
+ [][] 
+ []
+
+<figures/prices_243.png, id=408, 1240.635pt x 651.18282pt>
+File: figures/prices_243.png Graphic file (type png)
+
+<use figures/prices_243.png>
+Package pdftex.def Info: figures/prices_243.png used on input line 769.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 769--770
+ [][] 
+ []
+
+[24 <./figures/prices_69.png>] [25 <./figures/farms_243.png>] [26 <./figures/ne
+twork_243.png> <./figures/prices_243.png>]
+<figures/procs_243_49.png, id=431, 1240.635pt x 651.18282pt>
+File: figures/procs_243_49.png Graphic file (type png)
+
+<use figures/procs_243_49.png>
+Package pdftex.def Info: figures/procs_243_49.png used on input line 836.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 836--837
+ [][] 
+ []
+
+<figures/procs_243_66.png, id=432, 1240.635pt x 651.18282pt>
+File: figures/procs_243_66.png Graphic file (type png)
+
+<use figures/procs_243_66.png>
+Package pdftex.def Info: figures/procs_243_66.png used on input line 844.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 844--845
+ [][] 
+ []
+
+<figures/procs_243_69.png, id=433, 1240.635pt x 651.18282pt>
+File: figures/procs_243_69.png Graphic file (type png)
+
+<use figures/procs_243_69.png>
+Package pdftex.def Info: figures/procs_243_69.png used on input line 852.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 852--853
+ [][] 
+ []
+
+<figures/stores_243_49.png, id=434, 1240.635pt x 651.18282pt>
+File: figures/stores_243_49.png Graphic file (type png)
+
+<use figures/stores_243_49.png>
+Package pdftex.def Info: figures/stores_243_49.png used on input line 862.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 862--863
+ [][] 
+ []
+
+<figures/stores_243_66.png, id=435, 1240.635pt x 651.18282pt>
+File: figures/stores_243_66.png Graphic file (type png)
+
+<use figures/stores_243_66.png>
+Package pdftex.def Info: figures/stores_243_66.png used on input line 870.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 870--871
+ [][] 
+ []
+
+<figures/stores_243_69.png, id=436, 1240.635pt x 651.18282pt>
+File: figures/stores_243_69.png Graphic file (type png)
+
+<use figures/stores_243_69.png>
+Package pdftex.def Info: figures/stores_243_69.png used on input line 878.
+(pdftex.def)             Requested size: 496.24521pt x 260.4685pt.
+
+Overfull \hbox (45.29018pt too wide) in paragraph at lines 878--879
+ [][] 
+ []
+
+[27] [28 <./figures/procs_243_49.png>] [29 <./figures/procs_243_66.png> <./figu
+res/procs_243_69.png>] [30 <./figures/stores_243_49.png> <./figures/stores_243_
+66.png>] [31 <./figures/stores_243_69.png>] [32]
+Underfull \hbox (badness 1527) in paragraph at lines 944--945
+[]\OT1/cmr/m/n/10 NYS De-part-ment of Agri-cul-ture and Mar-kets (DAM) (2016). 
+Farm Prod-uct Dealer Li-censes
+ []
+
+[33
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 954.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 954.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 954.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 954.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 9A34E58BB6C359C3FE32F2D9598BD50B;2720.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 954.
+ ) 
+Here is how much of TeX's memory you used:
+ 18015 strings out of 493039
+ 336885 string characters out of 6136943
+ 448275 words of memory out of 5000000
+ 21100 multiletter control sequences out of 15000+600000
+ 10403 words of font info for 38 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 55i,12n,60p,1099b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
+b>
+Output written on main.pdf (36 pages, 3941869 bytes).
+PDF statistics:
+ 567 PDF objects out of 1000 (max. 8388607)
+ 472 compressed objects within 5 object streams
+ 135 named destinations out of 1000 (max. 500000)
+ 417 words of extra memory for PDF output out of 10000 (max. 10000000)
+

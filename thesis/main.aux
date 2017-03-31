@@ -1,0 +1,155 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{Just}
+\citation{Bernell}
+\citation{Chung}
+\citation{Hwang}
+\citation{Larson}
+\citation{Cook}
+\citation{Stewart}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Background}{2}{chapter.1}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Related Work}{2}{section.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Demographics, Policy and Nutrition}{2}{subsection.1.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Spatial Data and Nutrition}{2}{subsection.1.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.3}Optimization Problem and Food}{2}{subsection.1.1.3}}
+\citation{Cook}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Optimal Transportation}{3}{section.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Problem Description}{3}{subsection.1.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Solving the Problem}{3}{subsection.1.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Worked out Example}{3}{subsection.1.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Linear Programming}{3}{section.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}The Simplex Algorithm}{3}{subsection.1.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces This picture represents the network for which we will be finding minimum cost flow. The supply and demand nodes are labeled with their corresponding capacities. The edges between each supply and demand node are labled according to their cost. To make the problem easier, you can assume all edges have unlimited capacity meaning suppliers can send as much goods as they want over them.}}{4}{figure.1.1}}
+\newlabel{fig:example1}{{1.1}{4}{This picture represents the network for which we will be finding minimum cost flow. The supply and demand nodes are labeled with their corresponding capacities. The edges between each supply and demand node are labled according to their cost. To make the problem easier, you can assume all edges have unlimited capacity meaning suppliers can send as much goods as they want over them}{figure.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces The algorithm starts by matching the capacities on the supply nodes with the capacities on the demand nodes. This is trivial because there are no edge capacities and every node is connected.}}{4}{figure.1.2}}
+\newlabel{fig:example2}{{1.2}{4}{The algorithm starts by matching the capacities on the supply nodes with the capacities on the demand nodes. This is trivial because there are no edge capacities and every node is connected}{figure.1.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces This solution is not optimal in terms of cost (yet). I've labled each edge in this figure with the cost each edge has incurred. It works out to 14. The edge costs are just the amount of flow on each edge times its cost.}}{5}{figure.1.3}}
+\newlabel{fig:example3}{{1.3}{5}{This solution is not optimal in terms of cost (yet). I've labled each edge in this figure with the cost each edge has incurred. It works out to 14. The edge costs are just the amount of flow on each edge times its cost}{figure.1.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces In order to improve the cost of flow through the network, we look for a reduced cost cycle. The cycle needs to start and end on the same node. It also needs to alternate between suppliers and demand nodes. This is because you delete costly edges and replace them with less expensive ones. By traversing the cycle we see can reduce the cost by 4 to the optimal amount. Edges in the cycle are labled with their reduced cost (i.e. how much they improve the total cost)}}{5}{figure.1.4}}
+\newlabel{fig:example4}{{1.4}{5}{In order to improve the cost of flow through the network, we look for a reduced cost cycle. The cycle needs to start and end on the same node. It also needs to alternate between suppliers and demand nodes. This is because you delete costly edges and replace them with less expensive ones. By traversing the cycle we see can reduce the cost by 4 to the optimal amount. Edges in the cycle are labled with their reduced cost (i.e. how much they improve the total cost)}{figure.1.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces At this point, there are no more reduced cost cylces, so we've found an optimal solution in terms of cost. The edges reflect the amount of units flowing from supply to demand in this solution.}}{6}{figure.1.5}}
+\newlabel{fig:example5}{{1.5}{6}{At this point, there are no more reduced cost cylces, so we've found an optimal solution in terms of cost. The edges reflect the amount of units flowing from supply to demand in this solution}{figure.1.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces As long as there aren't minimum cost cylces we've found a solution. Zero-cost cycles exists in this simple network. As a result, there is more than 1 solution that optimizes cost and flow. This figure shows that example.}}{6}{figure.1.6}}
+\newlabel{fig:example6}{{1.6}{6}{As long as there aren't minimum cost cylces we've found a solution. Zero-cost cycles exists in this simple network. As a result, there is more than 1 solution that optimizes cost and flow. This figure shows that example}{figure.1.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Primal Problem}{7}{subsection.1.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3}Dual Problem}{7}{subsection.1.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.4}Characterizing Solutions with Complementary Slackness}{8}{subsection.1.3.4}}
+\citation{Cook}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.5}Computational Complexity}{9}{subsection.1.3.5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Problem Specification}{10}{chapter.2}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Explanation of the Problem}{10}{section.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Reduction to Linear Program}{10}{section.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Primal Problem Formulation}{10}{subsection.2.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces This figure show the structure of the agricultural supply network in my model. Farms grow crops and send their product to intermediate processors. Processors send their product to stores. The processors and farms send their product to the next step in the network using local roads. They choose where to send their crops based on convenience.}}{11}{figure.2.1}}
+\newlabel{fig:spec}{{2.1}{11}{This figure show the structure of the agricultural supply network in my model. Farms grow crops and send their product to intermediate processors. Processors send their product to stores. The processors and farms send their product to the next step in the network using local roads. They choose where to send their crops based on convenience}{figure.2.1}{}}
+\citation{nass}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Dual Problem Formulation}{12}{subsection.2.2.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Data Sources}{12}{section.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Farms}{12}{subsection.2.3.1}}
+\citation{dam}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces This table shows the various errors associated with pixels in each crop band in the sattelite image. The pixels are compared with a small test set for accuracy. Correct pixels are the number of pixels extrapolated from the training data. Producer's accuracy is a false negative, where pixels of a known class are classified as something other than that class. User's accuracy shows false positives, where pixels are incorrectly classified as a known class when they should have been classified as something else. Kappa index of agreement gives an overall assessment of the accuracy of the classification.}}{13}{table.2.1}}
+\newlabel{tab:band}{{2.1}{13}{This table shows the various errors associated with pixels in each crop band in the sattelite image. The pixels are compared with a small test set for accuracy. Correct pixels are the number of pixels extrapolated from the training data. Producer's accuracy is a false negative, where pixels of a known class are classified as something other than that class. User's accuracy shows false positives, where pixels are incorrectly classified as a known class when they should have been classified as something else. Kappa index of agreement gives an overall assessment of the accuracy of the classification}{table.2.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces This table is meant to summarize some statistics of interest about the size of farms. Some take aways are that onions (band 49) take up the most area followed by grapes (band 69). Cabbages (band 243) have the smallest range of sizes, but the highest variance within that range. Cherries (band 66) have the smallest variance and the smallest total cover.}}{13}{table.2.2}}
+\newlabel{tab:farms}{{2.2}{13}{This table is meant to summarize some statistics of interest about the size of farms. Some take aways are that onions (band 49) take up the most area followed by grapes (band 69). Cabbages (band 243) have the smallest range of sizes, but the highest variance within that range. Cherries (band 66) have the smallest variance and the smallest total cover}{table.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Agricultural Product Dealers}{13}{subsection.2.3.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Grapes (band 69) has the highest number of product dealers associated with them. The lowest is cherries (band 66).}}{14}{table.2.3}}
+\newlabel{tab:procs}{{2.3}{14}{Grapes (band 69) has the highest number of product dealers associated with them. The lowest is cherries (band 66)}{table.2.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces This table is meant to convey summary statistics about the characteristics of stores.}}{14}{table.2.4}}
+\newlabel{tab:stores}{{2.4}{14}{This table is meant to convey summary statistics about the characteristics of stores}{table.2.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Stores}{14}{subsection.2.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Edge Costs}{14}{subsection.2.3.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Here I've mapped all the stores as grey squares. They've been overlayed on top of the census tracts so you can see that stores are spread out between them. You can see are much more sparsely spread in the center of the state.}}{15}{figure.2.2}}
+\newlabel{fig:map_3}{{2.2}{15}{Here I've mapped all the stores as grey squares. They've been overlayed on top of the census tracts so you can see that stores are spread out between them. You can see are much more sparsely spread in the center of the state}{figure.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces The purpose of this map shows the distribution of median housing values through out the census tracts. The darker the shading, the higher the median property value for that tract. You can see housing is relatively cheap in western and Northern New York, but expensive in the South Western corner of the state.}}{16}{figure.2.3}}
+\newlabel{fig:map_4}{{2.3}{16}{The purpose of this map shows the distribution of median housing values through out the census tracts. The darker the shading, the higher the median property value for that tract. You can see housing is relatively cheap in western and Northern New York, but expensive in the South Western corner of the state}{figure.2.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.5}{\ignorespaces This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. Grapes (band 69) have the highest variability between edges. }}{17}{table.2.5}}
+\newlabel{tab:fp_edges}{{2.5}{17}{This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. Grapes (band 69) have the highest variability between edges}{table.2.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.6}{\ignorespaces This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. The distances are relatively similar to those of between farms and processors, but they are less variable}}{17}{table.2.6}}
+\newlabel{tab:ps_edges}{{2.6}{17}{This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. The distances are relatively similar to those of between farms and processors, but they are less variable}{table.2.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Implementing Optimal Transportation with Software Packages}{17}{subsection.2.3.5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Results}{18}{chapter.3}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Visualizing Results}{18}{section.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Onion Farms}{18}{subsection.3.1.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Another table caption}}{18}{table.3.1}}
+\newlabel{fig:price_49}{{3.1}{18}{Another table caption}{table.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Another table caption}}{19}{table.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces This shows something}}{19}{figure.3.1}}
+\newlabel{fig:farms_49}{{3.1}{19}{This shows something}{figure.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Another table caption}}{19}{table.3.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Another table caption}}{19}{table.3.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces This shows something}}{20}{figure.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces This shows something}}{20}{figure.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces This shows something}}{21}{figure.3.4}}
+\newlabel{fig:farms_66}{{3.4}{21}{This shows something}{figure.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces This shows something}}{21}{figure.3.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces This shows something}}{22}{figure.3.6}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Another table caption}}{22}{table.3.5}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Another table caption}}{22}{table.3.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces This shows something}}{23}{figure.3.7}}
+\newlabel{fig:farms_69}{{3.7}{23}{This shows something}{figure.3.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces This shows something}}{23}{figure.3.8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces This shows something}}{24}{figure.3.9}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.7}{\ignorespaces Another table caption}}{24}{table.3.7}}
+\newlabel{tab:price_243}{{3.7}{24}{Another table caption}{table.3.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Cherry Farms}{24}{subsection.3.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Grape Farms}{24}{subsection.3.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Cabbage Farms}{24}{subsection.3.1.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Discussion}{24}{section.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Comparing Different Results}{24}{subsection.3.2.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.8}{\ignorespaces Another table caption}}{25}{table.3.8}}
+\newlabel{fig:farms_243}{{3.1.4}{25}{Cabbage Farms}{table.3.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces This shows something}}{25}{figure.3.10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces This shows something}}{26}{figure.3.11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces This shows something}}{26}{figure.3.12}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.9}{\ignorespaces Another table caption}}{27}{table.3.9}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.10}{\ignorespaces Another table caption}}{27}{table.3.10}}
+\@writefile{toc}{\contentsline {subsubsection}{Farms}{27}{section*.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Intermediate Processors}{27}{section*.3}}
+\@writefile{toc}{\contentsline {subsubsection}{Stores}{27}{section*.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Robustness of Solutions}{27}{subsection.3.2.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.11}{\ignorespaces Another table caption}}{27}{table.3.11}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.12}{\ignorespaces Another table caption}}{28}{table.3.12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces This shows something}}{28}{figure.3.13}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.13}{\ignorespaces Another table caption}}{28}{table.3.13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces This shows something}}{29}{figure.3.14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces This shows something}}{29}{figure.3.15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces This shows something}}{30}{figure.3.16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces This shows something}}{30}{figure.3.17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces This shows something}}{31}{figure.3.18}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.14}{\ignorespaces Another table caption}}{31}{table.3.14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Transportation Problem Assumptions}{32}{subsection.3.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Comparing Optimal Transport with OLS}{32}{subsection.3.2.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Conclusion}{32}{subsection.3.2.5}}
+\bibcite{Bernell}{1}
+\bibcite{Chung}{2}
+\bibcite{Cook}{3}
+\bibcite{Hwang}{4}
+\bibcite{Just}{5}
+\bibcite{dfs}{6}
+\bibcite{dam}{7}
+\bibcite{Larson}{8}
+\bibcite{Stewart}{9}
+\bibcite{census}{10}
+\bibcite{nass}{11}
