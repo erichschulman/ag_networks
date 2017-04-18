@@ -23,125 +23,139 @@
 \citation{Larson}
 \citation{Cook}
 \citation{Stewart}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Background}{2}{chapter.1}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Related Work}{2}{section.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Demographics, Policy and Nutrition}{2}{subsection.1.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Spatial Data and Nutrition}{2}{subsection.1.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.3}Optimization Problem and Food}{2}{subsection.1.1.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Background}{2}{section.1.1}}
+\citation{nass2}
+\citation{nass3}
+\citation{nass3}
+\citation{nass2}
+\citation{nass2}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Research Question and Economic Mechanism}{3}{section.1.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces This table shows various crops in New York State. Fresh produce (i.e. Fruits and Vegetables) makes up about $10 \%$ of New York's agricultural sales \cite  {nass3}.}}{4}{table.1.1}}
+\newlabel{tab:nass3}{{1.1}{4}{This table shows various crops in New York State. Fresh produce (i.e. Fruits and Vegetables) makes up about $10 \%$ of New York's agricultural sales \cite {nass3}}{table.1.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.2}{\ignorespaces This table compares the organic production of the various bands of crops in New York to the amount that is sold on the fresh market \cite  {nass2}. The amount produced and sold is measured in hundredweight (CWT). About 17 CWT make up a US ton. I chose 2011 as the year because that was the year the crop cover data was produced. There are few things to note in this table. The these crops are USDA organic meaning that they don't represent all production. Organic cherries are produced in such limited quantity in New York that their production isn't included in the data.}}{4}{table.1.2}}
+\newlabel{tab:nass2}{{1.2}{4}{This table compares the organic production of the various bands of crops in New York to the amount that is sold on the fresh market \cite {nass2}. The amount produced and sold is measured in hundredweight (CWT). About 17 CWT make up a US ton. I chose 2011 as the year because that was the year the crop cover data was produced. There are few things to note in this table. The these crops are USDA organic meaning that they don't represent all production. Organic cherries are produced in such limited quantity in New York that their production isn't included in the data}{table.1.2}{}}
 \citation{Cook}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Optimal Transportation}{3}{section.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Problem Description}{3}{subsection.1.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Solving the Problem}{3}{subsection.1.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Worked out Example}{3}{subsection.1.2.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Linear Programming}{3}{section.1.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}The Simplex Algorithm}{3}{subsection.1.3.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces This picture represents the network for which we will be finding minimum cost flow. The supply and demand nodes are labeled with their corresponding capacities. The edges between each supply and demand node are labled according to their cost. To make the problem easier, you can assume all edges have unlimited capacity meaning suppliers can send as much goods as they want over them.}}{4}{figure.1.1}}
-\newlabel{fig:example1}{{1.1}{4}{This picture represents the network for which we will be finding minimum cost flow. The supply and demand nodes are labeled with their corresponding capacities. The edges between each supply and demand node are labled according to their cost. To make the problem easier, you can assume all edges have unlimited capacity meaning suppliers can send as much goods as they want over them}{figure.1.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces The algorithm starts by matching the capacities on the supply nodes with the capacities on the demand nodes. This is trivial because there are no edge capacities and every node is connected.}}{4}{figure.1.2}}
-\newlabel{fig:example2}{{1.2}{4}{The algorithm starts by matching the capacities on the supply nodes with the capacities on the demand nodes. This is trivial because there are no edge capacities and every node is connected}{figure.1.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces This solution is not optimal in terms of cost (yet). I've labled each edge in this figure with the cost each edge has incurred. It works out to 14. The edge costs are just the amount of flow on each edge times its cost.}}{5}{figure.1.3}}
-\newlabel{fig:example3}{{1.3}{5}{This solution is not optimal in terms of cost (yet). I've labled each edge in this figure with the cost each edge has incurred. It works out to 14. The edge costs are just the amount of flow on each edge times its cost}{figure.1.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces In order to improve the cost of flow through the network, we look for a reduced cost cycle. The cycle needs to start and end on the same node. It also needs to alternate between suppliers and demand nodes. This is because you delete costly edges and replace them with less expensive ones. By traversing the cycle we see can reduce the cost by 4 to the optimal amount. Edges in the cycle are labled with their reduced cost (i.e. how much they improve the total cost)}}{5}{figure.1.4}}
-\newlabel{fig:example4}{{1.4}{5}{In order to improve the cost of flow through the network, we look for a reduced cost cycle. The cycle needs to start and end on the same node. It also needs to alternate between suppliers and demand nodes. This is because you delete costly edges and replace them with less expensive ones. By traversing the cycle we see can reduce the cost by 4 to the optimal amount. Edges in the cycle are labled with their reduced cost (i.e. how much they improve the total cost)}{figure.1.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces At this point, there are no more reduced cost cylces, so we've found an optimal solution in terms of cost. The edges reflect the amount of units flowing from supply to demand in this solution.}}{6}{figure.1.5}}
-\newlabel{fig:example5}{{1.5}{6}{At this point, there are no more reduced cost cylces, so we've found an optimal solution in terms of cost. The edges reflect the amount of units flowing from supply to demand in this solution}{figure.1.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces As long as there aren't minimum cost cylces we've found a solution. Zero-cost cycles exists in this simple network. As a result, there is more than 1 solution that optimizes cost and flow. This figure shows that example.}}{6}{figure.1.6}}
-\newlabel{fig:example6}{{1.6}{6}{As long as there aren't minimum cost cylces we've found a solution. Zero-cost cycles exists in this simple network. As a result, there is more than 1 solution that optimizes cost and flow. This figure shows that example}{figure.1.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Primal Problem}{7}{subsection.1.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3}Dual Problem}{7}{subsection.1.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.4}Characterizing Solutions with Complementary Slackness}{8}{subsection.1.3.4}}
-\citation{Cook}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.5}Computational Complexity}{9}{subsection.1.3.5}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Problem Specification}{10}{chapter.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Linear Model}{5}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Explanation of the Problem}{10}{section.2.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Reduction to Linear Program}{10}{section.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Primal Problem Formulation}{10}{subsection.2.2.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces This figure show the structure of the agricultural supply network in my model. Farms grow crops and send their product to intermediate processors. Processors send their product to stores. The processors and farms send their product to the next step in the network using local roads. They choose where to send their crops based on convenience.}}{11}{figure.2.1}}
-\newlabel{fig:spec}{{2.1}{11}{This figure show the structure of the agricultural supply network in my model. Farms grow crops and send their product to intermediate processors. Processors send their product to stores. The processors and farms send their product to the next step in the network using local roads. They choose where to send their crops based on convenience}{figure.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Model Overview}{5}{section.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Primal Problem}{6}{section.2.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Dual Problem}{7}{section.2.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces This picture represents the network for which we will be finding minimum cost flow. The supply and demand nodes are labeled with their corresponding capacities. The edges between each supply and demand node are labeled according to their cost. To make the problem easier, you can assume all edges have unlimited capacity meaning suppliers can send as much goods as they want over them.}}{9}{figure.2.1}}
+\newlabel{fig:example1}{{2.1}{9}{This picture represents the network for which we will be finding minimum cost flow. The supply and demand nodes are labeled with their corresponding capacities. The edges between each supply and demand node are labeled according to their cost. To make the problem easier, you can assume all edges have unlimited capacity meaning suppliers can send as much goods as they want over them}{figure.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces The algorithm starts by matching the capacities on the supply nodes with the capacities on the demand nodes. This is trivial because there are no edge capacities and every node is connected.}}{9}{figure.2.2}}
+\newlabel{fig:example2}{{2.2}{9}{The algorithm starts by matching the capacities on the supply nodes with the capacities on the demand nodes. This is trivial because there are no edge capacities and every node is connected}{figure.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces This solution is not optimal in terms of cost (yet). I've labled each edge in this figure with the cost each edge has incurred. It works out to 14. The edge costs are just the amount of flow on each edge times its cost.}}{10}{figure.2.3}}
+\newlabel{fig:example3}{{2.3}{10}{This solution is not optimal in terms of cost (yet). I've labled each edge in this figure with the cost each edge has incurred. It works out to 14. The edge costs are just the amount of flow on each edge times its cost}{figure.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces In order to improve the cost of flow through the network, we look for a reduced cost cycle. The cycle needs to start and end on the same node. It also needs to alternate between suppliers and demand nodes. This is because you delete costly edges and replace them with less expensive ones. By traversing the cycle we see can reduce the cost by 4 to the optimal amount. Edges in the cycle are labeled with their reduced cost (i.e. how much they improve the total cost)}}{10}{figure.2.4}}
+\newlabel{fig:example4}{{2.4}{10}{In order to improve the cost of flow through the network, we look for a reduced cost cycle. The cycle needs to start and end on the same node. It also needs to alternate between suppliers and demand nodes. This is because you delete costly edges and replace them with less expensive ones. By traversing the cycle we see can reduce the cost by 4 to the optimal amount. Edges in the cycle are labeled with their reduced cost (i.e. how much they improve the total cost)}{figure.2.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces At this point, there are no more reduced cost cycles, so we've found an optimal solution in terms of cost. The edges reflect the amount of units flowing from supply to demand in this solution.}}{11}{figure.2.5}}
+\newlabel{fig:example5}{{2.5}{11}{At this point, there are no more reduced cost cycles, so we've found an optimal solution in terms of cost. The edges reflect the amount of units flowing from supply to demand in this solution}{figure.2.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces As long as there aren't minimum cost cycles we've found a solution. Zero-cost cycles exists in this simple network. As a result, there is more than 1 solution that optimizes cost and flow. This figure shows that example.}}{11}{figure.2.6}}
+\newlabel{fig:example6}{{2.6}{11}{As long as there aren't minimum cost cycles we've found a solution. Zero-cost cycles exists in this simple network. As a result, there is more than 1 solution that optimizes cost and flow. This figure shows that example}{figure.2.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces This figure show the structure of the agricultural supply network in my model. Farms grow crops and send their product to intermediate processors. Processors send their product to stores. The processors and farms send their product to the next step in the network using local roads. They choose where to send their crops based on convenience.}}{12}{figure.2.7}}
+\newlabel{fig:spec}{{2.7}{12}{This figure show the structure of the agricultural supply network in my model. Farms grow crops and send their product to intermediate processors. Processors send their product to stores. The processors and farms send their product to the next step in the network using local roads. They choose where to send their crops based on convenience}{figure.2.7}{}}
 \citation{nass}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Dual Problem Formulation}{12}{subsection.2.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Data Sources}{12}{section.2.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Farms}{12}{subsection.2.3.1}}
+\citation{nass}
+\citation{nass}
 \citation{dam}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces This table shows the various errors associated with pixels in each crop band in the sattelite image. The pixels are compared with a small test set for accuracy. Correct pixels are the number of pixels extrapolated from the training data. Producer's accuracy is a false negative, where pixels of a known class are classified as something other than that class. User's accuracy shows false positives, where pixels are incorrectly classified as a known class when they should have been classified as something else. Kappa index of agreement gives an overall assessment of the accuracy of the classification.}}{13}{table.2.1}}
-\newlabel{tab:band}{{2.1}{13}{This table shows the various errors associated with pixels in each crop band in the sattelite image. The pixels are compared with a small test set for accuracy. Correct pixels are the number of pixels extrapolated from the training data. Producer's accuracy is a false negative, where pixels of a known class are classified as something other than that class. User's accuracy shows false positives, where pixels are incorrectly classified as a known class when they should have been classified as something else. Kappa index of agreement gives an overall assessment of the accuracy of the classification}{table.2.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces This table is meant to summarize some statistics of interest about the size of farms. Some take aways are that onions (band 49) take up the most area followed by grapes (band 69). Cabbages (band 243) have the smallest range of sizes, but the highest variance within that range. Cherries (band 66) have the smallest variance and the smallest total cover.}}{13}{table.2.2}}
-\newlabel{tab:farms}{{2.2}{13}{This table is meant to summarize some statistics of interest about the size of farms. Some take aways are that onions (band 49) take up the most area followed by grapes (band 69). Cabbages (band 243) have the smallest range of sizes, but the highest variance within that range. Cherries (band 66) have the smallest variance and the smallest total cover}{table.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Agricultural Product Dealers}{13}{subsection.2.3.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Grapes (band 69) has the highest number of product dealers associated with them. The lowest is cherries (band 66).}}{14}{table.2.3}}
-\newlabel{tab:procs}{{2.3}{14}{Grapes (band 69) has the highest number of product dealers associated with them. The lowest is cherries (band 66)}{table.2.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces This table is meant to convey summary statistics about the characteristics of stores.}}{14}{table.2.4}}
-\newlabel{tab:stores}{{2.4}{14}{This table is meant to convey summary statistics about the characteristics of stores}{table.2.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Stores}{14}{subsection.2.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Edge Costs}{14}{subsection.2.3.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Here I've mapped all the stores as grey squares. They've been overlayed on top of the census tracts so you can see that stores are spread out between them. You can see are much more sparsely spread in the center of the state.}}{15}{figure.2.2}}
-\newlabel{fig:map_3}{{2.2}{15}{Here I've mapped all the stores as grey squares. They've been overlayed on top of the census tracts so you can see that stores are spread out between them. You can see are much more sparsely spread in the center of the state}{figure.2.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces The purpose of this map shows the distribution of median housing values through out the census tracts. The darker the shading, the higher the median property value for that tract. You can see housing is relatively cheap in western and Northern New York, but expensive in the South Western corner of the state.}}{16}{figure.2.3}}
-\newlabel{fig:map_4}{{2.3}{16}{The purpose of this map shows the distribution of median housing values through out the census tracts. The darker the shading, the higher the median property value for that tract. You can see housing is relatively cheap in western and Northern New York, but expensive in the South Western corner of the state}{figure.2.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.5}{\ignorespaces This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. Grapes (band 69) have the highest variability between edges. }}{17}{table.2.5}}
-\newlabel{tab:fp_edges}{{2.5}{17}{This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. Grapes (band 69) have the highest variability between edges}{table.2.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.6}{\ignorespaces This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. The distances are relatively similar to those of between farms and processors, but they are less variable}}{17}{table.2.6}}
-\newlabel{tab:ps_edges}{{2.6}{17}{This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. The distances are relatively similar to those of between farms and processors, but they are less variable}{table.2.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Implementing Optimal Transportation with Software Packages}{17}{subsection.2.3.5}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Results}{18}{chapter.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Data Sources}{13}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Visualizing Results}{18}{section.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Onion Farms}{18}{subsection.3.1.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Another table caption}}{18}{table.3.1}}
-\newlabel{fig:price_49}{{3.1}{18}{Another table caption}{table.3.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Another table caption}}{19}{table.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces This shows something}}{19}{figure.3.1}}
-\newlabel{fig:farms_49}{{3.1}{19}{This shows something}{figure.3.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Another table caption}}{19}{table.3.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Another table caption}}{19}{table.3.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces This shows something}}{20}{figure.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces This shows something}}{20}{figure.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces This shows something}}{21}{figure.3.4}}
-\newlabel{fig:farms_66}{{3.4}{21}{This shows something}{figure.3.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces This shows something}}{21}{figure.3.5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces This shows something}}{22}{figure.3.6}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Another table caption}}{22}{table.3.5}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Another table caption}}{22}{table.3.6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces This shows something}}{23}{figure.3.7}}
-\newlabel{fig:farms_69}{{3.7}{23}{This shows something}{figure.3.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces This shows something}}{23}{figure.3.8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces This shows something}}{24}{figure.3.9}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.7}{\ignorespaces Another table caption}}{24}{table.3.7}}
-\newlabel{tab:price_243}{{3.7}{24}{Another table caption}{table.3.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Cherry Farms}{24}{subsection.3.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Grape Farms}{24}{subsection.3.1.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Cabbage Farms}{24}{subsection.3.1.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Discussion}{24}{section.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Comparing Different Results}{24}{subsection.3.2.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.8}{\ignorespaces Another table caption}}{25}{table.3.8}}
-\newlabel{fig:farms_243}{{3.1.4}{25}{Cabbage Farms}{table.3.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces This shows something}}{25}{figure.3.10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces This shows something}}{26}{figure.3.11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces This shows something}}{26}{figure.3.12}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.9}{\ignorespaces Another table caption}}{27}{table.3.9}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.10}{\ignorespaces Another table caption}}{27}{table.3.10}}
-\@writefile{toc}{\contentsline {subsubsection}{Farms}{27}{section*.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Intermediate Processors}{27}{section*.3}}
-\@writefile{toc}{\contentsline {subsubsection}{Stores}{27}{section*.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Robustness of Solutions}{27}{subsection.3.2.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.11}{\ignorespaces Another table caption}}{27}{table.3.11}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.12}{\ignorespaces Another table caption}}{28}{table.3.12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces This shows something}}{28}{figure.3.13}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.13}{\ignorespaces Another table caption}}{28}{table.3.13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces This shows something}}{29}{figure.3.14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces This shows something}}{29}{figure.3.15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces This shows something}}{30}{figure.3.16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces This shows something}}{30}{figure.3.17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces This shows something}}{31}{figure.3.18}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.14}{\ignorespaces Another table caption}}{31}{table.3.14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Transportation Problem Assumptions}{32}{subsection.3.2.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Comparing Optimal Transport with OLS}{32}{subsection.3.2.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Conclusion}{32}{subsection.3.2.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Farms}{13}{section.3.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces This table shows the various errors associated with pixels in each crop band in the satellite image \cite  {nass}. The pixels are compared with a small test set for accuracy. Correct pixels are the number of pixels extrapolated from the training data. Producer's accuracy is a false negative, where pixels of a known class are classified as something other than that class. User's accuracy shows false positives, where pixels are incorrectly classified as a known class when they should have been classified as something else. Kappa index of agreement gives an overall assessment of the accuracy of the classification.}}{13}{table.3.1}}
+\newlabel{tab:band}{{3.1}{13}{This table shows the various errors associated with pixels in each crop band in the satellite image \cite {nass}. The pixels are compared with a small test set for accuracy. Correct pixels are the number of pixels extrapolated from the training data. Producer's accuracy is a false negative, where pixels of a known class are classified as something other than that class. User's accuracy shows false positives, where pixels are incorrectly classified as a known class when they should have been classified as something else. Kappa index of agreement gives an overall assessment of the accuracy of the classification}{table.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces This table is meant to summarize some statistics of interest about the size of farms. Some take aways are that onions (band 49) take up the most area followed by grapes (band 69). Cabbages (band 243) have the smallest range of sizes, but the highest variance within that range. Cherries (band 66) have the smallest variance and the smallest total cover.}}{14}{table.3.2}}
+\newlabel{tab:farms}{{3.2}{14}{This table is meant to summarize some statistics of interest about the size of farms. Some take aways are that onions (band 49) take up the most area followed by grapes (band 69). Cabbages (band 243) have the smallest range of sizes, but the highest variance within that range. Cherries (band 66) have the smallest variance and the smallest total cover}{table.3.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Grapes (band 69) has the highest number of intermediaries associated with it. The lowest is cherries (band 66).}}{14}{table.3.3}}
+\newlabel{tab:procs}{{3.3}{14}{Grapes (band 69) has the highest number of intermediaries associated with it. The lowest is cherries (band 66)}{table.3.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Agricultural Dealers}{14}{section.3.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Stores}{14}{section.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Here I've mapped all the stores as grey squares. They've been over-layed on top of the census tracts so you can see that stores are spread out between them. You can see are much more sparsely spread in the center of the state.}}{15}{figure.3.1}}
+\newlabel{fig:map_3}{{3.1}{15}{Here I've mapped all the stores as grey squares. They've been over-layed on top of the census tracts so you can see that stores are spread out between them. You can see are much more sparsely spread in the center of the state}{figure.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces This table is meant to convey summary statistics about the characteristics of stores.}}{15}{table.3.4}}
+\newlabel{tab:stores}{{3.4}{15}{This table is meant to convey summary statistics about the characteristics of stores}{table.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces The purpose of this map shows the distribution of median housing values through out the census tracts. The darker the shading, the higher the median property value for that tract. You can see housing is relatively cheap in western and Northern New York, but expensive in the South Western corner of the state.}}{16}{figure.3.2}}
+\newlabel{fig:map_4}{{3.2}{16}{The purpose of this map shows the distribution of median housing values through out the census tracts. The darker the shading, the higher the median property value for that tract. You can see housing is relatively cheap in western and Northern New York, but expensive in the South Western corner of the state}{figure.3.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. Grapes (band 69) have the highest variability between edges. }}{17}{table.3.5}}
+\newlabel{tab:fp_edges}{{3.5}{17}{This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. Grapes (band 69) have the highest variability between edges}{table.3.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. The distances are relatively similar to those of between farms and processors, but they are less variable}}{17}{table.3.6}}
+\newlabel{tab:ps_edges}{{3.6}{17}{This table is meant to convey summary statistics about the characteristics of the edges between farms and agricultural product dealers. The distances are relatively similar to those of between farms and processors, but they are less variable}{table.3.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Edge Costs}{17}{section.3.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Results}{18}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces This table shows descriptive statistics about the result of the linear program for onions. You can see that the farms are spread out enough that the program did not need to increase the price at the farms.}}{20}{table.4.1}}
+\newlabel{tab:price_49}{{4.1}{20}{This table shows descriptive statistics about the result of the linear program for onions. You can see that the farms are spread out enough that the program did not need to increase the price at the farms}{table.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces This table shows the minimum and maximum price for each step in the network according to the linear program for onion. Unsurprisingly, the highest prices were found in the Northeast tip of the state (Clinton County). The minimum was in the center by the most dense cluster of farms.}}{20}{table.4.2}}
+\newlabel{tab:county_49}{{4.2}{20}{This table shows the minimum and maximum price for each step in the network according to the linear program for onion. Unsurprisingly, the highest prices were found in the Northeast tip of the state (Clinton County). The minimum was in the center by the most dense cluster of farms}{table.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces This table shows the location of onion farms based on the cropland data put through the sieve. If you are interested in descriptive statistics of the farms you can see Table \ref  {tab:farms}. You can see there are roughly four clusters of farms. Three of them are in the center of the state, and the fourth is south by Westchester. As you can imagine the locations of farms influenced the prices.}}{20}{figure.4.1}}
+\newlabel{fig:farms_49}{{4.1}{20}{This table shows the location of onion farms based on the cropland data put through the sieve. If you are interested in descriptive statistics of the farms you can see Table \ref {tab:farms}. You can see there are roughly four clusters of farms. Three of them are in the center of the state, and the fourth is south by Westchester. As you can imagine the locations of farms influenced the prices}{figure.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces This figure tries to give you a sense of the onion supply network in New York. The pentagons are farms, the stars are processors, and the squares are stores. Onions had the second highest number of intermediate dealers to choose from as you can see in Table \ref  {tab:procs}}}{21}{figure.4.2}}
+\newlabel{fig:network_49}{{4.2}{21}{This figure tries to give you a sense of the onion supply network in New York. The pentagons are farms, the stars are processors, and the squares are stores. Onions had the second highest number of intermediate dealers to choose from as you can see in Table \ref {tab:procs}}{figure.4.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces This table shows descriptive statistics about the result of the linear program for cherries.}}{21}{table.4.3}}
+\newlabel{tab:price_66}{{4.3}{21}{This table shows descriptive statistics about the result of the linear program for cherries}{table.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces This table shows the minimum and maximum prices and the counties that they occur for cherries.}}{21}{table.4.4}}
+\newlabel{tab:county_66}{{4.4}{21}{This table shows the minimum and maximum prices and the counties that they occur for cherries}{table.4.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces This table shows descriptive statistics about the result of the linear program for grapes.}}{21}{table.4.5}}
+\newlabel{tab:price_69}{{4.5}{21}{This table shows descriptive statistics about the result of the linear program for grapes}{table.4.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces This figure shows the distribution of onion prices through out the state according to the linear program. You can see that the prices are highest in the Northeast and Southeast corners of the state. The fact that there was a cluster of farms in the southern part of the state caused prices to be lower there compared to some of the other bands.}}{22}{figure.4.3}}
+\newlabel{fig:prices_49}{{4.3}{22}{This figure shows the distribution of onion prices through out the state according to the linear program. You can see that the prices are highest in the Northeast and Southeast corners of the state. The fact that there was a cluster of farms in the southern part of the state caused prices to be lower there compared to some of the other bands}{figure.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.6}{\ignorespaces This table shows the minimum and maximum prices and the counties that they occur for grapes.}}{22}{table.4.6}}
+\newlabel{tab:county_69}{{4.6}{22}{This table shows the minimum and maximum prices and the counties that they occur for grapes}{table.4.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.7}{\ignorespaces This table shows descriptive statistics about the result of the linear program for cabbages. The variance of the prices is much lower than the other bands. Additionally, the cabbages are more expensive in the Southeast in relatively affluent areas. In the other bands, the crops were more expensive in the Northwest.}}{22}{table.4.7}}
+\newlabel{tab:price_243}{{4.7}{22}{This table shows descriptive statistics about the result of the linear program for cabbages. The variance of the prices is much lower than the other bands. Additionally, the cabbages are more expensive in the Southeast in relatively affluent areas. In the other bands, the crops were more expensive in the Northwest}{table.4.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces This table shows the location of cherry farms based on the cropland data put through the sieve. Cherries had the least amount of area dedicated to them and the farms were scattered throughout the far West portion of the state. If you are interested in descriptive statistics of the farms you can see Table \ref  {tab:farms}.}}{23}{figure.4.4}}
+\newlabel{fig:farms_66}{{4.4}{23}{This table shows the location of cherry farms based on the cropland data put through the sieve. Cherries had the least amount of area dedicated to them and the farms were scattered throughout the far West portion of the state. If you are interested in descriptive statistics of the farms you can see Table \ref {tab:farms}}{figure.4.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.8}{\ignorespaces This table shows the minimum and maximum prices and the counties that they occur for cabbages.}}{23}{table.4.8}}
+\newlabel{tab:county_243}{{4.8}{23}{This table shows the minimum and maximum prices and the counties that they occur for cabbages}{table.4.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.9}{\ignorespaces This table compares the various descriptive statistics for the different farm bands in one place.}}{23}{table.4.9}}
+\newlabel{tab:farm_price}{{4.9}{23}{This table compares the various descriptive statistics for the different farm bands in one place}{table.4.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces This figure tries to give you a sense of the cherries supply network in New York. The pentagons are farms, the stars are processors, and the squares are stores. You can see how many dealers there were in Table \ref  {tab:procs}}}{24}{figure.4.5}}
+\newlabel{fig:network_66}{{4.5}{24}{This figure tries to give you a sense of the cherries supply network in New York. The pentagons are farms, the stars are processors, and the squares are stores. You can see how many dealers there were in Table \ref {tab:procs}}{figure.4.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.10}{\ignorespaces This table compares the minimum and maximum prices between the four crop bands for farms.}}{24}{table.4.10}}
+\newlabel{tab:farm_county}{{4.10}{24}{This table compares the minimum and maximum prices between the four crop bands for farms}{table.4.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.11}{\ignorespaces This table compares the various descriptive statistics for the different farm product dealers across the four bands in one place.}}{24}{table.4.11}}
+\newlabel{tab:proc_price}{{4.11}{24}{This table compares the various descriptive statistics for the different farm product dealers across the four bands in one place}{table.4.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces This figure shows the distribution of cherry prices through out the state according to the linear program. The darker the shading the higher the price. You can see that the prices are highest in the Northeast corner of the state.}}{25}{figure.4.6}}
+\newlabel{fig:prices_66}{{4.6}{25}{This figure shows the distribution of cherry prices through out the state according to the linear program. The darker the shading the higher the price. You can see that the prices are highest in the Northeast corner of the state}{figure.4.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.12}{\ignorespaces This table compares the minimum and maximum prices between the four crop bands for the intermediate dealers.}}{25}{table.4.12}}
+\newlabel{tab:proc_county}{{4.12}{25}{This table compares the minimum and maximum prices between the four crop bands for the intermediate dealers}{table.4.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.13}{\ignorespaces This table compares the various descriptive statistics for the different stores across the four bands in one place.}}{25}{table.4.13}}
+\newlabel{tab:store_price}{{4.13}{25}{This table compares the various descriptive statistics for the different stores across the four bands in one place}{table.4.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces This table shows the location of grape farms based on the cropland data put through the sieve. If you are interested in descriptive statistics of the farms you can see Table \ref  {tab:farms}.}}{26}{figure.4.7}}
+\newlabel{fig:farms_69}{{4.7}{26}{This table shows the location of grape farms based on the cropland data put through the sieve. If you are interested in descriptive statistics of the farms you can see Table \ref {tab:farms}}{figure.4.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.14}{\ignorespaces This table compares the minimum and maximum prices between the four crop bands for the different census tracts}}{26}{table.4.14}}
+\newlabel{tab:store_county}{{4.14}{26}{This table compares the minimum and maximum prices between the four crop bands for the different census tracts}{table.4.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces This figure tries to give you a sense of the grape supply network in New York. The pentagons are farms, the stars are processors, and the squares are stores. You can see how many dealers there were in Table \ref  {tab:procs}}}{27}{figure.4.8}}
+\newlabel{fig:network_69}{{4.8}{27}{This figure tries to give you a sense of the grape supply network in New York. The pentagons are farms, the stars are processors, and the squares are stores. You can see how many dealers there were in Table \ref {tab:procs}}{figure.4.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces This figure shows the distribution of grape prices through out the state according to the linear program. The darker the shading the higher the price.}}{28}{figure.4.9}}
+\newlabel{fig:prices_69}{{4.9}{28}{This figure shows the distribution of grape prices through out the state according to the linear program. The darker the shading the higher the price}{figure.4.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces This table shows the location of cabbage farms based on the cropland data put through the sieve. If you are interested in descriptive statistics of the farms you can see Table \ref  {tab:farms}.}}{28}{figure.4.10}}
+\newlabel{fig:farms_243}{{4.10}{28}{This table shows the location of cabbage farms based on the cropland data put through the sieve. If you are interested in descriptive statistics of the farms you can see Table \ref {tab:farms}}{figure.4.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces This figure tries to give you a sense of the cherries supply network in New York. The pentagons are farms, the stars are processors, and the squares are stores. You can see how many dealers there were in Table \ref  {tab:procs}}}{29}{figure.4.11}}
+\newlabel{fig:network_243}{{4.11}{29}{This figure tries to give you a sense of the cherries supply network in New York. The pentagons are farms, the stars are processors, and the squares are stores. You can see how many dealers there were in Table \ref {tab:procs}}{figure.4.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces This figure shows the distribution of cabbage prices through out the state according to the linear program. The darker the shading the higher the price. The result for cabbages is more spread out across the state than the other bands because of the locations of farms.}}{30}{figure.4.12}}
+\newlabel{fig:prices_243}{{4.12}{30}{This figure shows the distribution of cabbage prices through out the state according to the linear program. The darker the shading the higher the price. The result for cabbages is more spread out across the state than the other bands because of the locations of farms}{figure.4.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces This figure compares the difference in prices between onions and cabbages at the intermediaries. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means onion prices were greater. Lighter means cabbage prices were greater.}}{31}{figure.4.13}}
+\newlabel{fig:procs_243_49}{{4.13}{31}{This figure compares the difference in prices between onions and cabbages at the intermediaries. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means onion prices were greater. Lighter means cabbage prices were greater}{figure.4.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces This figure compares the difference in prices between cherries and cabbages at the intermediaries. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means cherry prices were greater. Lighter means cabbage prices were greater.}}{32}{figure.4.14}}
+\newlabel{fig:procs_243_66}{{4.14}{32}{This figure compares the difference in prices between cherries and cabbages at the intermediaries. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means cherry prices were greater. Lighter means cabbage prices were greater}{figure.4.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces This figure compares the difference in prices between grapes and cabbages at the intermediaries. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means grape prices were greater. Lighter means cabbage prices were greater.}}{33}{figure.4.15}}
+\newlabel{fig:procs_243_69}{{4.15}{33}{This figure compares the difference in prices between grapes and cabbages at the intermediaries. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means grape prices were greater. Lighter means cabbage prices were greater}{figure.4.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces This figure compares the difference in prices between onions and cabbages at the census tracts. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means onion prices were greater. Lighter means cabbage prices were greater.}}{34}{figure.4.16}}
+\newlabel{fig:stores_243_49}{{4.16}{34}{This figure compares the difference in prices between onions and cabbages at the census tracts. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means onion prices were greater. Lighter means cabbage prices were greater}{figure.4.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces This figure compares the difference in prices between cherries and cabbages at the census tracts. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means cherry prices were greater. Lighter means cabbage prices were greater.}}{35}{figure.4.17}}
+\newlabel{fig:stores_243_66}{{4.17}{35}{This figure compares the difference in prices between cherries and cabbages at the census tracts. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means cherry prices were greater. Lighter means cabbage prices were greater}{figure.4.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces This figure compares the difference in prices between grapes and cabbages at the census tracts. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means grape prices were greater. Lighter means cabbage prices were greater.}}{36}{figure.4.18}}
+\newlabel{fig:stores_243_69}{{4.18}{36}{This figure compares the difference in prices between grapes and cabbages at the census tracts. I chose cabbages because the result of the linear program was most different for this band. The stars represent the dealers. Darker means grape prices were greater. Lighter means cabbage prices were greater}{figure.4.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Robustness of Solutions}{37}{section.4.1}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Discussion}{39}{chapter.5}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{Bernell}{1}
 \bibcite{Chung}{2}
 \bibcite{Cook}{3}
@@ -152,4 +166,6 @@
 \bibcite{Larson}{8}
 \bibcite{Stewart}{9}
 \bibcite{census}{10}
-\bibcite{nass}{11}
+\bibcite{nass3}{11}
+\bibcite{nass}{12}
+\bibcite{nass2}{13}
