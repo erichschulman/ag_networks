@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.17)  18 APR 2017 00:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.17)  19 APR 2017 00:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -735,25 +735,24 @@ Chapter 2.
 Chapter 3.
 [13
 
-] <figures/map_3.png, id=210, 1240.635pt x 651.18282pt>
+] [14] <figures/map_3.png, id=242, 1240.635pt x 651.18282pt>
 File: figures/map_3.png Graphic file (type png)
 
 <use figures/map_3.png>
-Package pdftex.def Info: figures/map_3.png used on input line 441.
+Package pdftex.def Info: figures/map_3.png used on input line 445.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 441--442
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 445--446
  [][] 
  []
 
-[14] <figures/map_4.png, id=219, 1240.635pt x 651.18282pt>
+<figures/map_4.png, id=244, 1240.635pt x 651.18282pt>
 File: figures/map_4.png Graphic file (type png)
-
-<use figures/map_4.png>
-Package pdftex.def Info: figures/map_4.png used on input line 465.
+ <use figures/map_4.png>
+Package pdftex.def Info: figures/map_4.png used on input line 467.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 465--466
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 467--468
  [][] 
  []
 
@@ -761,253 +760,253 @@ Overfull \hbox (32.89067pt too wide) in paragraph at lines 465--466
 Chapter 4.
 [18
 
-] <figures/farms_49.png, id=287, 1240.635pt x 651.18282pt>
+] [19] <figures/farms_49.png, id=333, 1240.635pt x 651.18282pt>
 File: figures/farms_49.png Graphic file (type png)
 
 <use figures/farms_49.png>
-Package pdftex.def Info: figures/farms_49.png used on input line 549.
+Package pdftex.def Info: figures/farms_49.png used on input line 572.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 549--550
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 572--573
  [][] 
  []
 
-<figures/network_49.png, id=290, 1240.635pt x 651.18282pt>
+<figures/network_49.png, id=336, 1240.635pt x 651.18282pt>
 File: figures/network_49.png Graphic file (type png)
 
 <use figures/network_49.png>
-Package pdftex.def Info: figures/network_49.png used on input line 558.
+Package pdftex.def Info: figures/network_49.png used on input line 581.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 558--559
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 581--582
  [][] 
  []
 
-<figures/prices_49.png, id=293, 1240.635pt x 651.18282pt>
+<figures/prices_49.png, id=339, 1240.635pt x 651.18282pt>
 File: figures/prices_49.png Graphic file (type png)
 
 <use figures/prices_49.png>
-Package pdftex.def Info: figures/prices_49.png used on input line 567.
+Package pdftex.def Info: figures/prices_49.png used on input line 590.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 567--568
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 590--591
  [][] 
  []
 
-<figures/farms_66.png, id=294, 1240.635pt x 651.18282pt>
+<figures/farms_66.png, id=340, 1240.635pt x 651.18282pt>
 File: figures/farms_66.png Graphic file (type png)
 
 <use figures/farms_66.png>
-Package pdftex.def Info: figures/farms_66.png used on input line 603.
+Package pdftex.def Info: figures/farms_66.png used on input line 626.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 603--604
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 626--627
  [][] 
  []
 
-<figures/network_66.png, id=297, 1240.635pt x 651.18282pt>
+<figures/network_66.png, id=343, 1240.635pt x 651.18282pt>
 File: figures/network_66.png Graphic file (type png)
 
 <use figures/network_66.png>
-Package pdftex.def Info: figures/network_66.png used on input line 612.
+Package pdftex.def Info: figures/network_66.png used on input line 635.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 612--613
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 635--636
  [][] 
  []
 
-<figures/prices_66.png, id=300, 1240.635pt x 651.18282pt>
+<figures/prices_66.png, id=346, 1240.635pt x 651.18282pt>
 File: figures/prices_66.png Graphic file (type png)
 
 <use figures/prices_66.png>
-Package pdftex.def Info: figures/prices_66.png used on input line 621.
+Package pdftex.def Info: figures/prices_66.png used on input line 644.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 621--622
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 644--645
  [][] 
  []
 
-<figures/farms_69.png, id=301, 1240.635pt x 651.18282pt>
+<figures/farms_69.png, id=347, 1240.635pt x 651.18282pt>
 File: figures/farms_69.png Graphic file (type png)
 
 <use figures/farms_69.png>
-Package pdftex.def Info: figures/farms_69.png used on input line 657.
+Package pdftex.def Info: figures/farms_69.png used on input line 680.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 657--658
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 680--681
  [][] 
  []
 
-<figures/network_69.png, id=304, 1240.635pt x 651.18282pt>
+<figures/network_69.png, id=350, 1240.635pt x 651.18282pt>
 File: figures/network_69.png Graphic file (type png)
 
 <use figures/network_69.png>
-Package pdftex.def Info: figures/network_69.png used on input line 666.
+Package pdftex.def Info: figures/network_69.png used on input line 689.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 666--667
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 689--690
  [][] 
  []
 
-<figures/prices_69.png, id=307, 1240.635pt x 651.18282pt>
+<figures/prices_69.png, id=353, 1240.635pt x 651.18282pt>
 File: figures/prices_69.png Graphic file (type png)
 
 <use figures/prices_69.png>
-Package pdftex.def Info: figures/prices_69.png used on input line 675.
+Package pdftex.def Info: figures/prices_69.png used on input line 698.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 675--676
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 698--699
  [][] 
  []
 
-<figures/farms_243.png, id=308, 1240.635pt x 651.18282pt>
+<figures/farms_243.png, id=354, 1240.635pt x 651.18282pt>
 File: figures/farms_243.png Graphic file (type png)
 
 <use figures/farms_243.png>
-Package pdftex.def Info: figures/farms_243.png used on input line 711.
+Package pdftex.def Info: figures/farms_243.png used on input line 733.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 711--712
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 733--734
  [][] 
  []
 
-<figures/network_243.png, id=311, 1240.635pt x 651.18282pt>
+<figures/network_243.png, id=357, 1240.635pt x 651.18282pt>
 File: figures/network_243.png Graphic file (type png)
 
 <use figures/network_243.png>
-Package pdftex.def Info: figures/network_243.png used on input line 720.
+Package pdftex.def Info: figures/network_243.png used on input line 742.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 720--721
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 742--743
  [][] 
  []
 
-<figures/prices_243.png, id=314, 1240.635pt x 651.18282pt>
+<figures/prices_243.png, id=360, 1240.635pt x 651.18282pt>
 File: figures/prices_243.png Graphic file (type png)
 
 <use figures/prices_243.png>
-Package pdftex.def Info: figures/prices_243.png used on input line 729.
+Package pdftex.def Info: figures/prices_243.png used on input line 751.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 729--730
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 751--752
  [][] 
  []
 
-<figures/procs_243_49.png, id=315, 1240.635pt x 651.18282pt>
+<figures/procs_243_49.png, id=361, 1240.635pt x 651.18282pt>
 File: figures/procs_243_49.png Graphic file (type png)
 
 <use figures/procs_243_49.png>
-Package pdftex.def Info: figures/procs_243_49.png used on input line 790.
+Package pdftex.def Info: figures/procs_243_49.png used on input line 812.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 790--791
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 812--813
  [][] 
  []
 
-<figures/procs_243_66.png, id=316, 1240.635pt x 651.18282pt>
+<figures/procs_243_66.png, id=362, 1240.635pt x 651.18282pt>
 File: figures/procs_243_66.png Graphic file (type png)
 
 <use figures/procs_243_66.png>
-Package pdftex.def Info: figures/procs_243_66.png used on input line 799.
+Package pdftex.def Info: figures/procs_243_66.png used on input line 821.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 799--800
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 821--822
  [][] 
  []
 
-<figures/procs_243_69.png, id=317, 1240.635pt x 651.18282pt>
+<figures/procs_243_69.png, id=363, 1240.635pt x 651.18282pt>
 File: figures/procs_243_69.png Graphic file (type png)
 
 <use figures/procs_243_69.png>
-Package pdftex.def Info: figures/procs_243_69.png used on input line 808.
+Package pdftex.def Info: figures/procs_243_69.png used on input line 830.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 808--809
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 830--831
  [][] 
  []
 
-<figures/stores_243_49.png, id=318, 1240.635pt x 651.18282pt>
+<figures/stores_243_49.png, id=364, 1240.635pt x 651.18282pt>
 File: figures/stores_243_49.png Graphic file (type png)
 
 <use figures/stores_243_49.png>
-Package pdftex.def Info: figures/stores_243_49.png used on input line 843.
+Package pdftex.def Info: figures/stores_243_49.png used on input line 865.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 843--844
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 865--866
  [][] 
  []
 
-<figures/stores_243_66.png, id=319, 1240.635pt x 651.18282pt>
+<figures/stores_243_66.png, id=365, 1240.635pt x 651.18282pt>
 File: figures/stores_243_66.png Graphic file (type png)
 
 <use figures/stores_243_66.png>
-Package pdftex.def Info: figures/stores_243_66.png used on input line 852.
+Package pdftex.def Info: figures/stores_243_66.png used on input line 874.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 852--853
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 874--875
  [][] 
  []
 
-<figures/stores_243_69.png, id=320, 1240.635pt x 651.18282pt>
+<figures/stores_243_69.png, id=366, 1240.635pt x 651.18282pt>
 File: figures/stores_243_69.png Graphic file (type png)
 
 <use figures/stores_243_69.png>
-Package pdftex.def Info: figures/stores_243_69.png used on input line 861.
+Package pdftex.def Info: figures/stores_243_69.png used on input line 883.
 (pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
 
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 861--862
+Overfull \hbox (32.89067pt too wide) in paragraph at lines 883--884
  [][] 
  []
 
-[19] [20 <./figures/farms_49.png>] [21 <./figures/network_49.png>] [22 <./figur
-es/prices_49.png>] [23 <./figures/farms_66.png>] [24 <./figures/network_66.png>
-] [25 <./figures/prices_66.png>] [26 <./figures/farms_69.png>] [27 <./figures/n
-etwork_69.png>] [28 <./figures/prices_69.png> <./figures/farms_243.png>]
-[29 <./figures/network_243.png>] [30 <./figures/prices_243.png>] [31 <./figures
-/procs_243_49.png>] [32 <./figures/procs_243_66.png>] [33 <./figures/procs_243_
-69.png>] [34 <./figures/stores_243_49.png>] [35 <./figures/stores_243_66.png>]
-[36 <./figures/stores_243_69.png>] [37] [38]
+[20] [21 <./figures/farms_49.png>] [22 <./figures/network_49.png>] [23 <./figur
+es/prices_49.png>] [24 <./figures/farms_66.png>] [25 <./figures/network_66.png>
+] [26 <./figures/prices_66.png>] [27 <./figures/farms_69.png>] [28 <./figures/n
+etwork_69.png>] [29 <./figures/prices_69.png> <./figures/farms_243.png>]
+[30 <./figures/network_243.png>] [31 <./figures/prices_243.png>] [32 <./figures
+/procs_243_49.png>] [33 <./figures/procs_243_66.png>] [34 <./figures/procs_243_
+69.png>] [35 <./figures/stores_243_49.png>] [36 <./figures/stores_243_66.png>]
+[37 <./figures/stores_243_69.png>]
 Chapter 5.
-[39
+[38
 
-] [40]
-Underfull \hbox (badness 1527) in paragraph at lines 946--947
+] [39] [40] [41]
+Underfull \hbox (badness 1527) in paragraph at lines 963--964
 []\OT1/cmr/m/n/10 NYS De-part-ment of Agri-cul-ture and Mar-kets (DAM) (2016). 
 Farm Prod-uct Dealer Li-censes
  []
 
 
-Underfull \hbox (badness 3449) in paragraph at lines 950--951
+Underfull \hbox (badness 3449) in paragraph at lines 967--968
 []\OT1/cmr/m/n/10 USDA, NASS. (2012) Cen-sus Pub-li-ca-tions Mar-ket Value of A
 g Prod-ucts. Re-trieved from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 950--951
+Underfull \hbox (badness 10000) in paragraph at lines 967--968
 []$\OT1/cmtt/m/n/10 https : / / www . agcensus . usda . gov / Publications / 20
 12 / Online _ Resources / Rankings _ of _ Market _
  []
 
-[41
+[42
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 958.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 958.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 975.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 975.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 958.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 958.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 975.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 975.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CF61AF4A76912A424140483AC0285FD5;848.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 958.
+(rerunfilecheck)             Checksum: 91ED42319CC336365A41D14A138DC93E;1130.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 975.
  ) 
 Here is how much of TeX's memory you used:
- 18036 strings out of 493069
- 337303 string characters out of 6138222
- 487482 words of memory out of 5000000
- 21121 multiletter control sequences out of 15000+600000
+ 18047 strings out of 493069
+ 337430 string characters out of 6138222
+ 481745 words of memory out of 5000000
+ 21126 multiletter control sequences out of 15000+600000
  10096 words of font info for 37 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 55i,11n,60p,2415b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,60p,1499b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -1020,10 +1019,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b>
-Output written on main.pdf (44 pages, 3961770 bytes).
+Output written on main.pdf (45 pages, 3963313 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 435 compressed objects within 5 object streams
- 121 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 579 PDF objects out of 1000 (max. 8388607)
+ 464 compressed objects within 5 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 

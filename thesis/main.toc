@@ -1,6 +1,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
 \contentsline {section}{\numberline {1.1}Background}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Research Question and Economic Mechanism}{3}{section.1.2}
+\contentsline {section}{\numberline {1.2}Research Question}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Economic Mechanism}{3}{section.1.3}
 \contentsline {chapter}{\numberline {2}Linear Model}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Model Overview}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Primal Problem}{6}{section.2.2}
@@ -11,5 +12,9 @@
 \contentsline {section}{\numberline {3.3}Stores}{14}{section.3.3}
 \contentsline {section}{\numberline {3.4}Edge Costs}{17}{section.3.4}
 \contentsline {chapter}{\numberline {4}Results}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}Robustness of Solutions}{37}{section.4.1}
-\contentsline {chapter}{\numberline {5}Discussion}{39}{chapter.5}
+\contentsline {section}{\numberline {4.1}Overview}{18}{section.4.1}
+\contentsline {section}{\numberline {4.2}Visualizing Results}{19}{section.4.2}
+\contentsline {section}{\numberline {4.3}Comparing Bands}{19}{section.4.3}
+\contentsline {chapter}{\numberline {5}Discussion}{38}{chapter.5}
+\contentsline {section}{\numberline {5.1}Robustness of Solutions}{38}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusion}{39}{section.5.2}
