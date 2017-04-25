@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.17)  19 APR 2017 00:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.17)  24 APR 2017 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -598,23 +598,34 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \c@csvrow=\count142
 \c@csvcol=\count143
 \csv@out=\write4
+)
+(/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+\c@r@tfl@t=\count144
+\rotFPtop=\skip62
+\rotFPbot=\skip63
+\rot@float@box=\box40
+\rot@mess@toks=\toks35
+)
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -650,19 +661,19 @@ LaTeX Font Info:    ... okay on input line 33.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box40
-Package hyperref Info: Link coloring OFF on input line 33.
+\AtBeginShipoutBox=\box41
+Package hyperref Info: Link coloring OFF on input line 35.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count144
+\c@section@level=\count145
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
@@ -671,17 +682,17 @@ LaTeX Info: Redefining \nameref on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count145
+\scratchcounter=\count146
 \scratchdimen=\dimen186
-\scratchbox=\box41
-\nofMPsegments=\count146
-\nofMParguments=\count147
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count148
+\scratchbox=\box42
+\nofMPsegments=\count147
+\nofMParguments=\count148
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count149
 \MPscratchDim=\dimen187
-\MPnumerator=\count149
-\makeMPintoPDFobject=\count150
-\everyMPtoPDFconversion=\toks36
+\MPnumerator=\count150
+\makeMPintoPDFobject=\count151
+\everyMPtoPDFconversion=\toks37
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -706,12 +717,12 @@ ng (ext4): destination with the same identifier (name{page.1}) has been already
  used, duplicate ignored
 <to be read again> 
                    \relax 
-l.41 \end{abstract}
+l.43 \end{abstract}
                     [1]pdfTeX warning (ext4): destination with the same identif
 ier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.48 \end{abstract}
+l.50 \end{abstract}
                     [1] (./main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
@@ -720,293 +731,241 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.53 \chapter
+l.55 \chapter
              {Introduction} [1
 
 ]
 Chapter 1.
 [2
 
-] [3] [4]
+]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+ [3] [4]
 Chapter 2.
 [5
 
-] [6] [7] [8] [9] [10] [11] [12]
+] [6] [7] [8] [9]
 Chapter 3.
-[13
+[10
 
-] [14] <figures/map_3.png, id=242, 1240.635pt x 651.18282pt>
-File: figures/map_3.png Graphic file (type png)
-
-<use figures/map_3.png>
-Package pdftex.def Info: figures/map_3.png used on input line 445.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 445--446
- [][] 
- []
-
-<figures/map_4.png, id=244, 1240.635pt x 651.18282pt>
-File: figures/map_4.png Graphic file (type png)
- <use figures/map_4.png>
-Package pdftex.def Info: figures/map_4.png used on input line 467.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 467--468
- [][] 
- []
-
-[15 <./figures/map_3.png>] [16 <./figures/map_4.png>] [17]
+] [11] [12] [13]
 Chapter 4.
-[18
+[14
 
-] [19] <figures/farms_49.png, id=333, 1240.635pt x 651.18282pt>
-File: figures/farms_49.png Graphic file (type png)
-
-<use figures/farms_49.png>
-Package pdftex.def Info: figures/farms_49.png used on input line 572.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 572--573
- [][] 
- []
-
-<figures/network_49.png, id=336, 1240.635pt x 651.18282pt>
-File: figures/network_49.png Graphic file (type png)
-
-<use figures/network_49.png>
-Package pdftex.def Info: figures/network_49.png used on input line 581.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 581--582
- [][] 
- []
-
-<figures/prices_49.png, id=339, 1240.635pt x 651.18282pt>
-File: figures/prices_49.png Graphic file (type png)
-
-<use figures/prices_49.png>
-Package pdftex.def Info: figures/prices_49.png used on input line 590.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 590--591
- [][] 
- []
-
-<figures/farms_66.png, id=340, 1240.635pt x 651.18282pt>
-File: figures/farms_66.png Graphic file (type png)
-
-<use figures/farms_66.png>
-Package pdftex.def Info: figures/farms_66.png used on input line 626.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 626--627
- [][] 
- []
-
-<figures/network_66.png, id=343, 1240.635pt x 651.18282pt>
-File: figures/network_66.png Graphic file (type png)
-
-<use figures/network_66.png>
-Package pdftex.def Info: figures/network_66.png used on input line 635.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 635--636
- [][] 
- []
-
-<figures/prices_66.png, id=346, 1240.635pt x 651.18282pt>
-File: figures/prices_66.png Graphic file (type png)
-
-<use figures/prices_66.png>
-Package pdftex.def Info: figures/prices_66.png used on input line 644.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 644--645
- [][] 
- []
-
-<figures/farms_69.png, id=347, 1240.635pt x 651.18282pt>
-File: figures/farms_69.png Graphic file (type png)
-
-<use figures/farms_69.png>
-Package pdftex.def Info: figures/farms_69.png used on input line 680.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 680--681
- [][] 
- []
-
-<figures/network_69.png, id=350, 1240.635pt x 651.18282pt>
-File: figures/network_69.png Graphic file (type png)
-
-<use figures/network_69.png>
-Package pdftex.def Info: figures/network_69.png used on input line 689.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 689--690
- [][] 
- []
-
-<figures/prices_69.png, id=353, 1240.635pt x 651.18282pt>
-File: figures/prices_69.png Graphic file (type png)
-
-<use figures/prices_69.png>
-Package pdftex.def Info: figures/prices_69.png used on input line 698.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 698--699
- [][] 
- []
-
-<figures/farms_243.png, id=354, 1240.635pt x 651.18282pt>
-File: figures/farms_243.png Graphic file (type png)
-
-<use figures/farms_243.png>
-Package pdftex.def Info: figures/farms_243.png used on input line 733.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 733--734
- [][] 
- []
-
-<figures/network_243.png, id=357, 1240.635pt x 651.18282pt>
-File: figures/network_243.png Graphic file (type png)
-
-<use figures/network_243.png>
-Package pdftex.def Info: figures/network_243.png used on input line 742.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 742--743
- [][] 
- []
-
-<figures/prices_243.png, id=360, 1240.635pt x 651.18282pt>
-File: figures/prices_243.png Graphic file (type png)
-
-<use figures/prices_243.png>
-Package pdftex.def Info: figures/prices_243.png used on input line 751.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 751--752
- [][] 
- []
-
-<figures/procs_243_49.png, id=361, 1240.635pt x 651.18282pt>
-File: figures/procs_243_49.png Graphic file (type png)
-
-<use figures/procs_243_49.png>
-Package pdftex.def Info: figures/procs_243_49.png used on input line 812.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 812--813
- [][] 
- []
-
-<figures/procs_243_66.png, id=362, 1240.635pt x 651.18282pt>
-File: figures/procs_243_66.png Graphic file (type png)
-
-<use figures/procs_243_66.png>
-Package pdftex.def Info: figures/procs_243_66.png used on input line 821.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 821--822
- [][] 
- []
-
-<figures/procs_243_69.png, id=363, 1240.635pt x 651.18282pt>
-File: figures/procs_243_69.png Graphic file (type png)
-
-<use figures/procs_243_69.png>
-Package pdftex.def Info: figures/procs_243_69.png used on input line 830.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 830--831
- [][] 
- []
-
-<figures/stores_243_49.png, id=364, 1240.635pt x 651.18282pt>
-File: figures/stores_243_49.png Graphic file (type png)
-
-<use figures/stores_243_49.png>
-Package pdftex.def Info: figures/stores_243_49.png used on input line 865.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 865--866
- [][] 
- []
-
-<figures/stores_243_66.png, id=365, 1240.635pt x 651.18282pt>
-File: figures/stores_243_66.png Graphic file (type png)
-
-<use figures/stores_243_66.png>
-Package pdftex.def Info: figures/stores_243_66.png used on input line 874.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 874--875
- [][] 
- []
-
-<figures/stores_243_69.png, id=366, 1240.635pt x 651.18282pt>
-File: figures/stores_243_69.png Graphic file (type png)
-
-<use figures/stores_243_69.png>
-Package pdftex.def Info: figures/stores_243_69.png used on input line 883.
-(pdftex.def)             Requested size: 483.8457pt x 253.96028pt.
-
-Overfull \hbox (32.89067pt too wide) in paragraph at lines 883--884
- [][] 
- []
-
-[20] [21 <./figures/farms_49.png>] [22 <./figures/network_49.png>] [23 <./figur
-es/prices_49.png>] [24 <./figures/farms_66.png>] [25 <./figures/network_66.png>
-] [26 <./figures/prices_66.png>] [27 <./figures/farms_69.png>] [28 <./figures/n
-etwork_69.png>] [29 <./figures/prices_69.png> <./figures/farms_243.png>]
-[30 <./figures/network_243.png>] [31 <./figures/prices_243.png>] [32 <./figures
-/procs_243_49.png>] [33 <./figures/procs_243_66.png>] [34 <./figures/procs_243_
-69.png>] [35 <./figures/stores_243_49.png>] [36 <./figures/stores_243_66.png>]
-[37 <./figures/stores_243_69.png>]
+] [15] [16] [17] [18] [19] [20] [21]
 Chapter 5.
-[38
+[22
 
-] [39] [40] [41]
-Underfull \hbox (badness 1527) in paragraph at lines 963--964
+] [23]
+Underfull \hbox (badness 1527) in paragraph at lines 667--668
 []\OT1/cmr/m/n/10 NYS De-part-ment of Agri-cul-ture and Mar-kets (DAM) (2016). 
 Farm Prod-uct Dealer Li-censes
  []
 
 
-Underfull \hbox (badness 3449) in paragraph at lines 967--968
+Underfull \hbox (badness 3449) in paragraph at lines 671--672
 []\OT1/cmr/m/n/10 USDA, NASS. (2012) Cen-sus Pub-li-ca-tions Mar-ket Value of A
 g Prod-ucts. Re-trieved from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
 []$\OT1/cmtt/m/n/10 https : / / www . agcensus . usda . gov / Publications / 20
 12 / Online _ Resources / Rankings _ of _ Market _
  []
 
-[42
+[24
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 975.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 975.
+Chapter 6.
+[25
+
+] [26] [27] [28] <figures/map_3.png, id=425, 1240.635pt x 651.18282pt>
+File: figures/map_3.png Graphic file (type png)
+
+<use figures/map_3.png>
+Package pdftex.def Info: figures/map_3.png used on input line 858.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+ <figures/map_4.png, id=427, 1240.635pt x 651.18282pt>
+File: figures/map_4.png Graphic file (type png)
+
+<use figures/map_4.png>
+Package pdftex.def Info: figures/map_4.png used on input line 867.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/farms_49.png, id=428, 1240.635pt x 651.18282pt>
+File: figures/farms_49.png Graphic file (type png)
+
+<use figures/farms_49.png>
+Package pdftex.def Info: figures/farms_49.png used on input line 880.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/farms_66.png, id=431, 1240.635pt x 651.18282pt>
+File: figures/farms_66.png Graphic file (type png)
+
+<use figures/farms_66.png>
+Package pdftex.def Info: figures/farms_66.png used on input line 889.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/farms_69.png, id=434, 1240.635pt x 651.18282pt>
+File: figures/farms_69.png Graphic file (type png)
+
+<use figures/farms_69.png>
+Package pdftex.def Info: figures/farms_69.png used on input line 898.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/farms_243.png, id=437, 1240.635pt x 651.18282pt>
+File: figures/farms_243.png Graphic file (type png)
+
+<use figures/farms_243.png>
+Package pdftex.def Info: figures/farms_243.png used on input line 907.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/network_49.png, id=440, 1240.635pt x 651.18282pt>
+File: figures/network_49.png Graphic file (type png)
+
+<use figures/network_49.png>
+Package pdftex.def Info: figures/network_49.png used on input line 920.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/network_66.png, id=443, 1240.635pt x 651.18282pt>
+File: figures/network_66.png Graphic file (type png)
+
+<use figures/network_66.png>
+Package pdftex.def Info: figures/network_66.png used on input line 929.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/network_69.png, id=444, 1240.635pt x 651.18282pt>
+File: figures/network_69.png Graphic file (type png)
+
+<use figures/network_69.png>
+Package pdftex.def Info: figures/network_69.png used on input line 938.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/network_243.png, id=447, 1240.635pt x 651.18282pt>
+File: figures/network_243.png Graphic file (type png)
+
+<use figures/network_243.png>
+Package pdftex.def Info: figures/network_243.png used on input line 947.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/prices_49.png, id=450, 1240.635pt x 651.18282pt>
+File: figures/prices_49.png Graphic file (type png)
+
+<use figures/prices_49.png>
+Package pdftex.def Info: figures/prices_49.png used on input line 960.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/prices_66.png, id=451, 1240.635pt x 651.18282pt>
+File: figures/prices_66.png Graphic file (type png)
+
+<use figures/prices_66.png>
+Package pdftex.def Info: figures/prices_66.png used on input line 970.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/prices_69.png, id=452, 1240.635pt x 651.18282pt>
+File: figures/prices_69.png Graphic file (type png)
+
+<use figures/prices_69.png>
+Package pdftex.def Info: figures/prices_69.png used on input line 980.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/prices_243.png, id=453, 1240.635pt x 651.18282pt>
+File: figures/prices_243.png Graphic file (type png)
+
+<use figures/prices_243.png>
+Package pdftex.def Info: figures/prices_243.png used on input line 990.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/procs_243_49.png, id=454, 1240.635pt x 651.18282pt>
+File: figures/procs_243_49.png Graphic file (type png)
+
+<use figures/procs_243_49.png>
+Package pdftex.def Info: figures/procs_243_49.png used on input line 1004.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/procs_243_66.png, id=455, 1240.635pt x 651.18282pt>
+File: figures/procs_243_66.png Graphic file (type png)
+
+<use figures/procs_243_66.png>
+Package pdftex.def Info: figures/procs_243_66.png used on input line 1013.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/procs_243_69.png, id=456, 1240.635pt x 651.18282pt>
+File: figures/procs_243_69.png Graphic file (type png)
+
+<use figures/procs_243_69.png>
+Package pdftex.def Info: figures/procs_243_69.png used on input line 1022.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/stores_243_49.png, id=457, 1240.635pt x 651.18282pt>
+File: figures/stores_243_49.png Graphic file (type png)
+
+<use figures/stores_243_49.png>
+Package pdftex.def Info: figures/stores_243_49.png used on input line 1031.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/stores_243_66.png, id=458, 1240.635pt x 651.18282pt>
+File: figures/stores_243_66.png Graphic file (type png)
+
+<use figures/stores_243_66.png>
+Package pdftex.def Info: figures/stores_243_66.png used on input line 1040.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+
+<figures/stores_243_69.png, id=459, 1240.635pt x 651.18282pt>
+File: figures/stores_243_69.png Graphic file (type png)
+
+<use figures/stores_243_69.png>
+Package pdftex.def Info: figures/stores_243_69.png used on input line 1049.
+(pdftex.def)             Requested size: 620.31598pt x 325.5906pt.
+ [29
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1056.
+ [30 <./figures/map_3.png>] [31 <./figures/map_4.png>] [32 <./figures/farms_49.
+png>] [33 <./figures/farms_66.png>]
+[34 <./figures/farms_69.png>] [35 <./figures/farms_243.png>] [36 <./figures/net
+work_49.png>] [37 <./figures/network_66.png>] [38 <./figures/network_69.png>]
+[39 <./figures/network_243.png>] [40 <./figures/prices_49.png>] [41 <./figures/
+prices_66.png>] [42 <./figures/prices_69.png>] [43 <./figures/prices_243.png>]
+[44 <./figures/procs_243_49.png>] [45 <./figures/procs_243_66.png>] [46 <./figu
+res/procs_243_69.png>] [47 <./figures/stores_243_49.png>] [48 <./figures/stores
+_243_66.png>] [49 <./figures/stores_243_69.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1056.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 975.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 975.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1056.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1056.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 91ED42319CC336365A41D14A138DC93E;1130.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 975.
+(rerunfilecheck)             Checksum: 28F3292EEF78C96196CE47716A18A6C7;1419.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1056.
  ) 
 Here is how much of TeX's memory you used:
- 18047 strings out of 493069
- 337430 string characters out of 6138222
- 481745 words of memory out of 5000000
- 21126 multiletter control sequences out of 15000+600000
+ 18176 strings out of 493069
+ 339161 string characters out of 6138222
+ 476049 words of memory out of 5000000
+ 21234 multiletter control sequences out of 15000+600000
  10096 words of font info for 37 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 55i,12n,60p,1499b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,60p,1422b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -1019,10 +978,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b>
-Output written on main.pdf (45 pages, 3963233 bytes).
+Output written on main.pdf (52 pages, 3829764 bytes).
 PDF statistics:
- 579 PDF objects out of 1000 (max. 8388607)
- 464 compressed objects within 5 object streams
- 127 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 641 PDF objects out of 1000 (max. 8388607)
+ 518 compressed objects within 6 object streams
+ 140 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 

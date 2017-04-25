@@ -1,5 +1,5 @@
-Band,Max,Max County, Min, Min County
-49,17798.3,Clinton County,171.4,Orleans County
-66,23301.8,Clinton County,311.5,Wayne County
-69,24858.6,Clinton County,123.6,Chautauqua County
-243,32869.4,Suffolk County,237.6,Orleans County
+Band,Max,Max County, Min, Min County,,
+Onions,1.780e+04,Clinton County,1.714e+02,Orleans County,,
+Cherries,2.330e+04,Clinton County,3.115e+02,Wayne County,,
+Grapes,2.486e+04,Clinton County,1.236e+02,Chautauqua County,,
+Cabbages,3.287e+04,Suffolk County,2.376e+02,Orleans County,,

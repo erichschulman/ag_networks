@@ -1,5 +1,5 @@
-Band,Max,Max County, Min, Min County
-49,209.6,Orange County,0,Jefferson County
-66,0,Niagara County,0,Niagara County
-69,2611.5,Suffolk County,0,Niagara County
-243,2844.2,Onondaga County,0,Orleans County
+Band,Max,Max County, Min, Min County,,
+Onions,2.096e+02,Orange County,0,Jefferson County,,
+Cherries,0,Niagara County,0,Niagara County,,
+Grapes,2.612e+03,Suffolk County,0,Niagara County,,
+Cabbages,2.844e+03,Onondaga County,0,Orleans County,,
