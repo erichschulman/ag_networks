@@ -39,7 +39,7 @@
 \pagebreak
 
 \begin{abstract}
-For my thesis, I ask how the network of farms, intermediaries, and stores involved with agricultural production relates to prices and consumer behavior. Suppliers face transportation costs while navigating products from farms to stores. Estimating these costs might provide insight into the prices consumers face at stores. To estimate transportation costs in the network, I track the supply of grapes, cabbage, onions, and cherries as it moves from farms to stores in New York state using data from satellites and public records. Using this data, I estimate the least costly path for transporting the goods from the farms to the stores using a linear programming software package. According to my estimates, transporting produce to northeast and southeastern parts of the state is most expensive. Additionally, when the farms vary in size, the cost of sending produce to stores gets noticeably amplified in the optimal solution. All of the code to used to complete this project is publicly available on GitHub at \url{http://github.com/erichschulman/ag_networks}. 
+For my thesis, I ask how the network of farms, intermediaries, and stores involved with agricultural production relates to prices and consumers' nutritional outcomes. Suppliers face transportation costs while navigating products from farms to stores and estimating these costs might provide insight into the prices consumers face at stores. To estimate transportation costs at stores, I track the supply of grapes, cabbage, onions, and cherries as it moves from farms to stores in New York state using data from satellites and public records. Using this data, I estimate the least costly path for transporting the goods from the farms to the stores using a linear programming software package. According to my estimates, transporting produce to northeast and southeastern parts of the state is most expensive. Additionally, when the farms vary in size, the cost of sending produce to stores gets noticeably amplified in the optimal solution. All of the code to used to complete this project is publicly available on GitHub at \url{http://github.com/erichschulman/ag_networks}. 
 \end{abstract}
 
 \pagebreak
@@ -63,23 +63,23 @@ This literature finds that reducing costs and increasing availability of nutriti
 
 In recent years, social scientists interested in nutrition have shifted towards looking at nutrition habits in the context of people's environments, thinking of people as part of a food network. Instead of trying to measure the statistical relationship between a family or individual characteristics with their eating outcomes, the researchers classify environments that put individuals at risk to be unhealthy. Most studies call areas where residents have difficulty maintaining a balanced diet 'food deserts'. The term originated to describe public housing developments in western Scotland with a limited number of grocery stores and other options for nutritious foods. Especially in the past 5 years, this term has captured the imagination of policy makers in the United States.
 
-A lot of research has been focused on finding and classifying food deserts or areas. These studies leverage spatial coordinates and mapping software to classify areas based on their risk for being food insecure using their proximity to grocers and markets. Often times, these studies augment their observations using demographic information.  One study conducted among grocery stores across inner cities and suburbs within the Minneapolis and St. Paul metropolitan concluded the urban poor pay marginally more for food because supermarket chains don't open in inner cities \cite{Chung}. Researchers began applying the label "food deserts" to inner cities. With more data becoming available online, researchers continue describing food supply in more detail to understand systemic food insecurity. In one project, researchers leveraged Google Maps, and local online news to build a graphical representation of food availability in Bogota, Columbia \cite{Hwang}. Another study used online directories of grocery stores to index neighborhoods' vulnerability to food insecurity in the twin cities area \cite{Larson}.
+A lot of research has been focused on finding and classifying food deserts. These studies leverage spatial coordinates and mapping software to classify areas based on their risk for being food insecure using their proximity to grocers and markets. Often times, these studies augment their observations using demographic information.  One study conducted among grocery stores across inner cities and suburbs within the Minneapolis and St. Paul metropolitan concluded the urban poor pay marginally more for food because supermarket chains don't open in inner cities \cite{Chung}. Researchers began applying the label 'food deserts' to inner cities. With more data becoming available online, researchers continue describing food supply in more detail to understand systemic food insecurity. In one project, researchers leveraged Google Maps, and local online news to build a graphical representation of food availability in Bogota, Columbia \cite{Hwang}. Another study used online directories of grocery stores to index neighborhoods' vulnerability to food insecurity in the twin cities area \cite{Larson}.
 
 The literature on food deserts focuses on observing the locations of food suppliers. It generally ignores the endogenous factors that determine the placement of stores even though researchers in the field of operations research have studied how suppliers decide on the allocation of food. Food allocation is often studied using a transportation problem. Transportation problems are an optimization problem designed to find the cheapest possible way of sending a certain amount of supply through a network. A typical application of this problem involves finding the best delivery route from a factory to a warehouse where the road network has some capacity and cost associated. Solving the problem involves finding a vector with an economic interpretation of optimal prices from a social planning perspective. It can be solved efficiently using the network simplex algorithm and linear programming software packages \cite{Cook}. Researchers often apply transportation problems to food allocation. One paper studies maize allocation in south Africa where trains carry maize from supply and demand points, scattered throughout the country. Researchers minimize the total rail cost, as is standard, but add a secondary objective of distributing costs fairly among all users \cite{Stewart}.
 
 \section{Research Question} 
 
-For my project, I ask what areas of New York state make purchasing fresh produce expensive due to their position in the network of farms, stores and intermediaries. Following much of the nascent literature on food deserts, I use spatial data and demographic information to identify regions where obtaining produce is difficult for structural reasons.
+For my project, I tried to answer how network of farms, stores and intermediaries impacts the price of purchasing fresh produce in New York State. Following much of the nascent literature on food deserts, I use spatial data and demographic information to identify regions where the structure of farms, stores and intermediaries makes purchasing certain types of produce difficult.Specifically, I tracked the movements of onions, cherries, grapes, and cabbages across New York state and leverage the operations research literature regarding the optimal allocation of food to estimate their transportation costs to stores. 
 
-I improve the literature identifying food deserts in two ways. Most studies do not comment on whether people rural areas can easily access nutritional food. Most studies, identify food deserts using detailed directories of stores and calculating residents proximity to those stores. These records do not exists for rural areas meaning rural areas are often overlooked by the literature. More importantly, using the distances between people and stores to identify areas where people do not have nutritional food ignores the endogenous factors that determine where stores get built and how prices get set. My project, considers prices in rural areas and endogenous factors into account by focusing my analysis to a few crops and leveraging the operations research literature regarding the optimal allocation of food. For my project, I estimate the prices for onions, cherries, grapes, and cabbages across New York state using information about the supply chain.
+My analysis of transportation costs has the same intentions as the existing literature on food deserts, but my perspective is different. I also try to identify regions with limited access to produce due to high costs. However, instead of thinking about nutrition in terms of food deserts, my project is about food networks. In other words, instead of using the isolated characteristics of certain areas to predict troubling nutritional outcomes, I predict outcomes using connections between areas. 
 
-Although I expand my analysis to encapsulate the endogenous factor involved with supply, my study falls like most of the literature on food deserts. due to time constraints, availability of data, and the complexity of the problem, I ignore data regarding consumer behavior in classifying areas regarding the ease of finding produce. Still, most of the literature does not even acknowledge this shortcoming and modeling supply takes a step in the right direction. Also, the estimates I made are interesting in themselves. By estimating costs in the transportation network, certain observation about how the distribution of farms and stores effects costs emerge. Additionally, the literature finds a statistical relationship between high prices and worse outcomes. These observations could be useful in further focusing the scope of future investigations that include consumer behavior.
+By focusing on the relationship between the nutritional characteristics of different regions, I improve the literature in two ways. First, most studies look at regions in isolation by calculating their proximity to stores. Often, these records about the locations of stores do not exist in rural areas causing them to be overlooked. By focusing on how onions, cherries, grapes, and cabbages move through the supply chain, I can estimate prices across the state. Secondly, the existing literature often ignores how endogenous factors contribute to nutritional outcomes in food deserts. By focusing my attention to tracking a few crops through the overall supply network contribute to prices, I address the interacting considerations suppliers make when setting prices.
 
 \section{Economic Mechanism}
 
-In order to predict where produce was expensive, I tracked the supply chain of cherries, cabbages, and onions come in New York state using satellite data and public records. I used this data to estimate the cost of moving the produce from farms to stores. Since, the crops I chose are not produced on a large scale transportation costs are a good indicator of prices. The factors involved with production are similar so transportation costs are the main difference in the costs faced by suppliers. By shifting the supply curve out for certain suppliers, transportation costs main are the main difference in prices. This means that the transportation costs have serious weight in terms of predicting which areas it is difficult to get fresh produce.
+In order to predict where produce was expensive for consumers, I tracked the supply chain of cherries, cabbages, and onions in New York state using satellite data and public records. Using this data, I estimate the transportation cost associated with moving produce from farms to stores. Since the crops I chose are not produced on a large scale, transportation costs are a good indicator of prices. The factors involved with production are similar so transportation costs are the main difference in the costs faced by suppliers. By shifting the supply curve out for certain suppliers, transportation costs main are the main difference in prices. This means that the transportation costs have serious weight in terms of predicting where prices are high. Considering the link between prices and nutrition in the literature, consumers presumably buy less fresh produce when prices are high impacting their nutrition.
 
-Focusing on crops with a shorter shelf life makes tracking their supply chain relatively simple. With the exception of grapes, production of these crops is limited as you can see from Table \ref{tab:nass3}. For this reason, It largely falls into three stages. First, farms produce crops. Then they send their goods to intermediaries called agricultural dealers. The agricultural dealers may do some intermediate processing (like putting to produce in bags), but they largely leave the produce alone. The facilitate the movement of produce between farms and stores. After agricultural dealers send the produce to stores who in turn allow consumers to buy the crop.  Cabbage, onions and cherries have relatively short shelf lives discouraging the crops from being sold out of state. As you can see, in Table \ref{tab:nass2}. This table compares production of these crops to the amount of these crops that are sold for USDA organic crops \cite{nass2}.
+Focusing on crops with a short shelf life, produced on a small scale makes tracking their supply chain simple. With the exception of grapes, New York produces limited quantities of onions, cherries, and cabbages as you can see from Table \ref{tab:nass3}. Cabbage, onions and cherries have relatively short shelf lives discouraging the crops from being sold out of state. As you can see, in Table \ref{tab:nass2}. This table compares production of these crops to the amount of these crops that are sold for USDA organic crops \cite{nass2}. Because production is small, it largely falls into three stages. First, farms produce crops. They send their crops to intermediaries called agricultural dealers. The dealers may may bag the produce but mostly facilitate its movement between farms and stores. After agricultural dealers send the produce to stores, stores sell the crops to consumers. 
 
 New York releases data on the size and location of farms, the locations of the agricultural dealers, and the size and locations of stores. Since the crops are sent directly from farms to dealers to stores, I  have a snapshot of the crops at each stage through their production. It seems reasonable to assume farms move their goods through the state in such a way that satisfies demand, but keeps costs as low as possible. Building on the assumption that farms, dealers, and stores try to minimize the of moving produce through the network, I can fill in the missing pieces to estimate how produce dynamically moves through the state. In this way, my project incorporates the literature of looking at agricultural markets as an optimization problem by optimizing the transportation costs through this network based on the produces' initial and final locations.
 
@@ -114,17 +114,17 @@ New York releases data on the size and location of farms, the locations of the a
 
 \section{Model Overview}
 
-The optimization problem of minimizing costs while meeting demand is called optimal transportation. It is also called minimum-cost flow. It tries to maximize the amount of flow (in my case units of produce flowing through the network of farms, stores, and intermediaries) at the minimum cost.  Minimum-cost flow is a more general version of a matching market. For my project, I apply this frame work to agricultural markets in New York to understand how the network is related to costs. I have the snap-shot of a network. In the network, Farms can ship to any intermediary associated with the same crop and intermediaries can ship to any store. Intermediaries can scale as much as they desire. Farms produce agricultural products proportional to their size. Although I do not have the exact amount of produce sold by stores, it seems reasonable to assume it would be proportional to the cost of their square footage. This costs represents the majority of the stores fixed cost. By modeling these crops using this framework, I fill in the missing details of my snapshot about how the produce is moving through the network.
+The optimization problem of minimizing transportation costs while ensuring markets clear is called optimal transportation. Some people call it minimum-cost flow because the objective involves maximizes the amount of flow (in my case units of produce flowing through the network of farms, stores, and intermediaries) at the minimum cost. If you are familiar with matching markets and augmenting paths, minimum-cost flow will seem familiar because minimum-cost flow is a more general version of a matching market. You can use the augmenting path algorithm for matching markets to solve the problem. You start by using augmenting paths to find the maximum amount of flow through the network. Then you try to optimize cost by starting at a supply node and finding cycles that alternate between supply and demand while reducing cost. Describing the problem with words is much harder than working out a visual example. For this reason, I included a manageable example of a transportation problem with a network of 2 suppliers and 3 consumers in Figures \ref{fig:example1} through \ref{fig:example6} in the appendix. Following the example will clarify the problem's nature and how to solve it.
 
-To solve the problem, you can start by maximizing the amount of goods you've sent through the network without worrying about cost.  After finding the maximum amount of goods flowing through the network, you find try to optimize cost.  If you are familiar with matching markets and augmenting paths, this problem will look familiar. You start by using augmenting paths to find the maximum amount of flow through the network. Then you try to optimize its cost by finding a reduced cost path. A reduced cost path works exactly like an augmenting path in a matching market but instead of increasing the amount of goods, you try to reduce the costs while keeping the amount of goods constant. You start at a supply node and trace a path alternating between supply and demand until you reach your original node while reducing cost. If you can trace back to your initial node then you've reduced the cost. You repeat this process until you've exhausted all of the reduced cost cycles. To get a better sense of the problem and how to  solve it, I worked out a  manageable example of a transportation problem with a network of 2 suppliers and 3 consumers in Figures \ref{fig:example1} through \ref{fig:example6}. Following the example makes the nature of the problem and how to solve it significantly more clear. Understanding the problem in the abstract much more complicated than a concrete example.
+For my project, I apply minimum-cost flow to agricultural markets in New York to estimate shipping costs using data of supply and demand. In the network, farms can ship to any intermediary associated with the same crop and intermediaries can ship to any store. Intermediaries can scale as much as they desire. Farms produce agricultural products proportional to their size. Although I do not have the exact amount of produce sold by stores, it seems reasonable to assume it would be proportional to the cost of their square footage. This costs represents the majority of the stores fixed cost. By modeling these crops using this framework, I fill in the missing details of my snapshot about how the produce is moving through the network.
 
 Because I had a lot of variables to solve for I solved this problem as linear and used the simplex algorithm (as opposed the the algorithm in Figures \ref{fig:example1} through \ref{fig:example6}). The algorithm finds the solution to a linear objective (i.e. $a x_1 +b x_2 + ...$ ) subjected to linear constraints. The intuition behind how it works involves solving the problem in two ways to finds the lowest maximum and highest minimum. When these coincide,  you know you found a maximum.
 
 Using the simplex algorithm to solve my problem is efficient. Measuring a program's efficiency using factors like how long it takes to run or how many lines of code it takes can vary with the computer, the compiler and the input to the program. As a result, in order to have a more universal measure of efficiency the efficiency of algorithms are measured using run time bounds. Run time bounds are an upper bound on the number of steps you need to solve the problem, given the input's size.  The simplex algorithm's run time bound is bad as far as we know. It can be $O(2^n)$. Meaning that if there could be some scalar multiple of $2^n$ steps if there are $n$ input variables. However, in practice the simplex algorithm does much better. The general rule of thumb is that the simplex algorithm has a run time bound that is some polynomial of $n$ \cite{Cook}.
 
-At first glance, the  linear nature of the problem function might look like OLS. The problems have mathematical similarities. However, practically speaking they are used differently. Generally speaking, OLS produces estimates parameters that are interesting in a statistical sense.  The parameters in linear programming are more interesting as point values. They are interesting purely because they satisfies the objective function. Perhaps measuring transportation costs in this way is a foolish way to look at the data. However, the more I explore the data, the more doubtful I am that a statistical model could capture the intricate relationships between farmers, intermediaries and stores across the state. As opposed to looking at statstical properties, the linear program tries to formally describe the mechanism that firms use to decide the transportation costs.
+At first glance, the  linear nature of the problem function might look like OLS. The problems have mathematical similarities. However, practically speaking they are used differently. Generally speaking, OLS estimates parameters that are interesting in a statistical sense.  The parameters in linear programming are more interesting as point values. They are interesting because they satisfies the objective function. Perhaps OLS would have provided more insight into the data. However, the more I explore the data, the more doubtful I am that a statistical model could capture the intricate relationships between farmers, intermediaries and stores across the state. As opposed to looking at statstical properties, the linear program tries to formally describe the mechanism that firms use to decide the transportation costs.
 
-Since  open source code is important, I've made all the code I wrote for this project publicly available on GitHub with a detailed explanation about how to get it running. It's mostly written in python, with a few SQL queries. Since open source is important to me, most of the software dependencies that need to be installed in order to get my code working are open source. The one exception is the linear optimizer. In this case, I used Gurobi for which an academic license is free. You can access the code at \url{http://github.com/erichschulman/ag_networks}.
+Since  open source code is important, I made all the code I wrote for this project publicly available on GitHub with a detailed explanation about how to get it running. It is mostly written in python, with a few SQL queries. I value open source important, so most of the software dependencies need to get my code working are open source. The one exception is the linear optimizer. In this case, I used Gurobi for which an academic license is free. You can access the code at \url{http://github.com/erichschulman/ag_networks}.
 
 \section{Primal Problem}
 
@@ -155,7 +155,7 @@ To summarize, the objective function minimizes total costs. The first and second
 
 %reduction
 
-The network I'm looking at is slightly more complicated than just supply and demand nodes though. I drew a picture of how I modified the transportation network in Figure \ref{fig:spec}. Assuming I can measure demand, supply, and the edge costs in the network, I can reduce the problem I've described to optimal transportation. By reduce, I mean I want to show that the problem I specified above can be  written as a linear program which I can solve with the simplex algorithm. In this section, I will be formally explaining the way I did this. It is easy to see this linear program for my agricultural networks is  the same as minimum cost flow. Farms are suppliers and stores are consumers. Supplies and demands balance because these crops are not really exported. The only difference is the inclusion of processors. Farms can send produce to which ever processor they like and processors can send produce to which ever store they like. However, farms cannot send their produce straight to the stores. The objective function is updated to reflect this change. Farms must incur the cost of sending their goods to processors, and stores incur the cost of receiving their goods from processors (instead of just sending goods between farms and stores like the original problem).
+The network I'm looking at is slightly more complicated than just supply and demand nodes though. I drew a picture of how I modified the transportation network in Figure \ref{fig:spec}. Assuming I can measure demand, supply, and the edge costs in the network, I can reduce the problem I've described to optimal transportation. By reduce, I mean I show that the problem I specified above can be written as a linear program which I can solve with the simplex algorithm. It is easy to see this linear program for my agricultural networks is a version of minimum-cost flow. Farms are suppliers and stores are consumers. Supplies and demands balance because these crops are not exported at scale. The biggest difference is the inclusion of processors. Farms can send produce to which ever processor they like and processors can send produce to which ever store they like. However, farms cannot send their produce straight to the stores. The objective function is updated to reflect this change. Farms must incur the cost of sending their goods to processors, and stores incur the cost of receiving their goods from processors (instead of just sending goods between farms and stores like the original problem).
 
 $$\operatorname{Minimize} \sum_{f,p \in \text{Routes}} c_{f,p} u_{f,p} + \sum_{p,s \in \text{Routes}} c_{p,s} u_{p,s}$$
 
@@ -174,18 +174,48 @@ $$0 \leq u_{s,d}, \text{ for all edges } s,d \in \text{Routes}$$
 
 So to summarize, we are minimizing the cost of sending goods from farms to processors and processors to stores. In the problem, we are imposing the constraints that farms send all the crops they grow, stores consume all the crops they receive and processors do not keep any crops. This is  optimal transport.
 
-%dual problem
+\begin{figure}
+\centering
+\begin{framed}
+\begin{tikzpicture}[
+node/.style={circle, draw=black!70, fill=white!5,  thick, minimum size=9mm}
+]
+%Nodes
+\node[node]      (f1)                                        {Farm 1};
+\node[node]      (f2)     [below of = f1, yshift= -2cm]       {Farm 2};
+\node[node]      (p1)    [right of = f1, xshift= 2cm]        {Proc 1};
+\node[node]      (p2)     [below of =p1, yshift= -2cm]       {Proc 2};
+\node[node]      (s1)     [right of = p1 , xshift= 2cm]       {Store 1};
+\node[node]      (s2)     [below of = s1, yshift= -2cm]       {Store 2};
+\node[node]      (s3)     [below of = s2, yshift= -2cm]      {Store 3};
+%Lines
+\draw[->] (f1) -- (p1) ;%node [midway, fill=white] {};
+\draw[->] (f1) -- (p2) ;%node [near start, fill=white] {};
+\draw[->] (f2) -- (p1) ;%node [near start, fill=white] {distance};
+\draw[->] (f2) -- (p2) ;%node [midway, fill=white] {distance};
+\draw[->] (p1) -- (s1) ;%node [midway, fill=white] {distance};
+\draw[->] (p1) -- (s2) ;%node [near start, fill=white] {distance};
+\draw[->] (p1) -- (s3) ;%node [near end, fill=white] {distance};
+\draw[->] (p2) -- (s1) ;%node [near end, fill=white] {distance};
+\draw[->] (p2) -- (s2) ;%node [midway, fill=white] {distance};
+\draw[->] (p2) -- (s3) ;%node [near start, fill=white] {distance};
+\end{tikzpicture}
+\caption{This figure show the structure of the agricultural supply network in my model. Farms grow crops and send their product to intermediate processors. Processors send their product to stores. The processors and farms send their product to the next step in the network using local roads. They choose where to send their crops based on convenience.}
+\label{fig:spec}
+\end{framed}
+\end{figure}
+
 \section{Dual Problem}
 
-Every linear problem can be stated two different ways as a "primal" and "dual" problem. In the dual version of a linear program the constraints become the variables of interest in a new objective function and old variables become the new constraints. An intuitive way to think about the dual problem is that you find a maximum from all possible minimums in the primal problem. In other words, you try to push the value of the original constraints as high as possible while maintaining the structure of the original primal problem. I just described the "primal" version of optimal transport. I will now state the second, "dual" way of looking at it because it is more relevant to my project. I used the dual problem to solve optimal transport because it yields a more interesting economic interpretation. The dual variables can be interpreted as the optimal prices that incentivize firms to send their goods along the optimal path. If the dual prices at a node are high, that means it is costly to send goods to that node. Instead of finding the amount of units sent between each pair of suppliers and consumers, we can look prices that reflect the relative cost of sending goods to certain parts of the network.
+Every linear problem can be stated two different ways as a 'primal' and 'dual' problem. In the dual version of a linear program the constraints are used to construct new variables of interest and the old variables are used to construct constraints. You turn the constraints into variables in order to their value as high as possible while maintaining the structure of the original primal problem. In the previous section, I described the 'primal' version of optimal transport. I will now explain the second, 'dual' way of looking at the problem. The dual is relevant to my project because I use it to calculate the transportation costs faced by suppliers. However, for the rest of the section, I will refer to transportation costs produced by calculating the dual variables as prices. In other words, when I mention prices in this section, I am not talking about the prices consumers face. 
 
-The intuition behind the dual problem for optimal transport comes from the desire to get rid of reduced cost cycles (i.e. paths through the network who's total cost is negative). The dual formalizes this idea. To build the dual problem, you introduce a slack variable called $p$ at each node. In other words, when you compute the costs of a cycle through the network by adding up the costs of each edge in the cycle, you add and subtract $p$ at each node. Adding $p$ does not change how costly the cycle was because as long as the slack variables cancel out you are just left with the cost of traveling through cycle.
-
-Since $p$ is a slack variable, it can take what ever value you want. For our objective function we abritrarily let the difference between $p_d$ (i.e. $p$ at a demand node $d$) and $p_s$  (i.e. $p$ at a supplier $s$) represent the amount you can reduce the costs of a cycle by sending a unit of good from $p$ to $d$. In order to reduce the costs of cylces as much as possible, we want to maximize the value of $p_d - p_s$ for all of the nodes.  In order to complete our objective function, we need to account for the fact multiple units will be sent from $s$ to $d$. Multiple units of flow can be sent accross each edge. To account for the fact that certain nodes are visited more than once, you scale the prices at each node. The amount you scale the prices is equal to the amount of product they will be recieving or sending (i.e. the net flow). It helps to think of the dual variable as a price. You are maximizing the difference revenue of selling the good at $d$ and buying the good at $s$. From here we have enough to write our objective.
+The prices in minimum-cost flow work by discouraging paths through the network with negative costs. Prices are slack variables added into the problem when computing the costs of cycles. In other words, when you compute the costs of a cycle through the network by adding up the costs of each edge in the cycle, you add and subtract price $p$ at each node. Adding $p$ does not change how costly the cycle was because as long as the slack variables cancel out you are just left with the cost of traveling through cycle.Once you add prices to the problem, they can take what ever value you want. It helps to think about them as the prices producers pay to send goods through the network. These prices give firms incentive to send their goods along the optimal path. In the objective, firms try to maximize revenue made selling the good at demand nodes for $p_d$ but subtract the cost $p_s$ incurred by buying it from supply nodes. 
 
 $$\operatorname{Maximize} \sum_{d \in D}  (\text{demand at } d) \cdot p_{d} -   \sum_{s \in S}  (\text{supply at } s) \cdot p_{s} $$
 
-The constraints in the dual variable reflect the fact that you can only reduce the cost across an edge so much. At a certain point, you must incur some cost for traversing an edge. The most you can reduce the cost of traversing from from supplier $s$ to demand $d$ is the edge cost between the two $c_{s,d}$. Again, it helps to think of the dual variable as a price. Firms $s$ earns $p_d$ for sending their product to $d$ but looses $p_s + c_{s,w}$. The constraint prevents arbitrage through the network.  The constraints say that the price at the source plus the edge cost must outweigh the cost at the destination.
+In actuality, the prices represent the reduced cost of moving between nodes. In other words, given $p_d$ is the price at demand node $d$ and and $p_s$ is the price at supply node $s$ then $p_d - p_s$ represents the amount moving a unit of goods from $d$ to $s$ reduces the total costs. You scale the prices by the amount of times their corresponding node is visited (i.e. the net flow). We want to maximize the amount we reduce costs. 
+
+The constraints in the dual variable reflect the fact that you can only reduce the cost across an edge so much. At a certain point, you must traverse an edge and incur a cost. The most you can reduce the cost of traversing from from supplier $s$ to demand $d$ is the edge cost between the two $c_{s,d}$. You can think about it using the price metaphor, where firms $s$ earns $p_d$ for sending their product to $d$ and looses $p_s + c_{s,w}$. The constraint prevents arbitrage through the network.  The constraints say that the price at the source plus the edge cost must outweigh the cost at the destination.
 
 $$ p_d -p_s  \leq c_{s,d}$$
 
@@ -195,8 +225,9 @@ $$\operatorname{Maximize} \sum_{d \in D}  (\text{demand at } d) \cdot p_{d} -   
 $$ \text{ subject to}$$
 $$ -p_s + p_d \leq c_{s,d},  \text{ for all edges }  s,d\in \textrm{Routes}$$
 
+
 %reduction
-Of course as before, we have to modify the problem to reflect the inclusion of intermediaries. The dual problem's objective stays exactly the same as before because the netflow through the intermediate processors is 0.
+Of course as before, we have to modify the problem to reflect the inclusion of intermediaries. The dual problem's objective stays exactly the same as before the intermediate processors have prices, but since they do not keep any flow their prices do not effect 'revenue'.
 
 $$\operatorname{Maximize} \sum_{s \in S}  (\text{demand at } s) \cdot p_{s} -   \sum_{f \in F}  (\text{supply at } f) \cdot p_{f} $$
 
@@ -212,13 +243,14 @@ $$ \text{ subject to}$$
 $$ -p_f + p_p \leq c_{f,p}, \text{ for all edges } f,p\in \textrm{Routes}$$
 $$ -p_p + p_s \leq c_{p,s}, \text{ for all edges } p,s\in \textrm{Routes}$$
 
+
 \chapter{Data Sources}
 
 \section{Overview}
 
 \section{Farms}
 
-I am in the unqiue position where I can estimate transportation costs using the linear program because of the agriculutral datasets New York state makes publically available. Using New York's data you can track the supply chain of crops who's movements are simple. In my picture of supply, farm's production is proportional to their area. Since, I chose a fairly small geographic region soil, weather, and other elements that effect the production of a crop will not vary greatly. Unless farmers have access to drastically different technologies, the biggest difference affecting yields for farms is the area they've dedicated to growing the crop. I can figure out each farms area by looking at an image created by the National Agricultural Statistical Service \cite{nass}.
+I am in the unique position where I can estimate transportation costs using the linear program because of the agricultural datasets New York state makes publicly available. Using New York's data you can track the supply chain of crops who's movements are simple. In my picture of supply, farm's production is proportional to their area. Since, I chose a fairly small geographic region soil, weather, and other elements that effect the production of a crop will not vary greatly. Unless farmers have access to drastically different technologies, the biggest difference affecting yields for farms is the area they've dedicated to growing the crop. I can figure out each farms area by looking at an image created by the National Agricultural Statistical Service \cite{nass}.
 
 I use the pixels in a satellite image of crop cover to see supply. The data set is called the Cropland Data Layer and is created by measuring the way light reflects off the Earth at certain wavelengths using a satellite called Landsat. The satellite measures this reflection at $30 \times 30$ square meter plots. Based on the reflection is possible to classify point measured by the satellite. The classifications are made using training data from the Farm Service Agency Common Land Unit Program and non-agricultural training data from the United States Geological Survey National Land Cover Dataset 2001. The file forms a grid called a raster. Pixels in the image represent certain crop bands. The accuracy of classification for these pixels isn't great. In Table \ref{tab:band}, you can see how accurate the satellite data is.
 
@@ -253,7 +285,7 @@ Although individual pixels may be unreliable, I am counting on the fact that clu
 
 \section{Agricultural Dealers}
 
-I included the intermediate processors in the problem for two reasons. They make the problem more realistic because generally farms do not sell their product directly to stores rather intermediaries.  More over, produce is not exported or drastically changed during intermediate processing. If the crops make it to these dealers they are going to be sold to stores then consumed in state. Only 2 of the 300 dealers registered with teh state where out of state. The produce is not altered because you need additional permits for purposes other than resale.  the dealers can sell it to businesses that make prepared foods but in practice, the business with the necessary permits for processing also buy in bulk directly from farms. 
+I included the intermediate processors in the problem for two reasons. They make the problem more realistic because generally farms do not sell their product directly to stores rather intermediaries.  More over, produce is not exported or drastically changed during intermediate processing. If the crops make it to these dealers they are going to be sold to stores then consumed in state. Only 2 of the 300 dealers were out of state. The produce is not altered because you need additional permits for purposes other than resale.  the dealers can sell it to businesses that make prepared foods but in practice, the business with the necessary permits for processing also buy in bulk directly from farms. 
 
 The second reason for including the dealers is because they number of edges to make the problem more computationally tractable. There were roughly 300 licensed agricultural product dealers in the data set. By forcing the edges between stores and farms to the processors, I drastically cut down the number of edges. 
 
@@ -277,7 +309,7 @@ In order to include intermediate processors (i.e. the agricultural product deale
 
 I cannot see the exact amount of produce sold by stores in New York. Since, Cabbages, cherries, and onions production in New York mostly satisfies in state demand because of these crops' relatively shorter shelf life a smaller scale production, I assume that the amount of produce in the state does not change from farms to stores. 
 
-I also assume the amount of goods sold at a store would be proportional to its size weighted by property values. This is because I imagine stores preform an optimization problem when choosing how much square footage to buy for their store. If square footage is expensive, it reflects that fact that this location is more lucrative to the store. If stores could have higher turn over on inexpensive plots, I would imagine the price would rise. This is by no means precise; just a better estimate of capacity than just square footage. Intuitively, the median housing prices reflects the fact that a stores might have smaller square footage but similar demand. Stores in New York City might be the same size as a store upstate, but sell significantly more produce because the population density is much tighter in New York City and the consumers have more income to spend.  
+I also assume the amount of goods sold at a store would be proportional to its size weighted by property values. This is because I imagine stores preform an optimization problem when choosing how much square footage to buy for their store. If square footage is expensive, it reflects that fact that this location is more lucrative to the store. If stores could have higher turn over on inexpensive plots, the price of the plots would rise. This is by no means precise; just a better estimate of capacity than just square footage. Intuitively, the median housing prices reflects the fact that a stores might have smaller square footage but similar demand. Stores in New York City might be the same size as a store upstate, but sell significantly more produce because the population density is much tighter in New York City and the consumers have more income to spend.  
 
 Another reason for using the weighted size reflects the fact that the amount a store sells is proportional to its fixed costs. Higher fixed costs mean the grocery stores need to sell more to recoup their investment. Although I do not have the exact fixed costs I can approximate the cost of their property by multiplying size by median property values. The cost of the property makes up the majority of a stores fixed cost.
 
@@ -300,6 +332,23 @@ So as not to have too many edges between the stores and the intermediaries, I ag
 \end{table}
 
 
+\begin{sidewaysfigure}[!htb]
+\centering
+\begin{framed}
+\includegraphics[scale=.50]{map_3}
+\caption{Here I've mapped all the stores as grey squares. They've been over-layed on top of the census tracts so you can see that stores are spread out between them. You can see are much more sparsely spread in the center of the state.}
+\label{fig:map_3}
+\end{framed}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[!htb]
+\centering
+\begin{framed}
+\includegraphics[scale=.50]{map_4}
+\caption{The purpose of this map shows the distribution of median housing values through out the census tracts. The darker the shading, the higher the median property value for that tract. You can see housing is relatively cheap in western and northern New York, but expensive in the south western corner of the state.}
+\label{fig:map_4}
+\end{framed}
+\end{sidewaysfigure}
 
 \section{Edge Costs}
 
@@ -307,7 +356,7 @@ I edges between each farm and processor, and each processor and store. To measur
 
 For the crops I chose, travel times are an adequate measure of costs. These crops are grown on a small scale so roads are the best method for transporting the produce. The other factors involved with transporting produce like fuel, vehicle size, and wages to drivers are standard across the state. Additionally, the crops I analyze are being transported short enough distances in small enough quantities that I do not have to worry about a non-linear cost structure involved with transportation.
 
-The open source software I use to measure travel times is called open source routing machine (OSRM). The algorithm that OSRM implements is called contraction hierarchies. It is a technique to speed up shortest-path routing by first creating precomputed "contracted" versions of the connection graph. Contraction hierarchies can be used to generate shortest-path routes much more efficiently than the standard shortest path algorithm (i.e. Dijkstra's shortest path algorithm).
+The open source software I use to measure travel times is called open source routing machine (OSRM). The algorithm that OSRM implements is called contraction hierarchies. It is a technique to speed up shortest-path routing by first creating precomputed 'contracted' versions of the connection graph. Contraction hierarchies can be used to generate shortest-path routes much more efficiently than the standard shortest path algorithm (i.e. Dijkstra's shortest path algorithm).
 
 I downloaded a map of New York from the open source mapping project (OSM) and answered routing queries over my local network about routing. I included two tables to visualize the summary statistics of the edges. Table \ref{tab:fp_edges} shows the average, minimum, maximum, and variance of edges between farms and product dealers. Table \ref{tab:ps_edges} shows the same for the edges between dealers and stores.
 
@@ -343,37 +392,37 @@ I downloaded a map of New York from the open source mapping project (OSM) and an
 
 \section{Overview}
 
-For my project, I asked how the network of farms, agricultural dealers, and store related with transportation prices. To find out, I tracked the movements of certain crops and estimated the cost by optimizing the movement of the crops. The estimate assigns a cost to each part of the network. This means, that farms, stores and processors all get a price. It seems reasonable to assume these transportation prices are highly related to actual prices based on the structure of the network. By seeing which regions have the highest transportation prices, you can get a much better sense of how to direct future inquiries about how the network and consequently transportation prices effect prices. 
+For my project, I asked how the network of farms, agricultural dealers, and store made fresh produce more expensive for consumers in certain areas. I used transportation costs as insight into where produce would be expensive. The small size of these markets ensures that transportation costs account for the major difference in the costs faced by firms. As a result, its seems reasonable transportation costs would indicate the actual prices consumers face. In order to estimate transportation costs, I tracked the movements of certain crops and estimated the cost by optimizing the movement of the crops through the network. The estimate assigns a cost to transporting produce at each point of interest in the network. Farms, stores and processors all get assigned a transportation cost.
 
-The most interesting part of the problem is the prices at the store nodes. As you would expect, these estimates a lot to do with the concentration of stores, house prices, and the locations of farms. If you are curious about the locations of stores and the and median house prices, you can see them Figures \ref{fig:map_3} and Figure \ref{fig:map_4}. The farm and processor nodes also get prices. The prices at the farms and prices result when multiple stores are competing to receive resources from this node. For example, if a farm with a limited capacity is next to a lot of stores, you need to increase the price at that farm. This makes it less attractive for the nearby stores to ship produce from that farm.
+The most interesting part of the problem is the transportation costs at the store nodes. As you would expect, these estimates a lot to do with the concentration of stores, house transportation costs, and the locations of farms. If you are curious about the locations of stores and the and median house prices, you can see them Figures \ref{fig:map_3} and Figure \ref{fig:map_4}. The farm and processor nodes also get transportation costs. The transportation costs at the farms result when multiple stores are competing to receive resources from this node. For example, if a farm with a limited capacity is next to a lot of stores, you need to increase the price at that farm. This makes it less attractive for the nearby stores to ship produce from that farm.
 
-According to the estimates, prices in western part of the state are relatively low at stores. This happened because farms are located in this regions and the median house prices are relatively low. There is a lot of supply and little demand.  On the other hand, the south east and the northern corners of the state are significantly higher at stores. The south east faces the highest prices. This is unsurprising. Property values in this area are high and the concentration of farms is low. That the north would also be high in price was more surprising. Property values are low enough in this region to facilitate farming.  Prices are high here because the agricultural activities that take place are mostly focused on corn and dairy. The farms growing produce are also farthest from the state's northern regions. This is a troubling observation especially when you consider that this region also has some of the lower median incomes in the state. 
+According to the estimates, transportation costs in western part of the state are relatively low at stores. This happened because farms are located in this regions and the median house prices are relatively low. There is a lot of supply and little demand.  On the other hand, the south east and the northern corners of the state are significantly higher at stores. The south east faces the highest transportation costs. This is unsurprising. Property values in this area are high and the concentration of farms is low. That the north would also be high in price was more surprising. Property values are low enough in this region to facilitate farming. Transportation costs are high here because the agricultural activities that take place are mostly focused on corn and dairy. The farms growing produce are also farthest from the state's northern regions. This is a troubling observation especially when you consider that this region also has some of the lower median incomes in the state. 
 
-You might be wondering why solving the optimization problem was necessary. It seems obvious that your distance from farms and property vales would increase prices for fresh produce. Using the linear program to estimate prices is more tangible and formal way to combine these separate of New York agriculture describe and quantify them. By estimating prices in the transportation network, certain observation about how the distribution of farms and stores effects costs emerge. It turns out that less obvious properties of the network can effect transportation prices. 
+You might be wondering why solving the optimization problem was necessary. It seems obvious that your distance from farms and property vales would increase transportation costs for fresh produce. Using the linear program to estimate transportation costs is more tangible and formal way to combine these separate of New York agriculture describe and quantify them. By estimating transportation costs through the network, certain observation about how the distribution of farms and stores effects costs emerge. It turns out that less obvious properties of the network can effect transportation costs. 
 
-Specifically, more farms smaller in size reduce the variance in relative costs through out the state. This finding is highly related to the structure of the linear program. When you have fewer big farms, stores face bigger difference when choosing between farms. If the closest farm does not have enough capacity for all the nearby stores, then stores are forced to chose a farm that is further away incurring higher costs. When the farms are smaller, the difference between the closest farm and the second closest is more gradual. As a result, the difference in prices for the various stores is less pronounced. I noticed this effect in New York state data because it occurs in  prices for onion farms. The farms are smaller and evenly distributed. As a result, the solution looks different than the other bands. Additionally, variance in the sizes of farms gets amplified by the linear program. For example, in the cabbage band variance among the size of farms results in huge disparities in prices.
+Specifically, more farms smaller in size reduce the variance in relative costs through out the state. This finding is highly related to the structure of the linear program. When you have fewer big farms, stores face bigger difference when choosing between farms. If the closest farm does not have enough capacity for all the nearby stores, then stores are forced to chose a farm that is further away incurring higher costs. When the farms are smaller, the difference between the closest farm and the second closest is more gradual. As a result, the difference in transportation costs for the various stores is less pronounced. I noticed this effect in New York state data because it occurs in  transportation costs for onion farms. The farms are smaller and evenly distributed. As a result, the solution looks different than the other bands. Additionally, variance in the sizes of farms gets amplified by the linear program. For example, in the cabbage band variance among the size of farms results in huge disparities in transportation costs.
 
 \section{Visualizing Results}
 
-Understanding over all trends in the linear program isn't obvious. It outputs a list of roughly 8000 prices. In order to glean the key trends, I created tables that summarize key statistics about the linear program's result. Table \ref{tab:county_49}, Table \ref{tab:county_66}, Table \ref{tab:county_69}, and Table \ref{tab:county_243} all summarize the range of possible prices in the linear program for each of the crop bands I analyze. These tables also summarize what county has the highest and lowest prices. As I said before, the counties in the west tend to have the lowest prices. The counties in the south east tend to have the highest prices, followed by the north. The key take aways are that farms are in the western part of the state, but there is a cluster in the southern part of the state. As a result, prices according to the linear program should be cheapest in these places. Prices are most expensive in the northeast corner of the state, followed by the southeast (i.e. Long Island). Again I want to qualify these statements about prices by saying that prices only represent relative transportation prices. Table  \ref{tab:price_49}, Table  \ref{tab:price_66}, Table  \ref{tab:price_69}, and Table  \ref{tab:price_243} all show basic summary statistics about the mean, and variance of the prices in the linear program solution.
+Understanding over all trends in the linear program isn't obvious. It outputs a list of roughly 8000 transportation costs. In order to glean the key trends, I created tables that summarize key statistics about the linear program's result. Table \ref{tab:county_49}, Table \ref{tab:county_66}, Table \ref{tab:county_69}, and Table \ref{tab:county_243} all summarize the range of possible transportation costs in the linear program for each of the crop bands I analyze. These tables also summarize what county has the highest and lowest transportation costs. As I said before, the counties in the west tend to have the lowest transportation costs. The counties in the south east tend to have the highest transportation costs, followed by the north. The key take aways are that farms are in the western part of the state, but there is a cluster in the southern part of the state. As a result, transportation costs according to the linear program should be cheapest in these places. transportation costs are most expensive in the northeast corner of the state, followed by the southeast (i.e. Long Island). Again I want to qualify these statements about transportation costs by saying that transportation costs only represent relative transportation transportation costs. Table  \ref{tab:price_49}, Table  \ref{tab:price_66}, Table  \ref{tab:price_69}, and Table  \ref{tab:price_243} all show basic summary statistics about the mean, and variance of the transportation costs in the linear program solution.
 
-I also visualized the solution to the optimization problem over a map of New York state to make the nature of the network for each crop and the result of the linear program intelligible. The first the images shows the locations of farms based on the crop cover data that was put through the sieve. When you look at the pictures of farms, it becomes obvious how they influenced the solution. Areas around the farms have lower prices. Additionally, the differences in the solutions are explained mostly by the differences in the distribution of the farms throughout the state because  the stores and for the most part dealers stay the same between the various bands in the problem. Figure \ref{fig:farms_49}, Figure \ref{fig:farms_66}, Figure \ref{fig:farms_69}, and Figure \ref{fig:farms_243} show the location of farms for each of the respective crop bands.
+I also visualized the solution to the optimization problem over a map of New York state to make the nature of the network for each crop and the result of the linear program intelligible. The first the images shows the locations of farms based on the crop cover data that was put through the sieve. When you look at the pictures of farms, it becomes obvious how they influenced the solution. Areas around the farms have lower transportation costs. Additionally, the differences in the solutions are explained mostly by the differences in the distribution of the farms throughout the state because  the stores and for the most part dealers stay the same between the various bands in the problem. Figure \ref{fig:farms_49}, Figure \ref{fig:farms_66}, Figure \ref{fig:farms_69}, and Figure \ref{fig:farms_243} show the location of farms for each of the respective crop bands.
 
-The second map I created for each band shows the locations of the farms, stores and dealers on the same map. This is just meant to give a sense of what the network looks like. Farms are represented by pentagons, dealers are stars, and stores are squares. Figure \ref{fig:network_49} , Figure \ref{fig:network_66} , Figure \ref{fig:network_69} , and Figure \ref{fig:network_243} all show how the network looks for each of the respective bands. The final image I created for each band is the most interesting as it  visualizes the results of the linear program. It shows the various census tracts with shading based on the relative magnitude of the prices. The  number assigned to the price is some what irrelevant because they only have meaning in relation to each other. They prices reflect the extra time spent on transportation due to including each tract in the network. They are  relative costs due to transportation. Figure \ref{fig:prices_49} , Figure \ref{fig:prices_66} , Figure \ref{fig:prices_69} , and Figure \ref{fig:prices_243} all show how the network looks for each of the respective bands.
+The second map I created for each band shows the locations of the farms, stores and dealers on the same map. This is just meant to give a sense of what the network looks like. Farms are represented by pentagons, dealers are stars, and stores are squares. Figure \ref{fig:network_49} , Figure \ref{fig:network_66} , Figure \ref{fig:network_69} , and Figure \ref{fig:network_243} all show how the network looks for each of the respective bands. The final image I created for each band is the most interesting as it  visualizes the results of the linear program. It shows the various census tracts with shading based on the relative magnitude of the transportation costs. The  number assigned to the price is some what irrelevant because they only have meaning in relation to each other. They transportation costs reflect the extra time spent on transportation due to including each tract in the network. They are  relative costs due to transportation. Figure \ref{fig:prices_49} , Figure \ref{fig:prices_66} , Figure \ref{fig:prices_69} , and Figure \ref{fig:prices_243} all show how the network looks for each of the respective bands.
 
 \section{Comparing Crop Bands}
 
-There were differences between the results for each of the different crops. Onion prices are unique because there was a cluster of farms in the southern part of the state caused prices to be lower there compared to some of the other bands. Onions have both the lowest prices and the lowest variance among prices do to how spread out they are along the state. Stores are not competing with each other to import onions from the same farm. More over, the farms are relatively close by.
+There were differences between the results for each of the different crops. Onion transportation costs are unique because there was a cluster of farms in the southern part of the state caused transportation costs to be lower there compared to some of the other bands. Onions have both the lowest transportation costs and the lowest variance among transportation costs do to how spread out they are along the state. Stores are not competing with each other to import onions from the same farm. More over, the farms are relatively close by.
 
-In terms of the various bands Cherries are by far the smallest band in terms of the amount that are sold. Their production is focused in the western portion of the state. Prices are cheapest by farms and most expensive at the southeastern and northeastern parts of the state. The fact that their production is so small and seasonal leads me to question the accuracy of this band. 
+In terms of the various bands Cherries are by far the smallest band in terms of the amount that are sold. Their production is focused in the western portion of the state. transportation costs are cheapest by farms and most expensive at the southeastern and northeastern parts of the state. The fact that their production is so small and seasonal leads me to question the accuracy of this band. 
 
 The grape farms are concentrated in the southwestern part of the state. There are some farms in the center of the state and also eastern Long Island. I included this section because I calculated the edge costs for the grape farms which takes a long time. I don't think that grapes  are traded using this framework. The supply grown at farms is mostly turned into juices and wines.
 
-Cabbages ended up being the most visually interesting band. For most of the state, the result looks the same as the rest of the state. However, because of the variance in farms, price are much higher in the south east. The variance in the prices calculated is noticeably higher than any of the other bands as we can see in Table \ref{tab:price_243}. This result is more striking in Figure \ref{fig:prices_243}. This result is directly related to the location of the farms through out the state. This is the detail that changes the most between crop bands. Although cabbages are also farmed in the western portion of the state, they are more spread apart and their size is more variable. This result translates through the network creating huge disparities the further away from the farms you go.
+Cabbages ended up being the most visually interesting band. For most of the state, the result looks the same as the rest of the state. However, because of the variance in farms, price are much higher in the south east. The variance in the transportation costs calculated is noticeably higher than any of the other bands as we can see in Table \ref{tab:price_243}. This result is more striking in Figure \ref{fig:prices_243}. This result is directly related to the location of the farms through out the state. This is the detail that changes the most between crop bands. Although cabbages are also farmed in the western portion of the state, they are more spread apart and their size is more variable. This result translates through the network creating huge disparities the further away from the farms you go.
 
-I also provided Table \ref{tab:farm_price} to compare the prices for farms, Table \ref{tab:proc_price} to compare the prices for processors, and Table \ref{tab:store_price} to compare the prices for the various census tracts in each of the bands. Table \ref{tab:farm_county}, Table \ref{tab:proc_county}, and Table \ref{tab:store_county} to compare the information on minimum and maximum counties between the band for farms, dealers and stores.
+I also provided Table \ref{tab:farm_price} to compare the transportation costs for farms, Table \ref{tab:proc_price} to compare the transportation costs for processors, and Table \ref{tab:store_price} to compare the transportation costs for the various census tracts in each of the bands. Table \ref{tab:farm_county}, Table \ref{tab:proc_county}, and Table \ref{tab:store_county} to compare the information on minimum and maximum counties between the band for farms, dealers and stores.
 
-I also included three images comparing the prices generated at the intermediaries by the linear program for cabbages to onions, cherries, and grapes in Figures \ref{fig:procs_243_49}, Figures \ref{fig:procs_243_66}, and Figures \ref{fig:procs_243_69}. Similarly, I've also included three images comparing the prices generated at the census tracts by the linear program for cabbages to onions, cherries, and grapes in Figures \ref{fig:stores_243_49}, Figures \ref{fig:stores_243_66}, and Figures \ref{fig:stores_243_69}.
+I also included three images comparing the transportation costs generated at the intermediaries by the linear program for cabbages to onions, cherries, and grapes in Figures \ref{fig:procs_243_49}, Figures \ref{fig:procs_243_66}, and Figures \ref{fig:procs_243_69}. Similarly, I've also included three images comparing the transportation costs generated at the census tracts by the linear program for cabbages to onions, cherries, and grapes in Figures \ref{fig:stores_243_49}, Figures \ref{fig:stores_243_66}, and Figures \ref{fig:stores_243_69}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -385,11 +434,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c}%
-	Crop&Average&Variance&Deviation
+	Type&Average&Variance&Deviation
     \csvreader[head to column names]{price_49.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
 \end{tabular}
-\caption{This table shows descriptive statistics about the prices in the linear program  for onions as measured in added travel time. The prices from the program represent added travel time in seconds. You can see that the farms in the onion band are spread out enough that the program did not need to increase the price at the farms. The prices at farms and processors get raised when multiple stores compete to buy onions from the same store.}
+\caption{This table shows descriptive statistics about the transportation costs in the linear program  for onions as measured in added travel time. The transportation costs from the program represent added travel time in seconds. You can see that the farms in the onion band are spread out enough that the program did not need to increase the price at the farms. The transportation costs at farms and processors get raised when multiple stores compete to buy onions from the same store.}
 \label{tab:price_49}
 \end{framed}
 \end{table}
@@ -398,11 +447,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c}%
-	Crop&Average&Variance&Deviation
+	Type&Average&Variance&Deviation
     \csvreader[head to column names]{price_66.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
 \end{tabular}
-\caption{This table shows descriptive statistics about the prices in the linear program for cherries as measured in added travel time. The cherry farms are small enough and spread apart enough that stores do not have to compete between sources. Stores can buy cherries from their most preferred farm. As a result, the price at farms is zero for all farms. Since there are less agricultural dealers that sell cherries and the farms are further from stores, the average price is higher then compared to the other bands.}
+\caption{This table shows descriptive statistics about the transportation costs in the linear program for cherries as measured in added travel time. The cherry farms are small enough and spread apart enough that stores do not have to compete between sources. Stores can buy cherries from their most preferred farm. As a result, the price at farms is zero for all farms. Since there are less agricultural dealers that sell cherries and the farms are further from stores, the average transportation cost is higher then compared to the other bands.}
 \label{tab:price_66}
 \end{framed}
 \end{table}
@@ -411,11 +460,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c}%
-	Crop&Average&Variance&Deviation
+	Type&Average&Variance&Deviation
     \csvreader[head to column names]{price_69.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
 \end{tabular}
-\caption{This table shows descriptive statistics about the prices in the linear program as measured in added travel time for grapes. You can see prices at farms are relatively low, meaning farms are spread far enough apart so that stores do not have to compete over where to buy from. Variance in prices are high for this band.}
+\caption{This table shows descriptive statistics about the transportation costs in the linear program as measured in added travel time for grapes. You can see transportation costs at farms are relatively low, meaning farms are spread far enough apart so that stores do not have to compete over where to buy from. Variance in transportation costs are high for this band.}
 \label{tab:price_69}
 \end{framed}
 \end{table}
@@ -424,11 +473,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c}%
-	Crop&Average&Variance&Deviation
+	Type&Average&Variance&Deviation
     \csvreader[head to column names]{price_243.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
 \end{tabular}
-\caption{This table shows descriptive statistics about the prices in the linear program as measured in added travel time for cabbages. The variance of the prices is much lower than the other bands. Additionally, the cabbages are more expensive in the southeast in relatively affluent areas. In the other bands, the crops were more expensive in the northwest. }
+\caption{This table shows descriptive statistics about the transportation costs in the linear program as measured in added travel time for cabbages. The variance of the transportation costs is much lower than the other bands. Additionally, the cabbages are more expensive in the southeast in relatively affluent areas. In the other bands, the crops were more expensive in the northwest. }
 \label{tab:price_243}
 \end{framed}
 \end{table}
@@ -444,7 +493,7 @@ I also included three images comparing the prices generated at the intermediarie
     \csvreader[head to column names]{farm_price.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
 \end{tabular}
-\caption{This table compares the various prices for the different farm bands in one place as measured in expected travel time.  The prices at farms are non-zero at farms at the center of the network to encourage stores to ship produce from more remote farms. Prices are lowest at the cherry farms, as they are zero.This means that stores are not requesting cherries from the same farm.  The next lowest prices are at onion farms. Prices have the highest variance form the cabbage farms meaning certain farms are very popular with stores. There are more cabbage farms spread out over the western portion of the state. This means that all the eastern stores want to import produce from the central counties (Onondaga). As a result, the price needs to be increased to disincentive stores from ordering produce from these farms.}
+\caption{This table compares the various transportation costs for the different farm bands in one place as measured in expected travel time.  The transportation costs at farms are non-zero at farms at the center of the network to encourage stores to ship produce from more remote farms. transportation costs are lowest at the cherry farms, as they are zero.This means that stores are not requesting cherries from the same farm.  The next lowest transportation costs are at onion farms. transportation costs have the highest variance form the cabbage farms meaning certain farms are very popular with stores. There are more cabbage farms spread out over the western portion of the state. This means that all the eastern stores want to import produce from the central counties (Onondaga). As a result, the transportation cost needs to be increased to disincentive stores from ordering produce from these farms.}
 \label{tab:farm_price}
 \end{framed}
 \end{table}
@@ -458,7 +507,7 @@ I also included three images comparing the prices generated at the intermediarie
     \csvreader[head to column names]{proc_price.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
 \end{tabular}
-\caption{This table compares the prices for the different agricultural dealers across the four bands in one place as measured in expected travel time. Cabbages have the highest price reflecting the similarly high price at farms. The prices at the dealers reflects prices at farms. Cabbages have high prices at dealers reflecting the westward spread of farms.  Grapes have the highest variance reflecting the dense distribution of farms on the southwestern part of the state. Processors in this region have similarly disparate prices when compared }
+\caption{This table compares the transportation costs for the different agricultural dealers across the four bands in one place as measured in expected travel time. Cabbages have the highest transportation costreflecting the similarly high transportation cost at farms. The transportation costs at the dealers reflects transportation costs at farms. Cabbages have high transportation costs at dealers reflecting the westward spread of farms.  Grapes have the highest variance reflecting the dense distribution of farms on the southwestern part of the state. Processors in this region have similarly disparate transportation costs when compared }
 \label{tab:proc_price}
 \end{framed}
 \end{table}
@@ -485,11 +534,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c|c}%
-	Crop&Max Price&Max County&Min Price&Min County
+	Type&Max Cost&Max County&Min Cost&Min County
     \csvreader[head to column names]{county_49.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
 \end{tabular}
-\caption{This table shows the minimum and maximum price for each step in the network according to the linear program for onions. The highest prices were found in the northeast tip of the state (Clinton County). This area focuses on farming dairy, and is far from the onion farms. The minimum prices occur in the center by the most dense cluster of farms. You would expect prices to be higher for onions where transportation costs are high. This has implications for onions supply chains and nutrition.}
+\caption{This table shows the minimum and maximum transportation cost for each step in the network according to the linear program for onions. The highest transportation costs were found in the northeast tip of the state (Clinton County). This area focuses on farming dairy, and is far from the onion farms. The minimum transportation costs occur in the center by the most dense cluster of farms. You would expect transportation costs to be higher for onions where transportation costs are high. This has implications for onions supply chains and nutrition.}
 \label{tab:county_49}
 \end{framed}
 \end{table}
@@ -498,11 +547,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c|c}%
-	Crop&Max Price&Max County&Min Price&Min County
+	Type&Max Cost&Max County&Min Cost&Min County
     \csvreader[head to column names]{county_66.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
 \end{tabular}
-\caption{This table shows the minimum and maximum prices and the counties that they occur for cherries. Like we saw in Table \ref{tab:price_66}, the minimum and maximum price at farms for cherries is zero because stores are not competing to import cherries from the same store.  Multiple nodes in multiple counties have zero prices at farms and processors. Prices are highest in the northern counties of the state (Clinton) because these counties focus on other types of agriculture. As always, prices are measured in added travel time in seconds.}
+\caption{This table shows the minimum and maximum transportation costs and the counties that they occur for cherries. Like we saw in Table \ref{tab:price_66}, the minimum and maximum transportation cost at farms for cherries is zero because stores are not competing to import cherries from the same store.  Multiple nodes in multiple counties have zero transportation costs at farms and processors. transportation costs are highest in the northern counties of the state (Clinton) because these counties focus on other types of agriculture. As always, transportation costs are measured in added travel time in seconds.}
 \label{tab:county_66}
 \end{framed}
 \end{table}
@@ -511,11 +560,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c|c}%
-	Crop&Max Price&Max County&Min Price&Min County
+	Type&Max Cost&Max County&Min Cost&Min County
     \csvreader[head to column names]{county_69.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
 \end{tabular}
-\caption{This table shows the minimum and maximum prices and the counties that they occur for grapes. The price being zero reflects the fact that certain processors and farms are uncontested. In other words, only one stores wants to buy grapes from that farm or processor. Multiple counties may have zero prices at farms and processors. As always, prices are measured in added travel time in seconds.} 
+\caption{This table shows the minimum and maximum transportation costs and the counties that they occur for grapes. The transportation cost being zero reflects the fact that certain processors and farms are uncontested. In other words, only one stores wants to buy grapes from that farm or processor. Multiple counties may have zero transportation costs at farms and processors. As always, transportation costs are measured in added travel time in seconds.} 
 \label{tab:county_69}
 \end{framed}
 \end{table}
@@ -524,11 +573,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c|c}%
-	Crop&Max Price&Max County&Min Price&Min County
+	Type&Max Cost&Max County&Min Cost&Min County
     \csvreader[head to column names]{county_243.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
 \end{tabular}
-\caption{This table shows the minimum and maximum prices and the counties that they occur for cabbages. Cabbages are most expensive in Suffolk county (the south east). Farms in this band a relatively spread out. As a result, store do not compete over which farm to buy produce from, but do compete over the processors. As always, prices are measured in added travel time in seconds.}
+\caption{This table shows the minimum and maximum transportation costs and the counties that they occur for cabbages. Cabbages are most expensive in Suffolk county (the south east). Farms in this band a relatively spread out. As a result, store do not compete over which farm to buy produce from, but do compete over the processors. As always, transportation costs are measured in added travel time in seconds.}
 \label{tab:county_243}
 \end{framed}
 \end{table}
@@ -539,11 +588,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c|c}%
-	Crop&Max Price&Max County&Min Price&Min County
+	Crop&Max Cost&Max County&Min Cost&Min County
     \csvreader[head to column names]{farm_county.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
 \end{tabular}
-\caption{This table compares the minimum and maximum prices between the four crop bands for farms. The prices reflect expected travel times. Cherry farms have the cheapest prices followed by onions. Cabbages have the highest. This reflects the variance among the size of farms. Many stores want to import cabbages from the middle of the state. The variance in the size of farms is amplified through the network.}
+\caption{This table compares the minimum and maximum transportation costs between the four crop bands for farms. The transportation costs reflect expected travel times. Cherry farms have the cheapest transportation costs followed by onions. Cabbages have the highest. This reflects the variance among the size of farms. Many stores want to import cabbages from the middle of the state. The variance in the size of farms is amplified through the network.}
 \label{tab:farm_county}
 \end{framed}
 \end{table}
@@ -552,11 +601,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c|c}%
-	Crop&Max Price&Max County&Min Price&Min County
+	Crop&Max Cost&Max County&Min Cost&Min County
     \csvreader[head to column names]{proc_county.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
 \end{tabular}
-\caption{This table compares the minimum and maximum prices between the four crop bands for the agricultural dealers The prices reflect expected travel times. Again cabbages have the highest variance. }
+\caption{This table compares the minimum and maximum transportation costs between the four crop bands for the agricultural dealers The transportation costs reflect expected travel times. Again cabbages have the highest variance. }
 \label{tab:proc_county}
 \end{framed}
 \end{table}
@@ -565,11 +614,11 @@ I also included three images comparing the prices generated at the intermediarie
 \centering
 \begin{framed}
 \begin{tabular}{c|c|c|c|c}%
-	Crop&Max Price&Max County&Min Price&Min County
+	Crop&Max Cost&Max County&Min Cost&Min County
     \csvreader[head to column names]{store_county.csv}{}% use head of csv as column names
     {\\\hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
 \end{tabular}
-\caption{This table compares the minimum and maximum prices between the four crop bands for the different census tracts. The prices reflect expected travel times. Prices are highest for cabbages but also exhibit the most variance. Prices are highest for cabbages in the southeast (Suffolk county). Onions prices are the most evenly distributed. }
+\caption{This table compares the minimum and maximum transportation costs between the four crop bands for the different census tracts. The transportation costs reflect expected travel times. transportation costs are highest for cabbages but also exhibit the most variance. transportation costs are highest for cabbages in the southeast (Suffolk county). Onions transportation costs are the most evenly distributed. }
 \label{tab:store_county}
 \end{framed}
 \end{table}
@@ -578,7 +627,7 @@ I also included three images comparing the prices generated at the intermediarie
 \section{Robustness of Solutions}
 
 %complementary slackness
-One might be skeptical of any solution to this problem involving prices found by the simplex algorithm. Optimal transportation can have more than one possible solution. The example I've worked out the problem  has more than one solution and I've demonstrated it in Figure \ref{fig:example6}. The question becomes how do I know when I've found all possible minimum cost flow distributions through the network with the simplex algorithm. Perhaps I got lucky and found an interesting solution with certain properties that aren't robust.
+One might be skeptical of any solution to this problem involving transportation costs found by the simplex algorithm. Optimal transportation can have more than one possible solution. The example I've worked out the problem  has more than one solution and I've demonstrated it in Figure \ref{fig:example6}. The question becomes how do I know when I've found all possible minimum-cost flow distributions through the network with the simplex algorithm. Perhaps I got lucky and found an interesting solution with certain properties that aren't robust.
 
 Linear programming has a property that allows me to characterize all possible solutions. This property is called complementary slackness and it says that the optimal value of the primal and the dual objective functions will be equivalent. The intuition behind this idea is relatively easy to show with some matrix algebra.
 
@@ -625,21 +674,12 @@ Changes in the solution has more to do with rounding errors related to the way t
 \chapter{Conclusion}
 
 \section{Discussion}
+Despite these improvements my study falls short in the same way as a lot of the existing literature. I do not consider the endogenous choices consumers make involved with determining prices and nutritional outcomes. Still, modeling supply takes a step in the right direction. Also, the estimates I made are interesting even without thinking about how consumers interact with stores. By estimating costs in the transportation network, certain observation about how the distribution of farms and stores effects costs emerge. Additionally, the literature finds a statistical relationship between high prices and worse outcomes. These observations could be useful in further focusing the scope of future investigations that include consumer behavior.
+
+Part of the reason I left endogenous consumer behavior out was because of the complexity of the factors involved with determine price that are outside of transportation costs. However, statistical model could not answer how these factors in conjunction with the network related to prices. In order to quantify a statistical relationship between the network of farms, stores, and dealers and prices, you need to reduce to the network into a vector. Your result would be more about the property of the network you choose to look at and not about the entire network its self. You could always find some other property of the network to compare with prices that might seem important or might seem irrelevant in a statistical context. For example, if it turned out that actual prices in a given region were correlated with the result of the linear program, it would not tell you anything about whether transportation costs effect prices and consumer behavior. All it would tell you is that some aspect of the structure was related to the price. However, there are so many ways to represent the network in the regression. Quantifying what aspect of the network stuck out is difficult. Perhaps as a future project, I will build a more fleshed out mechanism for relating the transportation costs with prices.
 
 %Observed consumer behavior...
-One place where I stop short is asking how my projected regions match with actual consumer outcomes.
-They’re just one component of a function that
-identifies only one side of the market; the whole demand side needs to be taken into
-consideration in each store to actually model end prices, right? Your research is about the
-supply chain, so the consumer side seems sort of ambiguous, but I do like how you use
-property values as a kind of measure of regional income.
-Are food prices actually higher, or high relative to regional incomes, in
-these areas? If you could reference some empirical measurements to this effect, I think it would
-really help sell your approach to readers.
-
 The reason transportation costs may not obviously influence prices because the stores are not as self contained as the farms. A lot of these stores are part of national chains. Perhaps decisions that are optimal for the business on a national scale do not seem optimal on a local level in terms of which farms and dealers the store decides to get its produce from. For example, one grocery chain might decide to work with only one agricultural dealer even though from the perspective of transportation costs, it would be beneficial to work with two.
-
-Of course, there are factors that determine price that are outside of transportation costs. However, statistical model could not answer how these factors in conjunction with the network related to prices. In order to quantify a statistical relationship between the network of farms, stores, and dealers and prices, you need to reduce to the network into a vector. Your result would be more about the property of the network you choose to look at and not about the entire network its self. You could always find some other property of the network to compare with prices that might seem important or might seem irrelevant in a statistical context. For example, if it turned out that actual prices in a given region were correlated with the result of the linear program, it would not tell you anything about whether transportation costs effect prices and consumer behavior. All it would tell you is that some aspect of the structure was related to the price. However, there are so many ways to represent the network in the regression. Quantifying what aspect of the network stuck out is difficult. Perhaps as a future project, I will build a more fleshed out mechanism for relating the transportation costs with prices.
 
 Regardless of their relationship with prices, you can criticize the transportation costs because they are imperfect estimates. You can argue prices in the problem only reflect linear transportation costs. For example, it is possible that the extra cost involved with shipping goods to the northern corners of the state may only be logarithmic with travel time. There is the issue of exports and crops used for other purposes. The grape band data is not informative. That being said, for all these bands produce can be sent out of state or processed. For this reason, I am under-estimate costs. If I could adding demand for sales to manufacturers and inter-state exports it would increase prices. That being said, the estimated prices are still economically significant without exports. They represent a minimum for prices; adding additional demand from out-of-state increases costs in-state. Additionally, most of the categories of produce have a short shelf life and are exported in insignificant quantities with the exception of apples.
 
@@ -662,7 +702,7 @@ So to conclude, my project tries to explain how the network of farms, stores, an
 \begin{thebibliography}{99}
 \bibitem{barrett}Barrett, C. (2010). Measuring Food Insecurity. Science, 327(5967), new series, 825-828. Retrieved from \url{http://www.jstor.org/stable/40509899}
 \bibitem{Bernell}Bernell, S., Weber, B., {\&} Edwards, M. (2006). Restricted Opportunities, Personal Choices, Ineffective Policies: What Explains Food Insecurity in Oregon? Journal of Agricultural and Resource Economics, 31(2), 193-211. 
-\bibitem{Chung} Chung, Chanjin, and Samuel L. Myers. "Do the Poor Pay More for Food? An Analysis of Grocery Store Availability and Food Price Disparities." The Journal of Consumer Affairs 33.2 (1999): 276-96.
+\bibitem{Chung} Chung, Chanjin, and Samuel L. Myers. 'Do the Poor Pay More for Food? An Analysis of Grocery Store Availability and Food Price Disparities.' The Journal of Consumer Affairs 33.2 (1999): 276-96.
 \bibitem{Cook} Cook, W. J., Cunningham, W. H., Pulleyblank, W. R.,  {\&}  Schrijver, A. (1998). Combinatorial optimization (pp. 91-126). New York: John Wiley  {\&}  Sons.
 \bibitem{Hwang} Hwang, M., {\&} Smith, M. (2012). Integrating publicly available web mapping tools for cartographic visualization of community food insecurity: A prototype. GeoJournal, 77(1), 47-62.
 \bibitem{Just} Just, R., {\&} Weninger, Q. (1997). Economic Evaluation of the Farmers' Market Nutrition Program. American Journal of Agricultural Economics, 79(3), 902-917.
@@ -702,7 +742,7 @@ node/.style={circle, draw=black!70, fill=white!5,  thick, minimum size=9mm}
 \draw[->] (s2) -- (d2) node [near start, fill=white] {$c = 2$};
 \draw[->] (s2) -- (d3) node [near start, fill=white] {$c = 1$};
 \end{tikzpicture}
-\caption{This picture represents the network for which we will be finding minimum cost flow. The supply and demand nodes are labeled with their corresponding capacities.  The edges between each supply and demand node are labeled according to their cost. To make the problem easier, you can assume all edges have unlimited capacity meaning suppliers can send as much goods as they want over them.}
+\caption{This picture represents the network for which we will be finding minimum-cost flow. The supply and demand nodes are labeled with their corresponding capacities.  The edges between each supply and demand node are labeled according to their cost. To make the problem easier, you can assume all edges have unlimited capacity meaning suppliers can send as much goods as they want over them.}
 \label{fig:example1}
 \end{framed}
 \end{figure}
@@ -748,7 +788,7 @@ node/.style={circle, draw=black!70, fill=white!5,  thick, minimum size=9mm}
 \draw[->] (s2) -- (d1) node [near end, fill=white] {$c_e = 2$};
 \draw[->] (s2) -- (d2) node [near start, fill=white] {$c_e = 4$};
 \end{tikzpicture}
-\caption{This solution is not optimal in terms of cost (yet). I've labled each edge in this figure with the cost each edge has incurred. It works out to 14. The edge costs are just the amount of flow on each edge times its cost.}
+\caption{This solution is not optimal in terms of cost (yet). I've labeled each edge in this figure with the cost each edge has incurred. It works out to 14. The edge costs are just the amount of flow on each edge times its cost.}
 \label{fig:example3}
 \end{framed}
 \end{figure}
@@ -817,61 +857,13 @@ node/.style={circle, draw=black!70, fill=white!5,  thick, minimum size=9mm}
 \draw[->] (s2) -- (d2) node [midway, fill=white] {$u=2$};
 \draw[->] (s2) -- (d3) node [midway, fill=white] {$u=2$};
 \end{tikzpicture}
-\caption{As long as there aren't minimum cost cycles we've found a solution. Zero-cost cycles exists in this simple network. As a result, there is more than 1 solution that optimizes cost and flow. This figure shows that example.}
+\caption{As long as there aren't minimum-cost cycles we've found a solution. Zero-cost cycles exists in this simple network. As a result, there is more than 1 solution that optimizes cost and flow. This figure shows that example.}
 \label{fig:example6}
-\end{framed}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\begin{framed}
-\begin{tikzpicture}[
-node/.style={circle, draw=black!70, fill=white!5,  thick, minimum size=9mm}
-]
-%Nodes
-\node[node]      (f1)                                        {Farm 1};
-\node[node]      (f2)     [below of = f1, yshift= -2cm]       {Farm 2};
-\node[node]      (p1)    [right of = f1, xshift= 2cm]        {Proc 1};
-\node[node]      (p2)     [below of =p1, yshift= -2cm]       {Proc 2};
-\node[node]      (s1)     [right of = p1 , xshift= 2cm]       {Store 1};
-\node[node]      (s2)     [below of = s1, yshift= -2cm]       {Store 2};
-\node[node]      (s3)     [below of = s2, yshift= -2cm]      {Store 3};
-%Lines
-\draw[->] (f1) -- (p1) ;%node [midway, fill=white] {};
-\draw[->] (f1) -- (p2) ;%node [near start, fill=white] {};
-\draw[->] (f2) -- (p1) ;%node [near start, fill=white] {distance};
-\draw[->] (f2) -- (p2) ;%node [midway, fill=white] {distance};
-\draw[->] (p1) -- (s1) ;%node [midway, fill=white] {distance};
-\draw[->] (p1) -- (s2) ;%node [near start, fill=white] {distance};
-\draw[->] (p1) -- (s3) ;%node [near end, fill=white] {distance};
-\draw[->] (p2) -- (s1) ;%node [near end, fill=white] {distance};
-\draw[->] (p2) -- (s2) ;%node [midway, fill=white] {distance};
-\draw[->] (p2) -- (s3) ;%node [near start, fill=white] {distance};
-\end{tikzpicture}
-\caption{This figure show the structure of the agricultural supply network in my model. Farms grow crops and send their product to intermediate processors. Processors send their product to stores. The processors and farms send their product to the next step in the network using local roads. They choose where to send their crops based on convenience.}
-\label{fig:spec}
 \end{framed}
 \end{figure}
 
 \section{Maps}
 
-\begin{sidewaysfigure}[!htb]
-\centering
-\begin{framed}
-\includegraphics[scale=.50]{map_3}
-\caption{Here I've mapped all the stores as grey squares. They've been over-layed on top of the census tracts so you can see that stores are spread out between them. You can see are much more sparsely spread in the center of the state.}
-\label{fig:map_3}
-\end{framed}
-\end{sidewaysfigure}
-
-\begin{sidewaysfigure}[!htb]
-\centering
-\begin{framed}
-\includegraphics[scale=.50]{map_4}
-\caption{The purpose of this map shows the distribution of median housing values through out the census tracts. The darker the shading, the higher the median property value for that tract. You can see housing is relatively cheap in western and northern New York, but expensive in the south western corner of the state.}
-\label{fig:map_4}
-\end{framed}
-\end{sidewaysfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Farms%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
