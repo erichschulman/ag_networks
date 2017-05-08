@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.17)  8 MAY 2017 11:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.17)  8 MAY 2017 14:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -937,10 +937,6 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1044.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 50878DA7976058FEA10E240186EE51C9;1414.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1044.
  ) 
 Here is how much of TeX's memory you used:
@@ -963,7 +959,7 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b>
-Output written on main.pdf (51 pages, 3973560 bytes).
+Output written on main.pdf (51 pages, 3973380 bytes).
 PDF statistics:
  631 PDF objects out of 1000 (max. 8388607)
  514 compressed objects within 6 object streams
