@@ -1,4 +1,4 @@
-Type, Average,Variance,Deviation,,
-Farms,0,0,0,,
-Processors,3.197e+03,1.456e+07,3.815e+03,,
-Store,6.874e+03,1.327e+07,3.643e+03,,
+Type; Average;Variance;Deviation;
+Farms;0;0;0;
+Processors;3,197.0;14,557,043.0;3,815.4;
+Store;6,874.1;13,268,916.4;3,642.7;

@@ -1,7 +1,7 @@
-Item, Sales (1000 USD),Rank by Sales,Percent of Total Sales,
-Milk from cows, 2417398,1,44.6,
-Grains, 855891, 2, 15.8,
-Cattle, 449497,3,8.3,
-Nursery, 364135,4, 6.7,
-Vegetables, 307644,5,6.7,
-Fruits, 307644,6,5.7,
+Item; Sales (1000 USD);Rank by Sales;Percent of Total Sales;
+Milk from cows; 2,417,398;1;44.6;
+Grains; 855,891; 2; 15.8;
+Cattle; 449,497;3;8.3;
+Nursery; 364,135;4; 6.7;
+Vegetables; 307,644;5;6.7;
+Fruits; 307,644;6;5.7;

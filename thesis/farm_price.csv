@@ -1,5 +1,5 @@
-Band, Average,Variance,Deviation,,
-Onions,2.38,3.992e+02,19.98,,
-Cherries,0,0,0,,
-Grapes,26.48,2.920e+04,1.709e+02,,
-Cabbages,25.64,4.672e+04,2.161e+02,,
+Band; Average;Variance;Deviation;
+49;2.4;399.2;20.0;
+66;0;0;0;
+69;26.5;29,195.7;170.9;
+243;25.6;46,718.5;216.1;

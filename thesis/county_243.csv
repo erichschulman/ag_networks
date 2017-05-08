@@ -1,4 +1,4 @@
-Type,Max,Max County, Min, Min County,,
-Farms,2.844e+03,Onondaga County,0,Orleans County,,
-Processors,2.918e+04,Suffolk County,0,Ontario County,,
-Store,3.287e+04,Suffolk County,2.376e+02,Orleans County,,
+Type;Max;Max County; Min; Min County;
+Farms;2,844.2;Onondaga County;0;Orleans County;
+Processors;29,180.1;Suffolk County;0;Ontario County;
+Store;32,869.4;Suffolk County;237.6;Orleans County;

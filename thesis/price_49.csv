@@ -1,4 +1,4 @@
-Band, Average,Variance,Deviation,,
-Farms,2.38,3.992e+02,19.98,,
-Processors,2.517e+03,1.047e+07,3.236e+03,,
-Store,5.073e+03,9.637e+06,3.104e+03,,
+Band; Average;Variance;Deviation;
+Farms;2.4;399.2;20.0;
+Processors;2,516.5;10,468,640.2;3,235.5;
+Store;5,073.5;9,636,831.9;3,104.3;

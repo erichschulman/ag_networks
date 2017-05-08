@@ -16,10 +16,10 @@
 \contentsline {section}{\numberline {4.1}Overview}{16}{section.4.1}
 \contentsline {section}{\numberline {4.2}Visualizing Results}{17}{section.4.2}
 \contentsline {section}{\numberline {4.3}Comparing Crops}{19}{section.4.3}
-\contentsline {section}{\numberline {4.4}Robustness of Solutions}{22}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusion}{24}{chapter.5}
-\contentsline {section}{\numberline {5.1}Discussion}{24}{section.5.1}
-\contentsline {section}{\numberline {5.2}Summary}{25}{section.5.2}
-\contentsline {chapter}{\numberline {6}Appendix}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Worked Out Optimal Transportation}{27}{section.6.1}
-\contentsline {section}{\numberline {6.2}Maps}{31}{section.6.2}
+\contentsline {section}{\numberline {4.4}Robustness of Solutions}{20}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusion}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Discussion}{23}{section.5.1}
+\contentsline {section}{\numberline {5.2}Summary}{24}{section.5.2}
+\contentsline {chapter}{\numberline {6}Appendix}{26}{chapter.6}
+\contentsline {section}{\numberline {6.1}Worked Out Optimal Transportation}{26}{section.6.1}
+\contentsline {section}{\numberline {6.2}Maps}{30}{section.6.2}
