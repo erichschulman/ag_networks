@@ -1,7 +1,7 @@
 # Food Networks!
-This is the code repo for my Honors Thesis. Depending on who you ask, it's more interesting than Chopped. I'm trying to specify a transportation problem using NYS's publically available GIS data. I plan to solve the problem with the Gurobi Optimizer. Most of the code/data I'm using is open source or open access. Gurobi is not (but is free with an academic license).
+This is the code repo for my Undergraduate Honors Thesis. The goal of the project was to specify optimal transportation problem in New York agriculture using publically avaible GIS data. I plan to solve the problem with the Gurobi Linear Optimizer.
 
-Email me at ehs82@cornell.edu if you're interested!
+Although, I am not actively developing this project, I may revist it in the future.
 
 ## Software Dependencies
 
