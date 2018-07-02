@@ -1,5 +1,0 @@
-Type;Band;Correct Pixels;Producer's Accuracy; Kappa; User's Accuracy;
-Onions; 49 ; 900 ; 87.04 ; 0.8703; 69.82;
-Cherries; 66 ; 45;22.50 ; 0.2769; 50.31;
-Grapes ; 69;2,254 ; 66.16 ;0.6611 ; 88.15;
-Cabbage ; 243 ; 1,067;54.97 ;0.5493;  67.28;
